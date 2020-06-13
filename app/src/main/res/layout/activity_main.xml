@@ -51,8 +51,7 @@
             <LinearLayout
                 android:id="@+id/Navigation"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.5"
+                android:layout_height="50dp"
                 android:background="#FFA21F"
                 android:baselineAligned="false"
                 android:orientation="horizontal"
@@ -129,7 +128,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="#FFA21F"
                 android:orientation="horizontal">
 
