@@ -3,7 +3,7 @@ package com.example.smallternativ;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
+// Login Activity
 public class MainActivity extends AppCompatActivity {
 
     @Override

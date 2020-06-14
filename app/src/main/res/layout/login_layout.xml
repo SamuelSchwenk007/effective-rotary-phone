@@ -1,25 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@mipmap/hintergrund">
+    android:background="@mipmap/hintergrund"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:id="@+id/maincontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/maincontainerinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:layout_weight="2">
 
+            <LinearLayout
+                android:id="@+id/uppercontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        tools:text="LOGIN" />
+                <TextView
+                    android:id="@+id/textViewLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:text="@string/login"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    tools:text="LOGIN:" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="E-Mail"
-        tools:text="E-Mail" />
+                <LinearLayout
+                    android:id="@+id/emailContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/textViewEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e_mail"
+                        android:textColor="#FFFFFF"
+                        tools:text="E-Mail:" />
 
-</android.widget.RelativeLayout>
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/editTextEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/roundedinput"
+                        android:layout_weight="0"
+                        android:hint="@string/email_eingeben" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/passwortContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/textViewPasswort"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Passwort"
+                        android:textColor="#FFFFFF"
+                        tools:text="Passwort:" />
+
+                    <EditText
+                        android:id="@+id/editTextPasswort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/roundedinput"
+                        android:hint="@string/password_eingeben"
+                        android:layout_marginTop="10dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/angemeldetBleibenContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="100dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/textViewAngemeldetBleiben"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/angemeldetbleiben"
+                    android:textColor="#FFFFFF"
+                    tools:text="Angemeldet bleiben?" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxAngemeldetBleiben"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bestaetigenContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:layout_marginTop="15dp">
+
+                <Button
+                    android:id="@+id/buttonBestaetigen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundedbutton"
+                    android:clickable="true"
+                    android:text="@string/best_tigen"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/orangeLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:background="#FFA21F"
+                android:layout_marginTop="15dp">
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/nochKeinenAccountContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/textViewNochKeinenAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nochkeinenaccount"
+                    android:textColor="#FFFFFF"
+                    tools:text="Noch keinen Account?"
+                    android:layout_weight="1"
+                    android:layout_marginTop="15dp"/>
+
+                <Button
+                    android:id="@+id/buttonRegistrieren"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundedbutton"
+                    android:text="@string/registrieren"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000"
+                    android:layout_gravity="right"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/orangeLineTwo"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:background="#FFA21F"
+                android:layout_marginTop="15dp">
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/anmeldenMitContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/textViewAnmeldenMit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/anmeldenmit"
+                    android:textColor="#FFFFFF"
+                    tools:text="Anmelden mit:" />
+
+                <LinearLayout
+                    android:id="@+id/anmeldenMitButtonsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/buttonFaceBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fb" />
+
+                <Button
+                    android:id="@+id/buttonGoogle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/g" />
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/orangeLineThree"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="right"
+                    android:background="#FFA21F"
+                    android:layout_marginTop="20dp">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ohneAnmeldenFortfahrenContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/buttonOhneAnmeldenFortfahren"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundedbutton"
+                    android:text="@string/ohneanmeldenfortfahren"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000" />
+                </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/orangeBottomLine"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:background="#FFA21F"
+            android:layout_weight="1">
+        </LinearLayout>
+    </LinearLayout>
+</android.widget.LinearLayout>
