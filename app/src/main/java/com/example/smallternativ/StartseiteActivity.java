@@ -1,9 +1,11 @@
 package com.example.smallternativ;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -11,12 +13,21 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class StartseiteActivity extends AppCompatActivity {
+
+public class StartseiteActivity extends AppCompatActivity implements MyAdapter.ShopListItemListener {
+    private MyAdapter.ShopListItemListener shopListItemListener;
+    RecyclerView recyclerView;
+    MyAdapter myAdapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startseitenlayout);
+        recyclerView = findViewById(R.id.recyclerView);
+        setTodoListenerToAdapter(this);
+        myAdapter = MyAdapter.getInstance(this,shopListItemListener);
         // Get the ActionBar
         ActionBar ab = getSupportActionBar();
 
@@ -49,5 +60,30 @@ public class StartseiteActivity extends AppCompatActivity {
 
         // Finally, set the newly created TextView as ActionBar custom view
         ab.setCustomView(tv);
+        loadShopsToList(this, myAdapter);
+    }
+    public void setTodoListenerToAdapter(MyAdapter.ShopListItemListener shopListItemListener){
+        MyAdapter adapter = MyAdapter.getInstance(this, shopListItemListener);
+        adapter.setShopListItemlistener(this);
+    }
+
+    @Override
+    public void OnShopListItemClick(int position) {
+
+    }
+    public void loadShopsToList(Context context, MyAdapter myAdapter){
+        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo");
+        ShopListItem shopListItemTwo = new ShopListItem("Asiatica");
+        ShopListItem shopListItemThree = new ShopListItem("Cyroline");
+        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden");
+
+        myAdapter.insertShopListItem(shopListItemOne);
+        myAdapter.insertShopListItem(shopListItemTwo);
+        myAdapter.insertShopListItem(shopListItemThree);
+        myAdapter.insertShopListItem(shopListItemFour);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(myAdapter);
     }
 }
