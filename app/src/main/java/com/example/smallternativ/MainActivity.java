@@ -3,6 +3,7 @@ package com.example.smallternativ;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 // Login Activity
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     Button ohneAnmeldenFortfahren;
     Button buttonBestaetigen;
     Button buttonRegistrieren;
@@ -80,4 +81,5 @@ public class MainActivity extends AppCompatActivity {
         // Finally, set the newly created TextView as ActionBar custom view
         ab.setCustomView(tv);
     }
+
 }
