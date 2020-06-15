@@ -18,58 +18,6 @@
           "id": "2:1498519702054236580",
           "name": "title",
           "type": 9
-        },
-        {
-          "id": "3:6376948995898348085",
-          "name": "personcount",
-          "type": 5,
-          "flags": 4
-        },
-        {
-          "id": "4:5681162513553846164",
-          "name": "timecount",
-          "type": 5,
-          "flags": 4
-        },
-        {
-          "id": "5:5527206575552185600",
-          "name": "datevon",
-          "type": 9
-        },
-        {
-          "id": "6:3612079277002653505",
-          "name": "datebis",
-          "type": 9
-        },
-        {
-          "id": "7:2864414409204247777",
-          "name": "kosten",
-          "type": 5,
-          "flags": 4
-        },
-        {
-          "id": "8:7406497366762230174",
-          "name": "kostenpersonone",
-          "type": 5,
-          "flags": 4
-        },
-        {
-          "id": "9:4205927637786908564",
-          "name": "kostenpersontwo",
-          "type": 5,
-          "flags": 4
-        },
-        {
-          "id": "10:7880129035849646817",
-          "name": "kostenpersonthree",
-          "type": 5,
-          "flags": 4
-        },
-        {
-          "id": "11:6124135669217091632",
-          "name": "kostenpersonfour",
-          "type": 5,
-          "flags": 4
         }
       ],
       "relations": []
@@ -83,7 +31,17 @@
   "modelVersionParserMinimum": 5,
   "retiredEntityUids": [],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    6376948995898348085,
+    5681162513553846164,
+    5527206575552185600,
+    3612079277002653505,
+    2864414409204247777,
+    7406497366762230174,
+    4205927637786908564,
+    7880129035849646817,
+    6124135669217091632
+  ],
   "retiredRelationUids": [],
   "version": 1
 }

@@ -72,10 +72,10 @@ public class StartseiteActivity extends AppCompatActivity implements MyAdapter.S
 
     }
     public void loadShopsToList(Context context, MyAdapter myAdapter){
-        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo");
-        ShopListItem shopListItemTwo = new ShopListItem("Asiatica");
-        ShopListItem shopListItemThree = new ShopListItem("Cyroline");
-        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden");
+        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Netter Türke um die Ecke");
+        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Netter Asiate um die Ecke");
+        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Nette Mode um die Ecke");
+        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Netter Fäden um die Ecke");
 
         myAdapter.insertShopListItem(shopListItemOne);
         myAdapter.insertShopListItem(shopListItemTwo);

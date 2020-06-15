@@ -11,24 +11,24 @@ import io.objectbox.annotation.Id;
 public class ShopListItem {
     @Id  public long id;
     public String title;
-    public BackgroundColorSpan backgroundColorSpan;
+    public String beschreibung;
 
 
     // @Convert(converter = Button.class, dbType = boolean.class)
     //public Button loeschen;
 
 
-    public BackgroundColorSpan getBackgroundColorSpan() {
-        return backgroundColorSpan;
+    public String getBeschreibung() {
+        return beschreibung;
     }
 
-    public void setBackgroundColorSpan(BackgroundColorSpan backgroundColorSpan) {
-        this.backgroundColorSpan = backgroundColorSpan;
+    public void setBeschreibung(String beschreibung) {
+        this.beschreibung = beschreibung;
     }
 
-    public ShopListItem (String title, BackgroundColorSpan backgroundColorSpan){
+    public ShopListItem (String title, String beschreibung){
         this.title = title;
-        this.backgroundColorSpan = backgroundColorSpan;
+        this.beschreibung = beschreibung;
 
     }
     public ShopListItem(){

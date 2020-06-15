@@ -96,20 +96,23 @@ public class MyAdapter extends RecyclerView.Adapter  {
     }
     private static class ShopListItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ShopListItem currentShopListItem;
-        public TextView todoTitle;
+        public TextView shoplistItemTitle;
+        public TextView beschreibungsText;
         public Context context;
         public ShopListItemListener todoListener;
 
         public ShopListItemViewHolder(View v, ShopListItemListener todoListener) {
             super(v);
             context = v.getContext();
-            todoTitle = (TextView) v.findViewById(R.id.eintrag);
+            shoplistItemTitle = (TextView) v.findViewById(R.id.eintrag_title);
+            beschreibungsText = (TextView) v.findViewById(R.id.eintrag_beschreibung);
             this.todoListener = todoListener;
         }
 
-        public void setCurrentShopListItem(ShopListItem todo) {
-            currentShopListItem = todo;
-            todoTitle.setText(todo.getTitle());
+        public void setCurrentShopListItem(ShopListItem shopListItem) {
+            currentShopListItem = shopListItem;
+            shoplistItemTitle.setText(shopListItem.getTitle());
+            beschreibungsText.setText(shopListItem.getBeschreibung());
         }
 
         @Override
