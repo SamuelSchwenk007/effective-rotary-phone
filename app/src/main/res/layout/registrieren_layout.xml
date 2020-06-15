@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
 
     android:layout_width="match_parent"
@@ -7,197 +7,198 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@mipmap/hintergrund">
 
-    <TextView
-        android:id="@+id/textView"
-        tools:text="REGISTRIEREN:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginLeft="31dp"
-        android:layout_marginTop="67dp"
-        android:background="#00000000"
-        android:text="@string/registrieren"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        tools:text="E-Mail:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="108dp"
-        android:text="@string/e_mail"
-        android:textColor="#FFFFFF"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="31dp" />
-
-    <TextView
-        android:id="@+id/textView9"
-        tools:text="Passwort:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="241dp"
-        android:background="#00000000"
-        android:text="@string/passwort"
-        android:textColor="#FFFFFF"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="27dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        tools:text="Passwort wiederholen:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="314dp"
-        android:background="#00000000"
-        android:text="@string/passwort_wiederholen"
-        android:textColor="#FFFFFF"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="27dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        tools:text="Benutzername:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="172dp"
-        android:background="#00000000"
-        android:text="@string/benutzername"
-        android:textColor="#FFFFFF"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="28dp" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="310dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="136dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="31dp">
-
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
+    <LinearLayout
+        android:id="@+id/maincontainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/maincontainerinner"
             android:layout_width="match_parent"
-            android:layout_height="26dp"
-            android:background="#FFFFFF"
-            android:baselineAligned="false"
-            android:hint="@string/email_eingeben" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:layout_weight="2">
 
-    <TextView
-        android:id="@+id/textView6"
-        tools:text="Angemeldet bleiben?"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="407dp"
-        android:text="@string/angemeldet_bleiben"
-        android:textColor="#FFFFFF" />
+            <LinearLayout
+                android:id="@+id/uppercontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="404dp"
-        android:layout_marginEnd="129dp"
-        android:layout_marginRight="129dp"
-        android:background="#00000000"
-        android:textColor="#FFFFFF" />
+                <TextView
+                    android:id="@+id/textViewLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:text="@string/login"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    tools:text="REGISTRIEREN:" />
 
-    <Button
-        android:id="@+id/buttonBestaetigenRegristrieren"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="494dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginRight="110dp"
-        android:background=" #FFA21F"
-        android:clickable="true"
-        android:text="@string/best_tigen"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textColorHighlight="#000000"
-        android:focusable="true" />
+                <LinearLayout
+                    android:id="@+id/emailContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/textViewEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/e_mail"
+                        android:textColor="#FFFFFF"
+                        tools:text="E-Mail:" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:layout_width="316dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="66dp"
-        android:layout_marginRight="66dp"
-        android:layout_marginBottom="446dp"
-        android:background="#FFFFFF"
-        android:hint="@string/password_eingeben"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="28dp" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText3"
-        android:layout_width="316dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginRight="67dp"
-        android:layout_marginBottom="374dp"
-        android:background="#FFFFFF"
-        android:hint="@string/password_eingeben"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="27dp" />
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/editTextEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/roundedinput"
+                        android:layout_weight="0"
+                        android:hint="@string/email_eingeben" />
+                </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText2"
-        android:layout_width="316dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginLeft="29dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginRight="65dp"
-        android:layout_marginBottom="508dp"
-        android:background="#FFFFFF"
-        android:hint="@string/benutzername_eingeben" />
 
-</android.widget.RelativeLayout>
 
+                <LinearLayout
+                    android:id="@+id/benutzerNameContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/textViewBenutzername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/benutzername"
+                        android:textColor="#FFFFFF"
+                        tools:text="Benutzername:" />
+
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/editTextBenutzername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/roundedinput"
+                        android:layout_weight="0"
+                        android:hint="@string/benutzername_eingeben" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/passwortContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/textViewPasswort"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Passwort"
+                        android:textColor="#FFFFFF"
+                        tools:text="Passwort:" />
+
+                    <EditText
+                        android:id="@+id/editTextPasswort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/roundedinput"
+                        android:hint="@string/password_eingeben"
+                        android:layout_marginTop="10dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/passwortWiederholenContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/textViewPasswortWiederholen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Passwort"
+                    android:textColor="#FFFFFF"
+                    tools:text="Passwort wiederholen:" />
+
+                <EditText
+                    android:id="@+id/editTextPasswortWiederholen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundedinput"
+                    android:hint="@string/password_eingeben"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/angemeldetBleibenContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="100dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/textViewAngemeldetBleiben"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/angemeldetbleiben"
+                    android:textColor="#FFFFFF"
+                    tools:text="Angemeldet bleiben?" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxAngemeldetBleiben"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bestaetigenContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:layout_marginTop="15dp">
+
+                <Button
+                    android:id="@+id/buttonBestaetigen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundedbutton"
+                    android:clickable="true"
+                    android:text="@string/best_tigen"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/orangeBottomLine"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:background="#FFA21F"
+            android:layout_weight="1">
+        </LinearLayout>
+
+    </LinearLayout>
+</android.widget.LinearLayout>

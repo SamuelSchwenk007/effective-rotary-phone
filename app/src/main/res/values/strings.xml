@@ -11,11 +11,13 @@
     <string name="best_tigen">Bestätigen</string>
     <string name="login">Login</string>
     <string name="registrieren">Registrieren</string>
-    <string name="ohneanmeldenfortfahren">OhneAnmeldenFortfahren</string>
+    <string name="ohneanmeldenfortfahren">Ohne Anmelden fortfahren</string>
     <string name="angemeldetbleiben">AngemeldetBleiben</string>
     <string name="nochkeinenaccount">NochKeinenAccount</string>
     <string name="anmeldenmit">AnmeldenMit</string>
     <string name="benutzername_eingeben">Benutzernamen eingeben</string>
+    <string name="aendern">ändern</string>
+    <string name="ladenprofil_erstellen">Ladenprofil erstellen</string>
     <string name="g">G+</string>
     <string name="fb">FB</string>
 </resources>
