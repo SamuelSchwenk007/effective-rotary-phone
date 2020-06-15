@@ -1,11 +1,5 @@
 package com.example.smallternativ;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,37 +9,22 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-// Login Activity
-public class MainActivity extends AppCompatActivity{
-    Button ohneAnmeldenFortfahren;
-    Button buttonBestaetigen;
-    Button buttonRegistrieren;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
+public class RegistrierenActivity extends AppCompatActivity {
+    Button buttonBestaetigenRegistrieren;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_layout);
-        ohneAnmeldenFortfahren = findViewById(R.id.buttonOhneAnmeldenFortfahren);
-        ohneAnmeldenFortfahren.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.registrieren_layout);
+        buttonBestaetigenRegistrieren = findViewById(R.id.buttonBestaetigenRegristrieren);
+        buttonBestaetigenRegistrieren.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(),StartseiteActivity.class);
-                startActivity(intent);
-            }
-        });
-        buttonBestaetigen = findViewById(R.id.buttonBestaetigen);
-        buttonBestaetigen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),StartseiteActivity.class);
-                startActivity(intent);
-            }
-        });
-        buttonRegistrieren = findViewById(R.id.buttonRegistrieren);
-        buttonRegistrieren.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),RegistrierenActivity.class);
                 startActivity(intent);
             }
         });
@@ -71,7 +50,7 @@ public class MainActivity extends AppCompatActivity{
         // Set the monospace font for TextView text
         // This will change ActionBar title text font
         tv.setTypeface(ResourcesCompat.getFont(this,R.font.pacifico));
-        // set tje textsize
+        // size of the text
         tv.setTextSize(24);
         // set the Title to center
         tv.setGravity(Gravity.CENTER);
@@ -80,6 +59,6 @@ public class MainActivity extends AppCompatActivity{
 
         // Finally, set the newly created TextView as ActionBar custom view
         ab.setCustomView(tv);
-    }
 
+    }
 }

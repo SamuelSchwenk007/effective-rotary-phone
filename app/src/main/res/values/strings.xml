@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Smallternativ</string>
+    <string name="benutzername">Benutzername:</string>
+    <string name="e_mail">E-Mail:</string>
+    <string name="passwort">Passwort:</string>
+    <string name="passwort_wiederholen">Passwort wiederholen:</string>
+    <string name="hint">hint</string>
+    <string name="angemeldet_bleiben">Angemeldet bleiben?</string>
+    <string name="password_eingeben">Geben Sie bitte hier Ihr Passwort ein</string>
+    <string name="email_eingeben">Geben Sie bitte hier Ihre E-Mail ein</string>
+    <string name="best_tigen">Bestätigen</string>
+    <string name="login">Login</string>
+    <string name="registrieren">Registrieren</string>
+    <string name="ohneanmeldenfortfahren">OhneAnmeldenFortfahren</string>
+    <string name="angemeldetbleiben">AngemeldetBleiben</string>
+    <string name="nochkeinenaccount">NochKeinenAccount</string>
+    <string name="anmeldenmit">AnmeldenMit</string>
+    <string name="benutzername_eingeben">Benutzernamen eingeben</string>
+    <string name="g">G+</string>
+    <string name="fb">FB</string>
 </resources>
