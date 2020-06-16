@@ -7,8 +7,6 @@
     tools:context=".MainActivity">
 
 
-
-
     <LinearLayout
         android:id="@+id/maincontainer"
         android:layout_width="match_parent"
@@ -17,352 +15,223 @@
         android:visibility="visible">
 
 
-
-    <LinearLayout
-        android:id="@+id/maincontainerinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
-        android:layout_weight="2">
-
         <LinearLayout
-            android:id="@+id/benutzerNameContainer"
+            android:id="@+id/maincontainerinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
             android:orientation="vertical"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:id="@+id/textViewBenutzername"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/e_mail"
-                android:textColor="#000000"
-                tools:text="Benutzername:" />
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
 
-            <TextView
-                android:id="@+id/textViewBenutzername2"
+            <LinearLayout
+                android:id="@+id/benutzerNameContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/e_mail"
-                android:textColor="#000000"
-                android:textSize="55px"
-                tools:text="Marie Mustermann" />
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewBenutzername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e_mail"
+                    android:textColor="#000000"
+                    tools:text="Benutzername:" />
+
+                <TextView
+                    android:id="@+id/textViewBenutzername2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e_mail"
+                    android:textColor="#000000"
+                    android:textSize="55px"
+                    tools:text="Marie Mustermann" />
+
+                <Button
+                    android:id="@+id/buttonAendern1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/roundedbutton"
+                    android:text="@string/aendern"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/orangeLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="15dp"
+                android:background="#FFA21F"
+                android:orientation="horizontal"></LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/emailContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e_mail"
+                    android:textColor="#000000"
+                    tools:text="E-Mail-Adresse:" />
+
+                <TextView
+                    android:id="@+id/textViewEmail2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e_mail"
+                    android:textColor="#000000"
+                    android:textSize="55px"
+                    tools:text="MarieM@xyz.de" />
+
+                <Button
+                    android:id="@+id/buttonAendern2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/roundedbutton"
+                    android:text="@string/aendern"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/orangeLine2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="15dp"
+                android:background="#FFA21F"
+                android:orientation="horizontal"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/passwortContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewPasswort"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    tools:text="Passwort:" />
+
+                <TextView
+                    android:id="@+id/textViewBarrierefrei2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e_mail"
+                    android:textColor="#000000"
+                    android:textSize="55px"
+                    tools:text="***********" />
+
+                <Button
+                    android:id="@+id/buttonAendern3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/roundedbutton"
+                    android:text="@string/aendern"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/orangeLine3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="15dp"
+                android:background="#FFA21F"
+                android:orientation="horizontal"></LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/kontoLoeschenContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewKontoLoeschen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e_mail"
+                    android:textColor="#000000"
+                    tools:text="Konto dauerhaft entfernen:" />
+
+                <Button
+                    android:id="@+id/buttonLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@drawable/roundedbutton"
+                    android:text="Konto löschen"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/orangeLine4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="15dp"
+                android:background="#FFA21F"
+                android:orientation="horizontal"></LinearLayout>
+
 
             <Button
-                android:id="@+id/buttonAendern1"
+                android:id="@+id/buttonLadenprofilErstllen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
                 android:background="@drawable/roundedbutton"
-                android:text="@string/aendern"
+                android:text="Logout"
                 android:textAllCaps="false"
                 android:textColor="#000000"
-                android:textColorHighlight="#000000"
-                android:layout_gravity="right"/>
+                android:textColorHighlight="#000000" />
+
 
         </LinearLayout>
 
-
-        <LinearLayout
-            android:id="@+id/orangeLine"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:orientation="horizontal"
-            android:layout_gravity="right"
-            android:background="#FFA21F"
-            android:layout_marginTop="15dp">
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/emailContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:id="@+id/textViewEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/e_mail"
-                android:textColor="#000000"
-                tools:text="E-Mail-Adresse:" />
-
-            <TextView
-                android:id="@+id/textViewEmail2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/e_mail"
-                android:textColor="#000000"
-                android:textSize="55px"
-                tools:text="MarieM@xyz.de" />
-
-            <Button
-                android:id="@+id/buttonAendern2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/roundedbutton"
-                android:text="@string/aendern"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textColorHighlight="#000000"
-                android:layout_gravity="right"/>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/orangeLine2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:orientation="horizontal"
-            android:layout_gravity="right"
-            android:background="#FFA21F"
-            android:layout_marginTop="15dp">
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/passwortContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:id="@+id/textViewPasswort"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#000000"
-                tools:text="Passwort:" />
-
-            <TextView
-                android:id="@+id/textViewBarrierefrei2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/e_mail"
-                android:textColor="#000000"
-                android:textSize="55px"
-                tools:text="***********" />
-
-            <Button
-                android:id="@+id/buttonAendern3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/roundedbutton"
-                android:text="@string/aendern"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textColorHighlight="#000000"
-                android:layout_gravity="right"/>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/orangeLine3"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:orientation="horizontal"
-            android:layout_gravity="right"
-            android:background="#FFA21F"
-            android:layout_marginTop="15dp">
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/kontoLoeschenContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp">
-            <TextView
-                android:id="@+id/textViewKontoLoeschen"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/e_mail"
-                android:textColor="#000000"
-                tools:text="Konto dauerhaft entfernen:" />
-
-            <Button
-                android:id="@+id/buttonLogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/roundedbutton"
-                android:text="Konto löschen"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:textColorHighlight="#000000"
-                android:layout_gravity="right"/>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/orangeLine4"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:orientation="horizontal"
-            android:layout_gravity="right"
-            android:background="#FFA21F"
-            android:layout_marginTop="15dp">
-        </LinearLayout>
-
-
-
-
-        <Button
-            android:id="@+id/buttonLadenprofilErstllen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/roundedbutton"
-            android:text="Logout"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textColorHighlight="#000000"
-            android:layout_gravity="right"/>
-
-
-
-        <LinearLayout
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:background="#FFA21F"
+            app:elevation="8dp"
+            app:itemIconTint="#000000"
+            app:itemTextColor="#000000"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_navigation_menu">
 
-
-
-            <LinearLayout
-                android:id="@+id/Navigation"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#FFA21F"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:visibility="visible"
-                tools:visibility="visible">
-
-                <Button
-                    android:id="@+id/home"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFA21F"
-                    android:foreground="@drawable/home_button"
-                    android:freezesText="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    tools:visibility="visible" />
-
-                <Button
-                    android:id="@+id/anfragen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFA21F"
-                    android:foreground="@drawable/mail_button"
-                    android:freezesText="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    tools:visibility="visible" />
-
-                <Button
-                    android:id="@+id/fav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFA21F"
-                    android:foreground="@drawable/fav_button"
-                    android:freezesText="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    tools:visibility="visible" />
-
-                <Button
-                    android:id="@+id/konto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFA21F"
-                    android:foreground="@drawable/konto_button"
-                    android:freezesText="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    tools:visibility="visible" />
-
-                <Button
-                    android:id="@+id/menu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFA21F"
-                    android:foreground="@drawable/menu_button"
-                    android:freezesText="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    tools:visibility="visible" />
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FFA21F"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Startseite"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Anfragen"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Favoriten"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Mein Konto"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Menü"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
     </LinearLayout>
 
 
