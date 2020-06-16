@@ -1,68 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
 
-    <Button
-        android:id="@+id/abbrechenButton"
-        android:layout_width="match_parent"
-        android:layout_height="37dp"
-        android:layout_margin="100dp"
-        android:background="#FFA21F"
-
-        android:shadowDy="10"
-        android:text="Anfrage abbrechen"
-        android:textColor="@color/colorBlack"
-        android:textSize="15dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="78dp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="22dp">
 
 
-    <ImageView
-        android:layout_width="145dp"
-        android:layout_height="145dp"
-        android:src="@drawable/nadel_und_faden_profilbild"
-
-
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="139dp" />
-
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seide"
-        android:textSize="28dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp">
 
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="242dp"
-        tools:layout_editor_absoluteY="166dp" />
+            <Button
+                android:id="@+id/abbrechenButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFA21F"
+                android:text="Anfrage abbrechen"
+                android:textColor="@color/colorBlack"
+                android:clickable="true"
+                android:textSize="15dp"/>
 
-    <TextView
+    </LinearLayout>
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="232dp"
-        android:layout_margin="22dp"
-        android:text="@string/seide_anfragedetails"
-        android:textSize="22dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp">
 
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="273dp" />
+        <ImageView
+                android:layout_width="20mm"
+                android:layout_height="20mm"
+                android:src="@drawable/nadel_und_faden_profilbild"
+                />
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seide"
+            android:textSize="28dp"
+            android:layout_gravity="center"
+
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seide_anfragedetails"
+                android:textSize="22dp"
+                android:layout_marginBottom="40dp"
+                />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="22dp"
         android:text="@string/seide_antwort"
-        android:textSize="22dp"
+        android:textSize="22dp" />
 
+    </LinearLayout>
 
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="505dp" />
+</LinearLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

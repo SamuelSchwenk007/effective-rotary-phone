@@ -5,13 +5,13 @@
     <string name="asiatica">"Fleischhauerstraße 10. Waren aus Asien. von Lebensmitteln bis zu Dekoration."</string>
     <string name="cyroline">"Hier finden Sie FairTrade geschneiderte Bekleidung für Männer und Frauen"</string>
     <string name="nadel_und_faden">"Hüxstraße 59. Hier finden Sie unterschiedliche Stoffe, Bänder, Knöpfe und vieles mehr."</string>
-    <string name="papaya_anfragedetails">"Anfragendetails:\n Laden: Öz Sülo\n Produktdetails: Papaya\n Anzahl: 3\n Datum: 20.04.2020\n Status: abgelehnt"</string>
-    <string name="papaya_antwort">"Antwort: Es tut mir leid, aber dieses Geschäft würde sich nicht für mich rechnen."</string>
-    <string name="seide_anfragedetails">"Laden: Nadel und Faden \n Produktdetails: Seide 40cm x 40 cm \n Anzahl: 1 \n Datum: 20.04.2020 \n Status: nicht bearbeitet"</string>
-    <string name="seide_antwort">"Antwort: \n noch keine Antwort erhalten."</string>
-    <string name="neopren_anfragedetails_angenommen">"Laden: Nadel und Faden\n Produktdetails: Neopren 40cm x 40 cm\n Anzahl: 1\n Datum: 20.04.2020\n Status: angenommen"</string>
-    <string name="neopren_antwort">"Antwort: Guten Tag Frau Mustermann, gerne können wir Ihnen ein Stück Neopren zur Verfügung stellen. Es würde 10,99€ kosten."</string>
-    <string name="neopren_anfragedetails_ladenbeseitzer">"Laden: Nadel und Faden\n Produktdetails: Neopren 40cm x 40 cm\n Anzahl: 1\n Datum: 20.04.2020\n Status: wartet auf Ihre Bestätigung"</string>
-    <string name="googleMaps_alle">"Weiterleitung zu Google Maps\n Ihnen werden alle Läden Ihrer ausgewählten Kategorien angezeigt"</string>
-    <string name="googleMaps_einzeln">"Weiterleitung zu Google Maps\n Ihnen wird der Laden auf der Karte angezeigt, auf dessen Profil Sie sich befanden"</string>
+    <string name="papaya_anfragedetails">"Anfragendetails:\nLaden: Öz Sülo\nProduktdetails: Papaya\nAnzahl: 3\nDatum: 20.04.2020\nStatus: abgelehnt"</string>
+    <string name="papaya_antwort">"Antwort: \nEs tut mir leid, aber dieses Geschäft würde sich nicht für mich rechnen."</string>
+    <string name="seide_anfragedetails">"Laden: Nadel und Faden \nProduktdetails: Seide 40cm x 40 cm \nAnzahl: 1 \nDatum: 20.04.2020 \nStatus: nicht bearbeitet"</string>
+    <string name="seide_antwort">"Antwort: \nnoch keine Antwort erhalten."</string>
+    <string name="neopren_anfragedetails_angenommen">"Laden: Nadel und Faden\nProduktdetails: Neopren 40cm x 40 cm\nAnzahl: 1\nDatum: 20.04.2020\nStatus: angenommen"</string>
+    <string name="neopren_antwort">"Antwort: \nGuten Tag Frau Mustermann, gerne können wir Ihnen ein Stück Neopren zur Verfügung stellen. \nEs würde 10,99€ kosten."</string>
+    <string name="neopren_anfragedetails_ladenbeseitzer">"Laden: Nadel und Faden\nProduktdetails: Neopren 40cm x 40 cm\nAnzahl: 1\nDatum: 20.04.2020\nStatus: wartet auf Ihre Bestätigung"</string>
+    <string name="googleMaps_alle">"Weiterleitung zu Google Maps\nIhnen werden alle Läden Ihrer ausgewählten Kategorien angezeigt"</string>
+    <string name="googleMaps_einzeln">"Weiterleitung zu Google Maps\nIhnen wird der Laden auf der Karte angezeigt, auf dessen Profil Sie sich befanden"</string>
 </resources>
