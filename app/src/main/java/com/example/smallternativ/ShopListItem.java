@@ -1,5 +1,7 @@
 package com.example.smallternativ;
 
+import android.graphics.Color;
+import android.media.Image;
 import android.text.style.BackgroundColorSpan;
 import android.view.View;
 import android.widget.Button;
@@ -13,9 +15,24 @@ public class ShopListItem {
     public String title;
     public String beschreibung;
 
+    public int getProfilbildReference() {
+        return profilbildReference;
+    }
 
-    // @Convert(converter = Button.class, dbType = boolean.class)
-    //public Button loeschen;
+    public void setProfilbildReference(int profilbildReference) {
+        this.profilbildReference = profilbildReference;
+    }
+
+    public int profilbildReference;
+
+
+
+    public ShopListItem (String title, String beschreibung, int profilbildReference){
+        this.profilbildReference = profilbildReference;
+        this.title = title;
+        this.beschreibung = beschreibung;
+
+    }
 
 
     public String getBeschreibung() {
@@ -26,11 +43,7 @@ public class ShopListItem {
         this.beschreibung = beschreibung;
     }
 
-    public ShopListItem (String title, String beschreibung){
-        this.title = title;
-        this.beschreibung = beschreibung;
 
-    }
     public ShopListItem(){
         this.title = title;
     }
