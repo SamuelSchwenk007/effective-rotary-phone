@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -99,14 +100,16 @@ public class MyAdapter extends RecyclerView.Adapter  {
         public ShopListItem currentShopListItem;
         public TextView shoplistItemTitle;
         public TextView beschreibungsText;
-        public ImageView profilbild;
+        public ImageView profilBild;
+        public LinearLayout bannerBild;
         public Context context;
         public ShopListItemListener todoListener;
 
         public ShopListItemViewHolder(View v, ShopListItemListener todoListener) {
             super(v);
             context = v.getContext();
-            profilbild = (ImageView) v.findViewById(R.id.eintrag_bild);
+            profilBild = (ImageView) v.findViewById(R.id.eintrag_bild);
+            bannerBild = v.findViewById(R.id.bannerlayout);
             shoplistItemTitle = (TextView) v.findViewById(R.id.eintrag_title);
             beschreibungsText = (TextView) v.findViewById(R.id.eintrag_beschreibung);
             this.todoListener = todoListener;
@@ -116,7 +119,8 @@ public class MyAdapter extends RecyclerView.Adapter  {
             currentShopListItem = shopListItem;
             shoplistItemTitle.setText(shopListItem.getTitle());
             beschreibungsText.setText(shopListItem.getBeschreibung());
-            profilbild.setImageResource(shopListItem.getProfilbildReference());
+            profilBild.setImageResource(shopListItem.getProfilbildReference());
+            bannerBild.setBackground(context.getResources().getDrawable(shopListItem.getBannerReference()));
         }
 
         @Override
