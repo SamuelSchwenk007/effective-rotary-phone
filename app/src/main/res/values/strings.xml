@@ -18,4 +18,9 @@
     <string name="benutzername_eingeben">Benutzernamen eingeben</string>
     <string name="g">G+</string>
     <string name="fb">FB</string>
+    <string name="start">Startseite</string>
+    <string name="fav">Favoriten</string>
+    <string name="anf">Anfragen</string>
+    <string name="konto">Mein Konto</string>
+    <string name="menu">Menü</string>
 </resources>
