@@ -11,9 +11,10 @@
         android:layout_height="37dp"
         android:layout_margin="100dp"
         android:background="#FFA21F"
+
+        android:shadowDy="10"
         android:text="Anfrage abbrechen"
         android:textColor="@color/colorBlack"
-
         android:textSize="15dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="100dp"
