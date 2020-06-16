@@ -14,7 +14,23 @@ public class ShopListItem {
     @Id  public long id;
     public String title;
     public String beschreibung;
+    public int profilbildReference;
+    public int bannerReference;
 
+    public ShopListItem (String title, String beschreibung, int profilbildReference,int bannerReference){
+        this.profilbildReference = profilbildReference;
+        this.bannerReference = bannerReference;
+        this.title = title;
+        this.beschreibung = beschreibung;
+
+    }
+    public int getBannerReference() {
+        return bannerReference;
+    }
+
+    public void setBannerReference(int bannerReference) {
+        this.bannerReference = bannerReference;
+    }
     public int getProfilbildReference() {
         return profilbildReference;
     }
@@ -22,19 +38,6 @@ public class ShopListItem {
     public void setProfilbildReference(int profilbildReference) {
         this.profilbildReference = profilbildReference;
     }
-
-    public int profilbildReference;
-
-
-
-    public ShopListItem (String title, String beschreibung, int profilbildReference){
-        this.profilbildReference = profilbildReference;
-        this.title = title;
-        this.beschreibung = beschreibung;
-
-    }
-
-
     public String getBeschreibung() {
         return beschreibung;
     }
