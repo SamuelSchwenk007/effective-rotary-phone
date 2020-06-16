@@ -11,6 +11,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import io.objectbox.Box;
 
@@ -103,16 +105,17 @@ public class MyAdapter extends RecyclerView.Adapter  {
         public ImageView profilBild;
         public LinearLayout bannerBild;
         public Context context;
-        public ShopListItemListener todoListener;
+        public ShopListItemListener shopListItemListener;
 
-        public ShopListItemViewHolder(View v, ShopListItemListener todoListener) {
+        public ShopListItemViewHolder(View v, ShopListItemListener shopListItemListener) {
             super(v);
             context = v.getContext();
             profilBild = (ImageView) v.findViewById(R.id.eintrag_bild);
             bannerBild = v.findViewById(R.id.bannerlayout);
             shoplistItemTitle = (TextView) v.findViewById(R.id.eintrag_title);
             beschreibungsText = (TextView) v.findViewById(R.id.eintrag_beschreibung);
-            this.todoListener = todoListener;
+            this.shopListItemListener = shopListItemListener;
+            v.setOnClickListener(this);
         }
 
         public void setCurrentShopListItem(ShopListItem shopListItem) {
@@ -125,7 +128,7 @@ public class MyAdapter extends RecyclerView.Adapter  {
 
         @Override
         public void onClick(View view) {
-
+            shopListItemListener.OnShopListItemClick(getAdapterPosition());
         }
     }
 }

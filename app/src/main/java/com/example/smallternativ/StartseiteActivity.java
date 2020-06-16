@@ -1,6 +1,7 @@
 package com.example.smallternativ;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -15,6 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -71,7 +74,11 @@ public class StartseiteActivity extends AppCompatActivity implements MyAdapter.S
 
     @Override
     public void OnShopListItemClick(int position) {
-
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        LadenProfilFragment ladenProfilFragment = new LadenProfilFragment();
+        fragmentTransaction.add(R.id.container_startseite,ladenProfilFragment);
+        fragmentTransaction.commit();
     }
     public void loadShopsToList(Context context, MyAdapter myAdapter){
         ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Netter Türke um die Ecke", R.drawable.oz_sulo_profilbild,R.drawable.oz_sulo_banner);
