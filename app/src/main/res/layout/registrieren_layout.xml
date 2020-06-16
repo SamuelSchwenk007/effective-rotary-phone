@@ -176,7 +176,7 @@
                 android:layout_marginTop="15dp">
 
                 <Button
-                    android:id="@+id/buttonBestaetigen"
+                    android:id="@+id/buttonBestaetigenRegistrieren"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/roundedbutton"

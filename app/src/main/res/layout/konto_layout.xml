@@ -28,27 +28,27 @@
         android:layout_weight="2">
 
         <LinearLayout
-            android:id="@+id/hauptstandortContainer"
+            android:id="@+id/benutzerNameContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="10dp">
             <TextView
-                android:id="@+id/textViewHauptstandort"
+                android:id="@+id/textViewBenutzername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e_mail"
                 android:textColor="#000000"
-                tools:text="Hauptstandort:" />
+                tools:text="Benutzername:" />
 
             <TextView
-                android:id="@+id/textViewHauptstandort2"
+                android:id="@+id/textViewBenutzername2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e_mail"
                 android:textColor="#000000"
                 android:textSize="55px"
-                tools:text="Lübeck" />
+                tools:text="Marie Mustermann" />
 
             <Button
                 android:id="@+id/buttonAendern1"
@@ -76,27 +76,27 @@
 
 
         <LinearLayout
-            android:id="@+id/spracheContainer"
+            android:id="@+id/emailContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="10dp">
             <TextView
-                android:id="@+id/textViewSprache"
+                android:id="@+id/textViewEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e_mail"
                 android:textColor="#000000"
-                tools:text="Sprache:" />
+                tools:text="E-Mail-Adresse:" />
 
             <TextView
-                android:id="@+id/textViewSprache2"
+                android:id="@+id/textViewEmail2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e_mail"
                 android:textColor="#000000"
                 android:textSize="55px"
-                tools:text="deutsch" />
+                tools:text="MarieM@xyz.de" />
 
             <Button
                 android:id="@+id/buttonAendern2"
@@ -123,18 +123,17 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/barrierefreiContainer"
+            android:id="@+id/passwortContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="10dp">
             <TextView
-                android:id="@+id/textViewBarrierefrei"
+                android:id="@+id/textViewPasswort"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/e_mail"
                 android:textColor="#000000"
-                tools:text="Immer barrierefrei suchen:" />
+                tools:text="Passwort:" />
 
             <TextView
                 android:id="@+id/textViewBarrierefrei2"
@@ -143,7 +142,7 @@
                 android:text="@string/e_mail"
                 android:textColor="#000000"
                 android:textSize="55px"
-                tools:text="Ja" />
+                tools:text="***********" />
 
             <Button
                 android:id="@+id/buttonAendern3"
@@ -171,34 +170,25 @@
 
 
         <LinearLayout
-            android:id="@+id/ladenprofilErstellenContainer"
+            android:id="@+id/kontoLoeschenContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="10dp">
             <TextView
-                android:id="@+id/textViewLadenprofilErstellen"
+                android:id="@+id/textViewKontoLoeschen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/e_mail"
                 android:textColor="#000000"
-                tools:text="Besitzt du einen Laden?" />
-
-            <TextView
-                android:id="@+id/textViewLadenprofilErstellen2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/e_mail"
-                android:textColor="#000000"
-                android:textSize="55px"
-                tools:text="Nein" />
+                tools:text="Konto dauerhaft entfernen:" />
 
             <Button
-                android:id="@+id/buttonLadenprofilErstellen"
+                android:id="@+id/buttonLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/roundedbutton"
-                android:text="@string/ladenprofil_erstellen"
+                android:text="Konto löschen"
                 android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textColorHighlight="#000000"
@@ -216,6 +206,20 @@
             android:background="#FFA21F"
             android:layout_marginTop="15dp">
         </LinearLayout>
+
+
+
+
+        <Button
+            android:id="@+id/buttonLadenprofilErstllen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedbutton"
+            android:text="Logout"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textColorHighlight="#000000"
+            android:layout_gravity="right"/>
 
 
 
