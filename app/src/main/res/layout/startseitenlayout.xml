@@ -17,145 +17,23 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="0.2">
+            android:layout_weight="0.1">
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <LinearLayout
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:background="#FFA21F"
+            app:elevation="8dp"
+            app:itemIconTint="#000000"
+            app:itemTextColor="#000000"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_navigation_menu">
 
-            <LinearLayout
-                android:id="@+id/Navigation"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#FFA21F"
-                android:baselineAligned="false"
-                android:orientation="horizontal"
-                android:visibility="visible"
-                tools:visibility="visible">
-
-                <Button
-                    android:id="@+id/home"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFA21F"
-                    android:foreground="@drawable/home_button"
-                    android:freezesText="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    tools:visibility="visible" />
-
-                <Button
-                    android:id="@+id/anfragen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFA21F"
-                    android:foreground="@drawable/mail_button"
-                    android:freezesText="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    tools:visibility="visible" />
-
-                <Button
-                    android:id="@+id/fav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFA21F"
-                    android:foreground="@drawable/fav_button"
-                    android:freezesText="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    tools:visibility="visible" />
-
-                <Button
-                    android:id="@+id/konto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFA21F"
-                    android:foreground="@drawable/konto_button"
-                    android:freezesText="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    tools:visibility="visible" />
-
-                <Button
-                    android:id="@+id/menu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFA21F"
-                    android:foreground="@drawable/menu_button"
-                    android:freezesText="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    tools:visibility="visible" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FFA21F"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Startseite"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Anfragen"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Favoriten"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Mein Konto"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Menü"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-            </LinearLayout>
-        </LinearLayout>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </LinearLayout>
 
