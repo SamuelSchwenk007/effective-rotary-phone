@@ -1,4 +1,4 @@
 package com.example.smallternativ;
 
-public class AnfragenActivity {
+public class EinstellungenFragment {
 }

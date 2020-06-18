@@ -89,6 +89,10 @@ public class MyAdapter extends RecyclerView.Adapter  {
         notifyItemRangeChanged((int) todo.getId(), ladenListe.size());
         MyAdapter.getInstance(context,todoListener).notifyDataSetChanged();
     }
+    public void clearallListelements(){
+        ladenListe.clear();
+        notifyDataSetChanged();
+    }
     public void setContext(Context context){
         this.context = context;
     }
@@ -103,7 +107,6 @@ public class MyAdapter extends RecyclerView.Adapter  {
         public TextView shoplistItemTitle;
         public TextView beschreibungsText;
         public ImageView profilBild;
-        public LinearLayout bannerBild;
         public Context context;
         public ShopListItemListener shopListItemListener;
 
@@ -111,7 +114,6 @@ public class MyAdapter extends RecyclerView.Adapter  {
             super(v);
             context = v.getContext();
             profilBild = (ImageView) v.findViewById(R.id.eintrag_bild);
-            bannerBild = v.findViewById(R.id.bannerlayout);
             shoplistItemTitle = (TextView) v.findViewById(R.id.eintrag_title);
             beschreibungsText = (TextView) v.findViewById(R.id.eintrag_beschreibung);
             this.shopListItemListener = shopListItemListener;
@@ -123,7 +125,6 @@ public class MyAdapter extends RecyclerView.Adapter  {
             shoplistItemTitle.setText(shopListItem.getTitle());
             beschreibungsText.setText(shopListItem.getBeschreibung());
             profilBild.setImageResource(shopListItem.getProfilbildReference());
-            bannerBild.setBackground(context.getResources().getDrawable(shopListItem.getBannerReference()));
         }
 
         @Override

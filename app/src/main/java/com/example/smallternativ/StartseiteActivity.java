@@ -3,20 +3,17 @@ package com.example.smallternativ;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,23 +21,94 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
 
-public class StartseiteActivity extends AppCompatActivity implements MyAdapter.ShopListItemListener {
-    private MyAdapter.ShopListItemListener shopListItemListener;
-    RecyclerView recyclerView;
+
+public class StartseiteActivity extends AppCompatActivity {
     MyAdapter myAdapter;
+    ArrayList<Fragment> fragmentList = new ArrayList<>();
+    RecyclerView recyclerView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.startseitenlayout);
-        recyclerView = findViewById(R.id.recyclerView);
-        setTodoListenerToAdapter(this);
-        myAdapter = MyAdapter.getInstance(this,shopListItemListener);
+        setContentView(R.layout.startseite_containerlayout);
+        StartseitenFragment startseitenFragment = new StartseitenFragment();
+        removeAllFragment();
+        fragmentList.add(startseitenFragment);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.fragment_container,startseitenFragment);
+        fragmentTransaction.commit();
+        setAppTitle(getSupportActionBar(), this,"Smalternative");
+        myAdapter = MyAdapter.getInstance(getApplicationContext(),startseitenFragment.getShopListItemListener());
+
+        BottomNavigationView bottom_navigation =findViewById(R.id.bottom_navigation);
+        bottom_navigation.setOnNavigationItemSelectedListener(menuItem -> {
+            Log.d("test",""+menuItem.getItemId());
+            if(menuItem.getItemId()==2131361994){
+                StartseitenFragment startseitenFragment1 = new StartseitenFragment();
+               createFragment(startseitenFragment1);
+                StartseiteActivity.setAppTitle(getSupportActionBar(), getApplicationContext(),"Smallternative");
+                return true;
+            }
+            else if(menuItem.getItemId()==2131361995){
+               FavorisierteLaedenFragment favorisierteLaedenFragment = new FavorisierteLaedenFragment();
+                favorisierteLaedenFragment.setSupportActionBar(getSupportActionBar());
+               createFragment(favorisierteLaedenFragment);
+                return true;
+            }
+           else if(menuItem.getItemId()==2131361996){
+                AnfragenFragment anfragenFragment = new AnfragenFragment();
+                anfragenFragment.setSupportActionBar(getSupportActionBar());
+                createFragment(anfragenFragment);
+                return true;
+            }
+          else  if(menuItem.getItemId()==2131361997){
+
+                MeinkontoFragment meinkontoFragment = new MeinkontoFragment();
+                meinkontoFragment.setSupportActionBar(getSupportActionBar());
+               createFragment(meinkontoFragment);
+                return true;
+            }
+          else  if(menuItem.getItemId()==2131361995){
+
+                MenueFragment menueFragment = new MenueFragment();
+                createFragment(menueFragment);
+                return true;
+            }
+            else return true;
+        });
+
+    }
+    public  void removeListElements(Context context, MyAdapter myAdapter){
+            myAdapter.clearallListelements();
+    }
+    public void createFragment(Fragment fragment){
+        removeListElements(getApplicationContext(),myAdapter);
+        removeAllFragment();
+        fragmentList.add(fragment);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.fragment_container,fragment);
+        fragmentTransaction.commit();
+    }
+    public void removeAllFragment(){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        if(!fragmentList.isEmpty()) {
+            for (int i = 0; i < fragmentList.size(); i++) {
+                fragmentTransaction.remove(fragmentList.get(i));
+            }
+        }
+        fragmentTransaction.commit();
+    }
+    public static void setAppTitle(ActionBar actionBar, Context applicationContext,String appTitle){
         // Get the ActionBar
-        ActionBar ab = getSupportActionBar();
+        ActionBar ab = actionBar;
 
         // Create a TextView programmatically.
-        TextView tv = new TextView(getApplicationContext());
+        TextView tv = new TextView(applicationContext);
 
         // Create a LayoutParams for TextView
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
@@ -51,14 +119,14 @@ public class StartseiteActivity extends AppCompatActivity implements MyAdapter.S
         tv.setLayoutParams(lp);
 
         // Set text to display in TextView
-        tv.setText(ab.getTitle()); // ActionBar title text
+        tv.setText(appTitle); // ActionBar title text
 
         // Set the text color of TextView to black
         tv.setTextColor(Color.BLACK);
 
         // Set the monospace font for TextView text
         // This will change ActionBar title text font
-        tv.setTypeface(ResourcesCompat.getFont(this,R.font.pacifico));
+        tv.setTypeface(ResourcesCompat.getFont(applicationContext,R.font.pacifico));
         // set tje textsize
         tv.setTextSize(24);
         // set the Title to center
@@ -68,69 +136,5 @@ public class StartseiteActivity extends AppCompatActivity implements MyAdapter.S
 
         // Finally, set the newly created TextView as ActionBar custom view
         ab.setCustomView(tv);
-        loadShopsToList(this, myAdapter);
-        BottomNavigationView bottom_navigation =findViewById(R.id.bottom_navigation);
-        bottom_navigation.setOnNavigationItemSelectedListener(menuItem -> {
-            Log.d("test",""+menuItem.getItemId());
-            if(menuItem.getItemId()==2131361991){
-                Intent intent = new Intent(this.getApplicationContext(),StartseiteActivity.class);
-                startActivity(intent);
-                return true;
-            }
-            else if(menuItem.getItemId()==2131361992){
-                Intent intent = new Intent(this.getApplicationContext(),FavorisierteLaedenActivity.class);
-                startActivity(intent);
-                return true;
-            }
-           else if(menuItem.getItemId()==2131361993){
-                Intent intent = new Intent(this.getApplicationContext(),AnfragenActivity.class);
-                startActivity(intent);
-                return true;
-            }
-          else  if(menuItem.getItemId()==2131361994){
-                Intent intent = new Intent(this.getApplicationContext(),MeinkontoActivity.class);
-                startActivity(intent);
-                return true;
-            }
-          else  if(menuItem.getItemId()==2131361995){
-                Intent intent = new Intent(this.getApplicationContext(),MenueFragment.class);
-                startActivity(intent);
-                return true;
-            }
-            else return true;
-        });
-
-    }
-    public void setTodoListenerToAdapter(MyAdapter.ShopListItemListener shopListItemListener){
-        MyAdapter adapter = MyAdapter.getInstance(this, shopListItemListener);
-        adapter.setShopListItemlistener(this);
-    }
-
-    @Override
-    public void OnShopListItemClick(int position) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        LadenProfilFragment ladenProfilFragment = new LadenProfilFragment();
-        fragmentTransaction.add(R.id.container_startseite,ladenProfilFragment);
-        fragmentTransaction.commit();
-    }
-    public void loadShopsToList(Context context, MyAdapter myAdapter){
-        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Netter Türke um die Ecke", R.drawable.oz_sulo_profilbild,R.drawable.oz_sulo_banner);
-
-        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Netter Asiate um die Ecke",R.drawable.asiatica_profilbild,R.drawable.asiatica_banner);
-
-        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Nette Mode um die Ecke",R.drawable.cyroline_profilbild,R.drawable.cyroline_banner);
-
-        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Netter Fäden um die Ecke",R.drawable.nadel_und_faden_profilbild,R.drawable.nadel_und_faden_banner);
-
-
-        myAdapter.insertShopListItem(shopListItemOne);
-        myAdapter.insertShopListItem(shopListItemTwo);
-        myAdapter.insertShopListItem(shopListItemThree);
-        myAdapter.insertShopListItem(shopListItemFour);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(myAdapter);
     }
 }
