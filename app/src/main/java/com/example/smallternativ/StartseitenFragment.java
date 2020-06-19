@@ -59,18 +59,20 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         fragmentTransaction.commit();
     }
     public void loadShopsToList(Context context, MyAdapter myAdapter){
-        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Netter Türke um die Ecke", R.drawable.oz_sulo_profilbild);
+        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Netter Türke um die Ecke", R.drawable.oez_suelo_logo_fixed);
 
-        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Netter Asiate um die Ecke",R.drawable.asiatica_profilbild);
+        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Netter Asiate um die Ecke",R.drawable.asiatica_logo_fixed);
 
-        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Nette Mode um die Ecke",R.drawable.cyroline_profilbild);
+        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Nette Mode um die Ecke",R.drawable.cyroline_logo_fixed);
 
-        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Netter Fäden um die Ecke",R.drawable.nadel_und_faden_profilbild);
+        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Netter Fäden um die Ecke",R.drawable.nadel_und_faden_logo_fixed);
 
         myAdapter.insertShopListItem(shopListItemOne);
         myAdapter.insertShopListItem(shopListItemTwo);
         myAdapter.insertShopListItem(shopListItemThree);
         myAdapter.insertShopListItem(shopListItemFour);
+
+
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);

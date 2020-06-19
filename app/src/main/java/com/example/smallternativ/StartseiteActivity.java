@@ -46,32 +46,32 @@ public class StartseiteActivity extends AppCompatActivity {
         BottomNavigationView bottom_navigation =findViewById(R.id.bottom_navigation);
         bottom_navigation.setOnNavigationItemSelectedListener(menuItem -> {
             Log.d("test",""+menuItem.getItemId());
-            if(menuItem.getItemId()==2131361994){
+            if(menuItem.getItemId()==2131361993){
                 StartseitenFragment startseitenFragment1 = new StartseitenFragment();
                createFragment(startseitenFragment1);
                 StartseiteActivity.setAppTitle(getSupportActionBar(), getApplicationContext(),"Smallternative");
                 return true;
             }
-            else if(menuItem.getItemId()==2131361995){
+            else if(menuItem.getItemId()==2131361994){
                FavorisierteLaedenFragment favorisierteLaedenFragment = new FavorisierteLaedenFragment();
                 favorisierteLaedenFragment.setSupportActionBar(getSupportActionBar());
                createFragment(favorisierteLaedenFragment);
                 return true;
             }
-           else if(menuItem.getItemId()==2131361996){
+           else if(menuItem.getItemId()==2131361995){
                 AnfragenFragment anfragenFragment = new AnfragenFragment();
                 anfragenFragment.setSupportActionBar(getSupportActionBar());
                 createFragment(anfragenFragment);
                 return true;
             }
-          else  if(menuItem.getItemId()==2131361997){
+          else  if(menuItem.getItemId()==2131361996){
 
                 MeinkontoFragment meinkontoFragment = new MeinkontoFragment();
                 meinkontoFragment.setSupportActionBar(getSupportActionBar());
                createFragment(meinkontoFragment);
                 return true;
             }
-          else  if(menuItem.getItemId()==2131361995){
+          else  if(menuItem.getItemId()==2131361997){
 
                 MenueFragment menueFragment = new MenueFragment();
                 createFragment(menueFragment);

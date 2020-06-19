@@ -3,22 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
 
     <LinearLayout
         android:id="@+id/maincontainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="visible"
+        tools:ignore="MissingConstraints">
 
 
         <LinearLayout
             android:id="@+id/maincontainerinner"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="0.1"
             android:orientation="vertical"
             android:paddingLeft="40dp"
@@ -35,7 +36,7 @@
                     android:id="@+id/textViewBenutzername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="Benutzername"
                     android:textColor="#000000"
                     tools:text="Benutzername:" />
 
@@ -43,7 +44,7 @@
                     android:id="@+id/textViewBenutzername2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="Marie Mustermann"
                     android:textColor="#000000"
                     android:textSize="55px"
                     tools:text="Marie Mustermann" />
@@ -83,7 +84,7 @@
                     android:id="@+id/textViewEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="E-Mail-Adresse:"
                     android:textColor="#000000"
                     tools:text="E-Mail-Adresse:" />
 
@@ -91,7 +92,7 @@
                     android:id="@+id/textViewEmail2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="E-Mail"
                     android:textColor="#000000"
                     android:textSize="55px"
                     tools:text="MarieM@xyz.de" />
@@ -131,13 +132,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
+                    android:text="Passwort"
                     tools:text="Passwort:" />
 
                 <TextView
                     android:id="@+id/textViewBarrierefrei2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="***********"
                     android:textColor="#000000"
                     android:textSize="55px"
                     tools:text="***********" />
@@ -177,7 +179,7 @@
                     android:id="@+id/textViewKontoLoeschen"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="Konto dauerhaft entfernen:"
                     android:textColor="#000000"
                     tools:text="Konto dauerhaft entfernen:" />
 
@@ -214,7 +216,8 @@
                 android:text="Logout"
                 android:textAllCaps="false"
                 android:textColor="#000000"
-                android:textColorHighlight="#000000" />
+                android:textColorHighlight="#000000"
+                android:layout_marginTop="15dp"/>
 
 
         </LinearLayout>

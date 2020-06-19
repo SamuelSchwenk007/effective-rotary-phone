@@ -4,23 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:id="@+id/fragment_container"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_favlaeden"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="visible">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView_favLaeden"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="0.1">
+            android:layout_height="match_parent">
 
-            </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
-
+        </androidx.recyclerview.widget.RecyclerView>
+    </ScrollView>
 
 </android.widget.LinearLayout>

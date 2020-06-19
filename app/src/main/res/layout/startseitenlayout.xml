@@ -3,31 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-
-    <LinearLayout
-        android:id="@+id/container_startseite"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="visible">
-
-    <LinearLayout
-        android:id="@+id/recyclerview_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="visible">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.1">
+            android:layout_height="match_parent">
 
         </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
-    </LinearLayout>
+</ScrollView>
 
 </android.widget.LinearLayout>

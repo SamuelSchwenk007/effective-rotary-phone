@@ -1,5 +1,6 @@
 package com.example.smallternativ;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,16 +10,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class FavorisierteLaedenFragment extends Fragment {
+public class FavorisierteLaedenFragment extends Fragment implements MyAdapter.ShopListItemListener {
     private View view;
     private androidx.appcompat.app.ActionBar supportActionBar;
+    private RecyclerView recyclerView;
+    private MyAdapter.ShopListItemListener shopListItemListener;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.favorisierte_laeden_layout, container, false);
         StartseiteActivity.setAppTitle(supportActionBar, getContext(),"Favorisierte Läden");
+        recyclerView = view.findViewById(R.id.recyclerView_favlaeden);
+        MyAdapter myAdapter = MyAdapter.getInstance(getActivity().getApplicationContext(), shopListItemListener);
+        loadShopsToList(getActivity().getApplicationContext(),myAdapter);
         return view;
     }
     public ActionBar getSupportActionBar() {
@@ -28,5 +36,26 @@ public class FavorisierteLaedenFragment extends Fragment {
     public void setSupportActionBar(ActionBar supportActionBar) {
         this.supportActionBar = supportActionBar;
     }
+    public void loadShopsToList(Context context, MyAdapter myAdapter){
 
+        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Netter Asiate um die Ecke",R.drawable.asiatica_logo_fixed);
+
+        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Nette Mode um die Ecke",R.drawable.cyroline_logo_fixed);
+
+
+        myAdapter.insertShopListItem(shopListItemTwo);
+        myAdapter.insertShopListItem(shopListItemThree);
+
+
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(myAdapter);
+    }
+
+    @Override
+    public void OnShopListItemClick(int position) {
+
+    }
 }
