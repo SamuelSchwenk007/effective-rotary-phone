@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/hintergrund"
+    android:background="#E6F3FF"
     tools:context=".MainActivity">
     <LinearLayout
         android:id="@+id/maincontainer"
@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:background="#00000000"
                     android:text="@string/login"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="24sp"
                     tools:text="LOGIN:" />
 
@@ -47,7 +47,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/e_mail"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#000000"
                         tools:text="E-Mail:" />
 
                     <EditText
@@ -71,7 +71,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Passwort"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#000000"
                         tools:text="Passwort:" />
 
                     <EditText
@@ -97,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/angemeldetbleiben"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     tools:text="Angemeldet bleiben?" />
 
                 <CheckBox
@@ -105,7 +105,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#00000000"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
             </LinearLayout>
 
             <LinearLayout
@@ -151,8 +151,8 @@
                     android:id="@+id/textViewNochKeinenAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/nochkeinenaccount"
-                    android:textColor="#FFFFFF"
+                    android:text="Noch keinen Accout ?"
+                    android:textColor="#000000"
                     tools:text="Noch keinen Account?"
                     android:layout_weight="1"
                     android:layout_marginTop="15dp"/>
@@ -192,7 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/anmeldenmit"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     tools:text="Anmelden mit:" />
 
                 <LinearLayout

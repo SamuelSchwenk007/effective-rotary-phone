@@ -59,13 +59,13 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         fragmentTransaction.commit();
     }
     public void loadShopsToList(Context context, MyAdapter myAdapter){
-        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Netter Türke um die Ecke", R.drawable.oez_suelo_logo_fixed);
+        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Dr.-Julius-Leber-Straße 3-7. Täglich frisches Obst und Gemüse.", R.drawable.oez_suelo_logo_fixed);
 
-        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Netter Asiate um die Ecke",R.drawable.asiatica_logo_fixed);
+        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Fleischhauerstraße 10. Waren aus Asien von Lebensmitteln bis zur Dekoration.",R.drawable.asiatica_logo_fixed);
 
-        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Nette Mode um die Ecke",R.drawable.cyroline_logo_fixed);
+        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Fleischhauerstraße 49. Hier finden Sie FairTrade geschneiderte Bekleidung.",R.drawable.cyroline_logo_fixed);
 
-        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Netter Fäden um die Ecke",R.drawable.nadel_und_faden_logo_fixed);
+        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Hüxstraße 59. Hier finden Sie unterschiedliche Stoffe und vieles mehr.",R.drawable.nadel_und_faden_logo_fixed);
 
         myAdapter.insertShopListItem(shopListItemOne);
         myAdapter.insertShopListItem(shopListItemTwo);

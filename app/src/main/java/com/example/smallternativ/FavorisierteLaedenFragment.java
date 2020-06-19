@@ -38,9 +38,9 @@ public class FavorisierteLaedenFragment extends Fragment implements MyAdapter.Sh
     }
     public void loadShopsToList(Context context, MyAdapter myAdapter){
 
-        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Netter Asiate um die Ecke",R.drawable.asiatica_logo_fixed);
+        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Fleischhauerstraße 10. Waren aus Asien von Lebensmitteln bis zur Dekoration.",R.drawable.asiatica_logo_fixed);
 
-        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Nette Mode um die Ecke",R.drawable.cyroline_logo_fixed);
+        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Fleischhauerstraße 49. Hier finden Sie FairTrade geschneiderte Bekleidung.",R.drawable.cyroline_logo_fixed);
 
 
         myAdapter.insertShopListItem(shopListItemTwo);

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@mipmap/hintergrund">
+    android:background="#E6F3FF">
 
     <LinearLayout
         android:id="@+id/maincontainer"
@@ -33,9 +33,9 @@
                     android:layout_height="wrap_content"
                     android:background="#00000000"
                     android:text="@string/login"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     android:textSize="24sp"
-                    tools:text="REGISTRIEREN:" />
+                    tools:text="Regristrieren:" />
 
                 <LinearLayout
                     android:id="@+id/emailContainer"
@@ -48,7 +48,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/e_mail"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#000000"
                         tools:text="E-Mail:" />
 
 
@@ -75,7 +75,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/benutzername"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#000000"
                         tools:text="Benutzername:" />
 
 
@@ -102,7 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Passwort"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#000000"
                         tools:text="Passwort:" />
 
                     <EditText
@@ -129,7 +129,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Passwort"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     tools:text="Passwort wiederholen:" />
 
                 <EditText
@@ -156,7 +156,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/angemeldetbleiben"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#000000"
                     tools:text="Angemeldet bleiben?" />
 
                 <CheckBox
@@ -164,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="#00000000"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000000" />
             </LinearLayout>
 
             <LinearLayout
