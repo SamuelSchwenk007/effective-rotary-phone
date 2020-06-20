@@ -110,6 +110,7 @@ public class MyAdapter extends RecyclerView.Adapter  {
         public Context context;
         public ShopListItemListener shopListItemListener;
 
+
         public ShopListItemViewHolder(View v, ShopListItemListener shopListItemListener) {
             super(v);
             context = v.getContext();
@@ -130,6 +131,13 @@ public class MyAdapter extends RecyclerView.Adapter  {
         @Override
         public void onClick(View view) {
             shopListItemListener.OnShopListItemClick(getAdapterPosition());
+        }
+        public TextView getShoplistItemTitle() {
+            return shoplistItemTitle;
+        }
+
+        public void setShoplistItemTitle(TextView shoplistItemTitle) {
+            this.shoplistItemTitle = shoplistItemTitle;
         }
     }
 }

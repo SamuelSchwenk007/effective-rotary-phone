@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/zufaelligerladen"
+        android:enabled="true"
+        android:title="Zufälliger Laden" />
+    <item
+        android:id="@+id/stadtwaehlen"
+        android:enabled="true"
+        android:title="Stadt wählen"/>
+    <item
+        android:id="@+id/einstellungen"
+        android:enabled="true"
+        android:title="Einstellungen"/>
+    <item
+        android:id="@+id/karte"
+        android:enabled="true"
+        android:title="Karte"/>
+
+</menu>

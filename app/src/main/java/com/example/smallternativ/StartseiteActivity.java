@@ -1,34 +1,37 @@
 package com.example.smallternativ;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
-public class StartseiteActivity extends AppCompatActivity {
+public class StartseiteActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     MyAdapter myAdapter;
     ArrayList<Fragment> fragmentList = new ArrayList<>();
     RecyclerView recyclerView;
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,35 +49,33 @@ public class StartseiteActivity extends AppCompatActivity {
         BottomNavigationView bottom_navigation =findViewById(R.id.bottom_navigation);
         bottom_navigation.setOnNavigationItemSelectedListener(menuItem -> {
             Log.d("test",""+menuItem.getItemId());
-            if(menuItem.getItemId()==2131361993){
+            if(menuItem.getItemId()== R.id.page_1){
                 StartseitenFragment startseitenFragment1 = new StartseitenFragment();
                createFragment(startseitenFragment1);
                 StartseiteActivity.setAppTitle(getSupportActionBar(), getApplicationContext(),"Smallternative");
                 return true;
             }
-            else if(menuItem.getItemId()==2131361994){
+            else if(menuItem.getItemId()==R.id.page_2){
                FavorisierteLaedenFragment favorisierteLaedenFragment = new FavorisierteLaedenFragment();
                 favorisierteLaedenFragment.setSupportActionBar(getSupportActionBar());
                createFragment(favorisierteLaedenFragment);
                 return true;
             }
-           else if(menuItem.getItemId()==2131361995){
+           else if(menuItem.getItemId()==R.id.page_3){
                 AnfragenFragment anfragenFragment = new AnfragenFragment();
                 anfragenFragment.setSupportActionBar(getSupportActionBar());
                 createFragment(anfragenFragment);
                 return true;
             }
-          else  if(menuItem.getItemId()==2131361996){
-
+          else  if(menuItem.getItemId()==R.id.page_4){
                 MeinkontoFragment meinkontoFragment = new MeinkontoFragment();
                 meinkontoFragment.setSupportActionBar(getSupportActionBar());
                createFragment(meinkontoFragment);
                 return true;
             }
-          else  if(menuItem.getItemId()==2131361997){
-
-                MenueFragment menueFragment = new MenueFragment();
-                createFragment(menueFragment);
+          else  if(menuItem.getItemId()==R.id.page_5){
+              View view = new View(getApplicationContext());
+              showMenuPopup(view);
                 return true;
             }
             else return true;
@@ -136,5 +137,59 @@ public class StartseiteActivity extends AppCompatActivity {
 
         // Finally, set the newly created TextView as ActionBar custom view
         ab.setCustomView(tv);
+    }
+    public void showKategoriePopup(View v){
+        PopupMenu popupMenu = new PopupMenu(this,v);
+        popupMenu.setOnMenuItemClickListener(this);
+        popupMenu.inflate(R.menu.kategorie_popup);
+        popupMenu.show();
+    }
+    public void showMenuPopup(View v){
+        PopupMenu popupMenu = new PopupMenu(this,v);
+        popupMenu.setOnMenuItemClickListener(this);
+        popupMenu.inflate(R.menu.menue_popup);
+        popupMenu.show();
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem menuItem) {
+        switch(menuItem.getItemId()){
+            case R.id.lebensmittel:
+                //Todo
+                return true;
+            case R.id.kleidung:
+                //Todo
+                return true;
+            case R.id.dekoration:
+                //Todo
+                return true;
+            case R.id.nur_barrierefrei:
+                //Todo
+                return true;
+            case R.id.max_Entfernung:
+                //Todo
+                return true;
+            case R.id.bestaetigen:
+                //Todo
+                return true;
+            case R.id.zufaelligerladen:
+                //Todo
+                return true;
+            case R.id.stadtwaehlen:
+                //Todo
+                return true;
+            case R.id.einstellungen:
+                //Todo
+                return true;
+            case R.id.karte:
+            default:
+                return false;
+        }
+    }
+    public void swipeLeft(View v){
+
+    }
+    public void swipeRight(View v){
+
     }
 }

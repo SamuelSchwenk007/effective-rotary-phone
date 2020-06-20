@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/lebensmittel"
+        android:enabled="true"
+        android:title="Lebensmittel" />
+    <item
+        android:id="@+id/kleidung"
+        android:enabled="true"
+        android:title="Kleidung"/>
+    <item
+        android:id="@+id/dekoration"
+        android:enabled="true"
+        android:title="Dekoration"/>
+    <item
+        android:id="@+id/nur_barrierefrei"
+        android:enabled="true"
+        android:title="Nur Barrierefrei"/>
+    <item
+        android:id="@+id/max_Entfernung"
+        android:enabled="true"
+        android:title="max Entfernung"/>
+    <item
+        android:id="@+id/bestaetigen"
+        android:enabled="true"
+        android:title="Bestätigen"/>
+</menu>
