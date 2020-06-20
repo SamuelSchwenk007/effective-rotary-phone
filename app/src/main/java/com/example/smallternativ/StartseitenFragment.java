@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 
 import com.example.smallternativ.LadenProfilFragment;
 import com.example.smallternativ.MyAdapter;
@@ -27,6 +28,7 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
     private MyAdapter.ShopListItemListener shopListItemListener;
     RecyclerView recyclerView;
     MyAdapter myAdapter;
+    HorizontalScrollView horizontalScrollView;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         view = inflater.inflate(R.layout.startseitenlayout, container, false);
         setTodoListenerToAdapter(this);
         recyclerView = view.findViewById(R.id.recyclerView);
+       // horizontalScrollView = view.findViewById(R.id.news_scroll_view);
         myAdapter = MyAdapter.getInstance(getContext(),shopListItemListener);
         loadShopsToList(getActivity().getApplicationContext(), myAdapter);
         return view;
@@ -82,5 +85,8 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
 
     public MyAdapter.ShopListItemListener getShopListItemListener(){
         return this;
+    }
+    public View getStartseitenFragmentView(){
+        return view;
     }
 }

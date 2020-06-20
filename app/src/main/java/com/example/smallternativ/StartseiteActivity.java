@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.HorizontalScrollView;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -30,7 +31,6 @@ import java.util.ArrayList;
 public class StartseiteActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     MyAdapter myAdapter;
     ArrayList<Fragment> fragmentList = new ArrayList<>();
-    RecyclerView recyclerView;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -100,9 +100,10 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         if(!fragmentList.isEmpty()) {
             for (int i = 0; i < fragmentList.size(); i++) {
                 fragmentTransaction.remove(fragmentList.get(i));
+                fragmentList.remove(i);
             }
+            fragmentTransaction.commit();
         }
-        fragmentTransaction.commit();
     }
     public static void setAppTitle(ActionBar actionBar, Context applicationContext,String appTitle){
         // Get the ActionBar
@@ -187,9 +188,27 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         }
     }
     public void swipeLeft(View v){
-
+        StartseitenFragment startseitenFragment = (StartseitenFragment) fragmentList.get(0);
+        View view = startseitenFragment.getStartseitenFragmentView();
+        HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view);
+        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()-view.getWidth());
     }
     public void swipeRight(View v){
-
+        StartseitenFragment startseitenFragment = (StartseitenFragment) fragmentList.get(0);
+        View view = startseitenFragment.getStartseitenFragmentView();
+        HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view);
+        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()+view.getWidth());
+    }
+    public void swipeLeftFav(View v){
+        FavorisierteLaedenFragment favorisierteLaedenFragment = (FavorisierteLaedenFragment) fragmentList.get(0);
+        View view = favorisierteLaedenFragment.getFavFragmentView();
+        HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view_fav);
+        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()-view.getWidth());
+    }
+    public void swipeRightFav(View v){
+        FavorisierteLaedenFragment favorisierteLaedenFragment = (FavorisierteLaedenFragment) fragmentList.get(0);
+        View view = favorisierteLaedenFragment.getFavFragmentView();
+        HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view_fav);
+        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()+view.getWidth());
     }
 }

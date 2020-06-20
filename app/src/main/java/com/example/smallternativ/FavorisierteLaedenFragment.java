@@ -58,4 +58,7 @@ public class FavorisierteLaedenFragment extends Fragment implements MyAdapter.Sh
     public void OnShopListItemClick(int position) {
 
     }
+    public View getFavFragmentView(){
+        return  view;
+    }
 }

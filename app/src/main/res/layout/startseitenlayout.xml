@@ -10,7 +10,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="10dp">
                 <Button
                     android:id="@+id/karte"
                     android:layout_width="wrap_content"
@@ -40,8 +40,10 @@
         </RelativeLayout>
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-        <ImageView
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp">
+        <Button
             android:id="@+id/arrowleft"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -50,8 +52,8 @@
             android:layout_centerInParent="true"
             android:layout_marginLeft="10dp"
             android:onClick="swipeLeft">
-        </ImageView>
-        <ImageView
+        </Button>
+        <Button
             android:id="@+id/arrowright"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -60,14 +62,14 @@
             android:layout_centerInParent="true"
             android:layout_marginRight="10dp"
             android:onClick="swipeRight">
-        </ImageView>
+        </Button>
 
                 <HorizontalScrollView
+                    android:id="@+id/news_scroll-view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginTop="5dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginRight="0dp"
                     android:fillViewport="true"
