@@ -184,7 +184,7 @@
                     tools:text="Konto dauerhaft entfernen:" />
 
                 <Button
-                    android:id="@+id/buttonLogout"
+                    android:id="@+id/kontoLoeschen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
@@ -208,7 +208,7 @@
 
 
             <Button
-                android:id="@+id/buttonLadenprofilErstllen"
+                android:id="@+id/logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"

@@ -21,7 +21,6 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -37,6 +36,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startseite_containerlayout);
         StartseitenFragment startseitenFragment = new StartseitenFragment();
+        startseitenFragment.setStartseiteActivity(this);
         removeAllFragment();
         fragmentList.add(startseitenFragment);
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -68,7 +68,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 return true;
             }
           else  if(menuItem.getItemId()==R.id.page_4){
-                MeinkontoFragment meinkontoFragment = new MeinkontoFragment();
+                MeinKontoFragment meinkontoFragment = new MeinKontoFragment();
                 meinkontoFragment.setSupportActionBar(getSupportActionBar());
                createFragment(meinkontoFragment);
                 return true;
@@ -139,12 +139,6 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         // Finally, set the newly created TextView as ActionBar custom view
         ab.setCustomView(tv);
     }
-    public void showKategoriePopup(View v){
-        PopupMenu popupMenu = new PopupMenu(this,v);
-        popupMenu.setOnMenuItemClickListener(this);
-        popupMenu.inflate(R.menu.kategorie_popup);
-        popupMenu.show();
-    }
     public void showMenuPopup(View v){
         PopupMenu popupMenu = new PopupMenu(this,v);
         popupMenu.setOnMenuItemClickListener(this);
@@ -155,24 +149,6 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
         switch(menuItem.getItemId()){
-            case R.id.lebensmittel:
-                //Todo
-                return true;
-            case R.id.kleidung:
-                //Todo
-                return true;
-            case R.id.dekoration:
-                //Todo
-                return true;
-            case R.id.nur_barrierefrei:
-                //Todo
-                return true;
-            case R.id.max_Entfernung:
-                //Todo
-                return true;
-            case R.id.bestaetigen:
-                //Todo
-                return true;
             case R.id.zufaelligerladen:
                 //Todo
                 return true;
@@ -180,7 +156,9 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 //Todo
                 return true;
             case R.id.einstellungen:
-                //Todo
+                EinstellungenFragment einstellungenFragment = new EinstellungenFragment();
+                einstellungenFragment.setSupportActionBar(getSupportActionBar());
+                createFragment(einstellungenFragment);
                 return true;
             case R.id.karte:
             default:

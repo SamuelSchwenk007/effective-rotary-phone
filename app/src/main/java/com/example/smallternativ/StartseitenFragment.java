@@ -3,15 +3,20 @@ package com.example.smallternativ;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
+import android.widget.PopupMenu;
 
 import com.example.smallternativ.LadenProfilFragment;
 import com.example.smallternativ.MyAdapter;
 import com.example.smallternativ.R;
 import com.example.smallternativ.ShopListItem;
 import com.example.smallternativ.StartseiteActivity;
+
+import javax.crypto.KeyAgreement;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,13 +27,14 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class StartseitenFragment extends Fragment implements MyAdapter.ShopListItemListener {
+public class StartseitenFragment extends Fragment implements MyAdapter.ShopListItemListener, PopupMenu.OnMenuItemClickListener {
     private View view;
     private androidx.appcompat.app.ActionBar supportActionBar;
     private MyAdapter.ShopListItemListener shopListItemListener;
     RecyclerView recyclerView;
     MyAdapter myAdapter;
-    HorizontalScrollView horizontalScrollView;
+    Button kategorien;
+    StartseiteActivity startseiteActivity;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -36,9 +42,16 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         view = inflater.inflate(R.layout.startseitenlayout, container, false);
         setTodoListenerToAdapter(this);
         recyclerView = view.findViewById(R.id.recyclerView);
-       // horizontalScrollView = view.findViewById(R.id.news_scroll_view);
+        kategorien = view.findViewById(R.id.kategorie);
         myAdapter = MyAdapter.getInstance(getContext(),shopListItemListener);
         loadShopsToList(getActivity().getApplicationContext(), myAdapter);
+        kategorien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                View newview = new View(getContext());
+                showMenuPopup(newview);
+            }
+        });
         return view;
     }
     public void setTodoListenerToAdapter(MyAdapter.ShopListItemListener shopListItemListener){
@@ -82,11 +95,49 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(myAdapter);
     }
+    public void showMenuPopup(View v){
+        PopupMenu popupMenu = new PopupMenu(getContext(),v);
+        popupMenu.setOnMenuItemClickListener(this);
+        popupMenu.inflate(R.menu.kategorie_popup);
+        popupMenu.show();
+    }
+    @Override
+    public boolean onMenuItemClick(MenuItem menuItem) {
+        switch(menuItem.getItemId()){
+            case R.id.lebensmittel:
+                //Todo
+                return true;
+            case R.id.kleidung:
+                //Todo
+                return true;
+            case R.id.dekoration:
+                //Todo
+                return true;
+            case R.id.nur_barrierefrei:
+                //Todo
+                return true;
+            case R.id.max_Entfernung:
+                //Todo
+                return true;
+            case R.id.bestaetigen:
+                //Todo
+                return true;
+            default:
+                return false;
+        }
+    }
 
     public MyAdapter.ShopListItemListener getShopListItemListener(){
         return this;
     }
     public View getStartseitenFragmentView(){
         return view;
+    }
+    public StartseiteActivity getStartseiteActivity() {
+        return startseiteActivity;
+    }
+
+    public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
+        this.startseiteActivity = startseiteActivity;
     }
 }
