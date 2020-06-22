@@ -51,6 +51,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
             Log.d("test",""+menuItem.getItemId());
             if(menuItem.getItemId()== R.id.page_1){
                 StartseitenFragment startseitenFragment1 = new StartseitenFragment();
+                startseitenFragment1.setStartseiteActivity(this);
                createFragment(startseitenFragment1);
                 StartseiteActivity.setAppTitle(getSupportActionBar(), getApplicationContext(),"Smallternative");
                 return true;
@@ -98,7 +99,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         if(!fragmentList.isEmpty()) {
-            for (int i = 0; i < fragmentList.size(); i++) {
+            for (int i = 0; i <= fragmentList.size(); i++) {
                 fragmentTransaction.remove(fragmentList.get(i));
                 fragmentList.remove(i);
             }

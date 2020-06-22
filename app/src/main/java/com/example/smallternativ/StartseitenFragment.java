@@ -68,11 +68,15 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
     }
     @Override
     public void OnShopListItemClick(int position) {
-        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        myAdapter = MyAdapter.getInstance(getContext(),shopListItemListener);
         LadenProfilFragment ladenProfilFragment = new LadenProfilFragment();
-        fragmentTransaction.add(R.id.fragment_container,ladenProfilFragment);
-        fragmentTransaction.commit();
+        ladenProfilFragment.setSupportActionBar(getSupportActionBar());
+        ladenProfilFragment.setAdapterPosition(position);
+        ladenProfilFragment.setMyAdapter(myAdapter);
+        ladenProfilFragment.setLadenNameString(myAdapter.getAufgaben().get(position).title);
+        ladenProfilFragment.setLadenBeschribungString(myAdapter.getAufgaben().get(position).beschreibung);
+        ladenProfilFragment.setLadenPicReference(myAdapter.getAufgaben().get(position).profilbildReference);
+        startseiteActivity.createFragment(ladenProfilFragment);
     }
     public void loadShopsToList(Context context, MyAdapter myAdapter){
         ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Dr.-Julius-Leber-Straße 3-7. Täglich frisches Obst und Gemüse.", R.drawable.oez_suelo_logo_fixed);
