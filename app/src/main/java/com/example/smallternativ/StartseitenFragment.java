@@ -71,21 +71,38 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         myAdapter = MyAdapter.getInstance(getContext(),shopListItemListener);
         LadenProfilFragment ladenProfilFragment = new LadenProfilFragment();
         ladenProfilFragment.setSupportActionBar(getSupportActionBar());
-        ladenProfilFragment.setAdapterPosition(position);
         ladenProfilFragment.setMyAdapter(myAdapter);
         ladenProfilFragment.setLadenNameString(myAdapter.getAufgaben().get(position).title);
         ladenProfilFragment.setLadenBeschribungString(myAdapter.getAufgaben().get(position).beschreibung);
         ladenProfilFragment.setLadenPicReference(myAdapter.getAufgaben().get(position).profilbildReference);
+        ladenProfilFragment.setKategorieItemString(myAdapter.getAufgaben().get(position).kategorie);
+       // ladenProfilFragment.setLadenAdresse(myAdapter.getAufgaben().get(position).adresse);
+        ladenProfilFragment.setSortimentUnoReference(myAdapter.getAufgaben().get(position).sortimentReferenceUno);
+        ladenProfilFragment.setSortimentDosReference(myAdapter.getAufgaben().get(position).sortimentReferenceDos);
+        ladenProfilFragment.setSortimentTresReference(myAdapter.getAufgaben().get(position).sortimentThresReference);
+        ladenProfilFragment.setSortimentQuadroReference(myAdapter.getAufgaben().get(position).sortimentQuadroReference);
+        ladenProfilFragment.setSortimentUnoString(myAdapter.getAufgaben().get(position).getSortimentUnoString());
+        ladenProfilFragment.setSortimentDosString(myAdapter.getAufgaben().get(position).getSortimentDosString());
+        ladenProfilFragment.setSortimentTresString(myAdapter.getAufgaben().get(position).getSortimentThresString());
+        ladenProfilFragment.setSortimentQuadroString(myAdapter.getAufgaben().get(position).getSortimentQuadroString());
         startseiteActivity.createFragment(ladenProfilFragment);
     }
     public void loadShopsToList(Context context, MyAdapter myAdapter){
-        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Dr.-Julius-Leber-Straße 3-7. Täglich frisches Obst und Gemüse.", R.drawable.oez_suelo_logo_fixed);
+        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Dr.-Julius-Leber-Straße 3-7. Täglich frisches Obst und Gemüse.",
+                R.drawable.oez_suelo_logo_fixed,"Nahrung, Frisch","Gemüse","Spezialitäten",
+                "Angebote","Neues",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
 
-        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Fleischhauerstraße 10. Waren aus Asien von Lebensmitteln bis zur Dekoration.",R.drawable.asiatica_logo_fixed);
+        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Fleischhauerstraße 10. Waren aus Asien von Lebensmitteln bis zur Dekoration.",
+                R.drawable.asiatica_logo_fixed,"Nahrung, Barrierefrei","Gemüse","Fleisch","Asia",
+                "Thai",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
 
-        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Fleischhauerstraße 49. Hier finden Sie FairTrade geschneiderte Bekleidung.",R.drawable.cyroline_logo_fixed);
+        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Fleischhauerstraße 49. Hier finden Sie FairTrade geschneiderte Bekleidung.",
+                R.drawable.cyroline_logo_fixed,"Kleidung, Modern","Angesagt","Retro","Sale",
+                "Speziel",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
 
-        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Hüxstraße 59. Hier finden Sie unterschiedliche Stoffe und vieles mehr.",R.drawable.nadel_und_faden_logo_fixed);
+        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Hüxstraße 59. Hier finden Sie unterschiedliche Stoffe und vieles mehr.",
+                R.drawable.nadel_und_faden_logo_fixed,"Basteln, Handmade","Stoffe","Knöpfe","Fäden",
+                "Füllungen",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
 
         myAdapter.insertShopListItem(shopListItemOne);
         myAdapter.insertShopListItem(shopListItemTwo);

@@ -44,10 +44,14 @@ public class AnfragenFragment extends Fragment implements MyAdapter.ShopListItem
     }
     public void loadAnfragentoList(Context context, MyAdapter myAdapter){
 
-        ShopListItem shopListItemTwo = new ShopListItem("Anfrage An: Asiatica","Frische Papayas",R.drawable.asiatica_logo_fixed);
 
-        ShopListItem shopListItemThree = new ShopListItem("Anfrage An: Cyroline","Neopreen",R.drawable.cyroline_logo_fixed);
+        ShopListItem shopListItemTwo = new ShopListItem("Anfrage An: Asiatica","Frische Papayas",
+                R.drawable.asiatica_logo_fixed,"Nahrung, Barrierefrei","Gemüse","Fleisch","Asia",
+                "Thai",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
 
+        ShopListItem shopListItemThree = new ShopListItem("Anfrage An: Cyroline","Neopreen",
+                R.drawable.cyroline_logo_fixed,"Kleidung, Modern","Angesagt","Retro","Sale",
+                "Speziel",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
         myAdapter.insertShopListItem(shopListItemTwo);
         myAdapter.insertShopListItem(shopListItemThree);
 

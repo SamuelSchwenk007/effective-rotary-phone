@@ -15,11 +15,29 @@ public class ShopListItem {
     public String title;
     public String beschreibung;
     public int profilbildReference;
+    public String kategorie;
+    public String sortimentUnoString;
+    public String sortimentDosString;
+    public String sortimentThresString;
+    public String sortimentQuadroString;
+    public int sortimentReferenceUno, sortimentReferenceDos, sortimentThresReference,sortimentQuadroReference;
 
-    public ShopListItem (String title, String beschreibung, int profilbildReference){
+    public ShopListItem (String title, String beschreibung, int profilbildReference, String kategorie,
+                         String sortimentUnoString, String sortimentDosString, String sortimentThresString,
+                         String sortimentQuadroString, int sortimentReferenceUno, int sortimentReferenceDos,
+                         int sortimentThresReference, int sortimentQuadroReference){
         this.profilbildReference = profilbildReference;
         this.title = title;
         this.beschreibung = beschreibung;
+        this.kategorie = kategorie;
+        this.sortimentUnoString = sortimentUnoString;
+        this.sortimentDosString = sortimentDosString;
+        this.sortimentThresString = sortimentThresString;
+        this.sortimentQuadroString = sortimentQuadroString;
+        this.sortimentReferenceUno = sortimentReferenceUno;
+        this.sortimentReferenceDos = sortimentReferenceDos;
+        this.sortimentThresReference = sortimentThresReference;
+        this.sortimentQuadroReference = sortimentQuadroReference;
 
     }
 
@@ -56,5 +74,75 @@ public class ShopListItem {
     }
     public void setId(long id){
         this.id = id;
+    }
+    public String getKategorie() {
+        return kategorie;
+    }
+
+    public void setKategorie(String kategorie) {
+        this.kategorie = kategorie;
+    }
+
+    public String getSortimentUnoString() {
+        return sortimentUnoString;
+    }
+
+    public void setSortimentUnoString(String sortimentUnoString) {
+        this.sortimentUnoString = sortimentUnoString;
+    }
+
+    public String getSortimentDosString() {
+        return sortimentDosString;
+    }
+
+    public void setSortimentDosString(String sortimentDosString) {
+        this.sortimentDosString = sortimentDosString;
+    }
+
+    public int getSortimentReferenceUno() {
+        return sortimentReferenceUno;
+    }
+
+    public void setSortimentReferenceUno(int sortimentReferenceUno) {
+        this.sortimentReferenceUno = sortimentReferenceUno;
+    }
+
+    public int getSortimentReferenceDos() {
+        return sortimentReferenceDos;
+    }
+
+    public void setSortimentReferenceDos(int sortimentReferenceDos) {
+        this.sortimentReferenceDos = sortimentReferenceDos;
+    }
+    public String getSortimentThresString() {
+        return sortimentThresString;
+    }
+
+    public void setSortimentThresString(String sortimentThresString) {
+        this.sortimentThresString = sortimentThresString;
+    }
+
+    public String getSortimentQuadroString() {
+        return sortimentQuadroString;
+    }
+
+    public void setSortimentQuadroString(String sortimentQuadroString) {
+        this.sortimentQuadroString = sortimentQuadroString;
+    }
+
+    public int getSortimentThresReference() {
+        return sortimentThresReference;
+    }
+
+    public void setSortimentThresReference(int sortimentThresReference) {
+        this.sortimentThresReference = sortimentThresReference;
+    }
+
+    public int getSortimentQuadroReference() {
+        return sortimentQuadroReference;
+    }
+
+    public void setSortimentQuadroReference(int sortimentQuadroReference) {
+        this.sortimentQuadroReference = sortimentQuadroReference;
     }
 }

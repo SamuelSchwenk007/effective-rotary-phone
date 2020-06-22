@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:6357364269998291140",
-      "lastPropertyId": "15:4284146932932360092",
+      "lastPropertyId": "20:6058375259664278578",
       "name": "ShopListItem",
       "properties": [
         {
@@ -31,8 +31,29 @@
           "flags": 4
         },
         {
-          "id": "15:4284146932932360092",
-          "name": "bannerReference",
+          "id": "16:3537635705699820884",
+          "name": "kategorie",
+          "type": 9
+        },
+        {
+          "id": "17:961197181318945742",
+          "name": "sortimentUnoString",
+          "type": 9
+        },
+        {
+          "id": "18:273078094048188063",
+          "name": "sortimentDosString",
+          "type": 9
+        },
+        {
+          "id": "19:6618139802142358517",
+          "name": "sortimentReferenceUno",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "20:6058375259664278578",
+          "name": "sortimentReferenceDos",
           "type": 5,
           "flags": 4
         }
@@ -58,7 +79,8 @@
     4205927637786908564,
     7880129035849646817,
     6124135669217091632,
-    8899284404012040140
+    8899284404012040140,
+    4284146932932360092
   ],
   "retiredRelationUids": [],
   "version": 1

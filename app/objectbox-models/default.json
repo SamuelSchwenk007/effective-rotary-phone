@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:6357364269998291140",
-      "lastPropertyId": "15:4284146932932360092",
+      "lastPropertyId": "24:1180601056050831283",
       "name": "ShopListItem",
       "properties": [
         {
@@ -27,6 +27,55 @@
         {
           "id": "14:4335049534806107077",
           "name": "profilbildReference",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "16:3537635705699820884",
+          "name": "kategorie",
+          "type": 9
+        },
+        {
+          "id": "17:961197181318945742",
+          "name": "sortimentUnoString",
+          "type": 9
+        },
+        {
+          "id": "18:273078094048188063",
+          "name": "sortimentDosString",
+          "type": 9
+        },
+        {
+          "id": "19:6618139802142358517",
+          "name": "sortimentReferenceUno",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "20:6058375259664278578",
+          "name": "sortimentReferenceDos",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "21:5428950712874103917",
+          "name": "sortimentThresString",
+          "type": 9
+        },
+        {
+          "id": "22:8900039803236329813",
+          "name": "sortimentQuadroString",
+          "type": 9
+        },
+        {
+          "id": "23:7242287050839326528",
+          "name": "sortimentThresReference",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "24:1180601056050831283",
+          "name": "sortimentQuadroReference",
           "type": 5,
           "flags": 4
         }
