@@ -76,7 +76,7 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         ladenProfilFragment.setLadenBeschribungString(myAdapter.getAufgaben().get(position).beschreibung);
         ladenProfilFragment.setLadenPicReference(myAdapter.getAufgaben().get(position).profilbildReference);
         ladenProfilFragment.setKategorieItemString(myAdapter.getAufgaben().get(position).kategorie);
-       // ladenProfilFragment.setLadenAdresse(myAdapter.getAufgaben().get(position).adresse);
+        ladenProfilFragment.setAdresseString(myAdapter.getAufgaben().get(position).adresse);
         ladenProfilFragment.setSortimentUnoReference(myAdapter.getAufgaben().get(position).sortimentReferenceUno);
         ladenProfilFragment.setSortimentDosReference(myAdapter.getAufgaben().get(position).sortimentReferenceDos);
         ladenProfilFragment.setSortimentTresReference(myAdapter.getAufgaben().get(position).sortimentThresReference);
@@ -88,21 +88,22 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         startseiteActivity.createFragment(ladenProfilFragment);
     }
     public void loadShopsToList(Context context, MyAdapter myAdapter){
-        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Dr.-Julius-Leber-Straße 3-7. Täglich frisches Obst und Gemüse.",
+        ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Täglich frisches Obst und Gemüse.",
                 R.drawable.oez_suelo_logo_fixed,"Nahrung, Frisch","Gemüse","Spezialitäten",
-                "Angebote","Neues",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
+                "Angebote","Neues",R.drawable.oez_suelo_fruechte,R.drawable.oez_suelo_gemuese,R.drawable.oez_suelo_gewuerze,
+                R.drawable.oez_suelo_obst,"Dr.-Julius-Leber-Straße 3-7.");
 
-        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Fleischhauerstraße 10. Waren aus Asien von Lebensmitteln bis zur Dekoration.",
+        ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Waren aus Asien von Lebensmitteln bis zur Dekoration.",
                 R.drawable.asiatica_logo_fixed,"Nahrung, Barrierefrei","Gemüse","Fleisch","Asia",
-                "Thai",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
+                "Thai",R.drawable.asiatica_deko,R.drawable.asiatica_einrichtung,R.drawable.asiatica_essen,R.drawable.asiatica_gewuerze,"Fleischhauerstraße 10.");
 
-        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Fleischhauerstraße 49. Hier finden Sie FairTrade geschneiderte Bekleidung.",
+        ShopListItem shopListItemThree = new ShopListItem("Cyroline","Hier finden Sie FairTrade geschneiderte Bekleidung.",
                 R.drawable.cyroline_logo_fixed,"Kleidung, Modern","Angesagt","Retro","Sale",
-                "Speziel",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
+                "Speziel",R.drawable.cyroline_jacken,R.drawable.cyroline_kleider,R.drawable.cyroline_pullover,R.drawable.cyroline_shirts,"Fleischhauerstraße 49.");
 
-        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Hüxstraße 59. Hier finden Sie unterschiedliche Stoffe und vieles mehr.",
+        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Hier finden Sie unterschiedliche Stoffe und vieles mehr.",
                 R.drawable.nadel_und_faden_logo_fixed,"Basteln, Handmade","Stoffe","Knöpfe","Fäden",
-                "Füllungen",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
+                "Füllungen",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe,"Hüxstraße 59.");
 
         myAdapter.insertShopListItem(shopListItemOne);
         myAdapter.insertShopListItem(shopListItemTwo);

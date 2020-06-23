@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:6357364269998291140",
-      "lastPropertyId": "24:1180601056050831283",
+      "lastPropertyId": "25:851660654736076940",
       "name": "ShopListItem",
       "properties": [
         {
@@ -78,6 +78,11 @@
           "name": "sortimentQuadroReference",
           "type": 5,
           "flags": 4
+        },
+        {
+          "id": "25:851660654736076940",
+          "name": "adresse",
+          "type": 9
         }
       ],
       "relations": []

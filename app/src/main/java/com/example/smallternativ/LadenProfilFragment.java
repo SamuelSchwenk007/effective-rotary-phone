@@ -37,6 +37,7 @@ public class LadenProfilFragment extends Fragment {
     private String sortimentDosString;
     private String sortimentTresString;
     private String sortimentQuadroString;
+    private  String adresseString;
     private int ladenPicReference, sortimentUnoReference, sortimentDosReference,sortimentTresReference, sortimentQuadroReference;
 
     @Nullable
@@ -62,7 +63,7 @@ public class LadenProfilFragment extends Fragment {
         ladenBeschreibung.setText(ladenBeschribungString);
         ladenBild.setImageResource(ladenPicReference);
         kategorieItems.setText(kategorieItemString);
-        ladenAdresse.setText("");
+        ladenAdresse.setText(adresseString);
         sortimentUno.setBackgroundResource(sortimentUnoReference);
         sortimentDos.setBackgroundResource(sortimentDosReference);
         sortimentTres.setBackgroundResource(sortimentTresReference);
@@ -252,4 +253,12 @@ public class LadenProfilFragment extends Fragment {
     public void setSortimentQuadroReference(int sortimentQuadroReference) {
         this.sortimentQuadroReference = sortimentQuadroReference;
     }
+    public String getAdresseString() {
+        return adresseString;
+    }
+
+    public void setAdresseString(String adresseString) {
+        this.adresseString = adresseString;
+    }
+
 }

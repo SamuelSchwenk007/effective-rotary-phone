@@ -14,21 +14,26 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class AnfragenFragment extends Fragment implements MyAdapter.ShopListItemListener {
+public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopListItemListenerDos {
     private View view;
     private androidx.appcompat.app.ActionBar supportActionBar;
-    private MyAdapter.ShopListItemListener shopListItemListener;
+    private AnfragenAdapter.shopListItemListenerDos shopListItemListenerDos;
     RecyclerView recyclerView;
-    MyAdapter myAdapter;
+    AnfragenAdapter AnfragenAdapter;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.anfragen_layout, container, false);
+        setTodoListenerDosToAdapter(shopListItemListenerDos);
         recyclerView = view.findViewById(R.id.recyclerView_anfragen);
-        myAdapter = MyAdapter.getInstance(getContext(),shopListItemListener);
+        AnfragenAdapter = AnfragenAdapter.getInstance(getContext(),shopListItemListenerDos);
         StartseiteActivity.setAppTitle(supportActionBar, getContext(),"Anfragen");
-        loadAnfragentoList(getContext(),myAdapter);
+        loadAnfragentoList(getContext(),AnfragenAdapter);
         return view;
+    }
+    public void setTodoListenerDosToAdapter(AnfragenAdapter.shopListItemListenerDos shopListItemListener){
+        AnfragenAdapter adapter = AnfragenAdapter.getInstance(getContext(), shopListItemListener);
+        adapter.setshopListItemListenerDos(this);
     }
     public ActionBar getSupportActionBar() {
         return supportActionBar;
@@ -40,24 +45,22 @@ public class AnfragenFragment extends Fragment implements MyAdapter.ShopListItem
 
     @Override
     public void OnShopListItemClick(int position) {
-
+            System.out.println("Lüppt");
     }
-    public void loadAnfragentoList(Context context, MyAdapter myAdapter){
-
-
+    public void loadAnfragentoList(Context context, AnfragenAdapter AnfragenAdapter){
         ShopListItem shopListItemTwo = new ShopListItem("Anfrage An: Asiatica","Frische Papayas",
                 R.drawable.asiatica_logo_fixed,"Nahrung, Barrierefrei","Gemüse","Fleisch","Asia",
-                "Thai",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
+                "Thai",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe,"Fleischhauerstraße 10.");
 
         ShopListItem shopListItemThree = new ShopListItem("Anfrage An: Cyroline","Neopreen",
                 R.drawable.cyroline_logo_fixed,"Kleidung, Modern","Angesagt","Retro","Sale",
-                "Speziel",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe);
-        myAdapter.insertShopListItem(shopListItemTwo);
-        myAdapter.insertShopListItem(shopListItemThree);
+                "Speziel",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe,"Fleischhauerstraße 49.");
+        AnfragenAdapter.insertShopListItem(shopListItemTwo);
+        AnfragenAdapter.insertShopListItem(shopListItemThree);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(myAdapter);
+        recyclerView.setAdapter(AnfragenAdapter);
     }
 }

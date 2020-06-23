@@ -20,12 +20,13 @@ public class ShopListItem {
     public String sortimentDosString;
     public String sortimentThresString;
     public String sortimentQuadroString;
+    public String adresse;
     public int sortimentReferenceUno, sortimentReferenceDos, sortimentThresReference,sortimentQuadroReference;
 
     public ShopListItem (String title, String beschreibung, int profilbildReference, String kategorie,
                          String sortimentUnoString, String sortimentDosString, String sortimentThresString,
                          String sortimentQuadroString, int sortimentReferenceUno, int sortimentReferenceDos,
-                         int sortimentThresReference, int sortimentQuadroReference){
+                         int sortimentThresReference, int sortimentQuadroReference, String adresse){
         this.profilbildReference = profilbildReference;
         this.title = title;
         this.beschreibung = beschreibung;
@@ -38,6 +39,7 @@ public class ShopListItem {
         this.sortimentReferenceDos = sortimentReferenceDos;
         this.sortimentThresReference = sortimentThresReference;
         this.sortimentQuadroReference = sortimentQuadroReference;
+        this.adresse = adresse;
 
     }
 
@@ -145,4 +147,12 @@ public class ShopListItem {
     public void setSortimentQuadroReference(int sortimentQuadroReference) {
         this.sortimentQuadroReference = sortimentQuadroReference;
     }
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
 }
