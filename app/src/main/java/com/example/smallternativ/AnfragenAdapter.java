@@ -1,6 +1,7 @@
 package com.example.smallternativ;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -126,8 +127,11 @@ public class AnfragenAdapter extends RecyclerView.Adapter  {
 
         public void setCurrentShopListItem(ShopListItem shopListItem) {
             currentShopListItem = shopListItem;
-            shoplistItemTitle.setText(shopListItem.getTitle());
-            beschreibungsText.setText(shopListItem.getBeschreibung());
+            String ladenName = shopListItem.getLadenName();
+            String substring = ladenName.substring(6,ladenName.length());
+            shoplistItemTitle.setText("Anfrage An: "+substring);
+            shoplistItemTitle.setTextSize(20);
+            beschreibungsText.setText(shopListItem.getProdukt());
             profilBild.setImageResource(shopListItem.getProfilbildReference());
         }
 

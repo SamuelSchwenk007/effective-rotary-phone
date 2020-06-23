@@ -166,5 +166,60 @@ public class ShopListItem {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
+    public String getProdukt() {
+        return produkt;
+    }
+
+    public void setProdukt(String produkt) {
+        this.produkt = produkt;
+    }
+
+    public String getLadenName() {
+        return ladenName;
+    }
+
+    public void setLadenName(String ladenName) {
+        this.ladenName = ladenName;
+    }
+
+    public String getAnzahl() {
+        return anzahl;
+    }
+
+    public void setAnzahl(String anzahl) {
+        this.anzahl = anzahl;
+    }
+
+    public String getDatum() {
+        return datum;
+    }
+
+    public void setDatum(String datum) {
+        this.datum = datum;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getAntwort() {
+        return antwort;
+    }
+
+    public void setAntwort(String antwort) {
+        this.antwort = antwort;
+    }
+
+    public String getProduktdetails() {
+        return produktdetails;
+    }
+
+    public void setProduktdetails(String produktdetails) {
+        this.produktdetails = produktdetails;
+    }
 
 }

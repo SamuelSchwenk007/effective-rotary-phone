@@ -44,7 +44,7 @@ public class FavorisierteLaedenFragment extends Fragment implements MyAdapter.Sh
 
         ShopListItem shopListItemThree = new ShopListItem("Cyroline","Hier finden Sie FairTrade geschneiderte Bekleidung.",
                 R.drawable.cyroline_logo_fixed,"Kleidung, Modern","Angesagt","Retro","Sale",
-                "Speziel",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe,"Fleischhauerstraße 49.");
+                "Speziel",R.drawable.nadel_und_faden_stoffe,R.drawable.nadel_und_faden_knoepfe,R.drawable.nadel_und_faden_faeden,R.drawable.nadel_und_faden_buendchen,"Fleischhauerstraße 49.");
         myAdapter.insertShopListItem(shopListItemTwo);
         myAdapter.insertShopListItem(shopListItemThree);
 

@@ -89,21 +89,21 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
     }
     public void loadShopsToList(Context context, MyAdapter myAdapter){
         ShopListItem shopListItemOne = new ShopListItem("Öz Sülo", "Täglich frisches Obst und Gemüse.",
-                R.drawable.oez_suelo_logo_fixed,"Nahrung, Frisch","Gemüse","Spezialitäten",
-                "Angebote","Neues",R.drawable.oez_suelo_fruechte,R.drawable.oez_suelo_gemuese,R.drawable.oez_suelo_gewuerze,
+                R.drawable.oez_suelo_logo_fixed,"Nahrung, Frisch","Obst","Gemüse",
+                "Gewürze","Neues",R.drawable.oez_suelo_fruechte,R.drawable.oez_suelo_gemuese,R.drawable.oez_suelo_gewuerze,
                 R.drawable.oez_suelo_obst,"Dr.-Julius-Leber-Straße 3-7.");
 
         ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Waren aus Asien von Lebensmitteln bis zur Dekoration.",
-                R.drawable.asiatica_logo_fixed,"Nahrung, Barrierefrei","Gemüse","Fleisch","Asia",
-                "Thai",R.drawable.asiatica_deko,R.drawable.asiatica_einrichtung,R.drawable.asiatica_essen,R.drawable.asiatica_gewuerze,"Fleischhauerstraße 10.");
+                R.drawable.asiatica_logo_fixed,"Nahrung, Barrierefrei","Spezialitäten","Deko","Sushi",
+                "Gewürze",R.drawable.asiatica_deko,R.drawable.asiatica_einrichtung,R.drawable.asiatica_essen,R.drawable.asiatica_gewuerze,"Fleischhauerstraße 10.");
 
         ShopListItem shopListItemThree = new ShopListItem("Cyroline","Hier finden Sie FairTrade geschneiderte Bekleidung.",
-                R.drawable.cyroline_logo_fixed,"Kleidung, Modern","Angesagt","Retro","Sale",
-                "Speziel",R.drawable.cyroline_jacken,R.drawable.cyroline_kleider,R.drawable.cyroline_pullover,R.drawable.cyroline_shirts,"Fleischhauerstraße 49.");
+                R.drawable.cyroline_logo_fixed,"Kleidung, Modern","Angesagt","Retro","Basics",
+                "Sale",R.drawable.cyroline_jacken,R.drawable.cyroline_kleider,R.drawable.cyroline_pullover,R.drawable.cyroline_shirts,"Fleischhauerstraße 49.");
 
-        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Hier finden Sie unterschiedliche Stoffe und vieles mehr.",
+        ShopListItem shopListItemFour = new ShopListItem("Nadel und Faden","Hier finden Sie unterschiedliche Stoffe.",
                 R.drawable.nadel_und_faden_logo_fixed,"Basteln, Handmade","Stoffe","Knöpfe","Fäden",
-                "Füllungen",R.drawable.stoffe,R.drawable.knoepfe,R.drawable.stoffe,R.drawable.knoepfe,"Hüxstraße 59.");
+                "Füllungen",R.drawable.nadel_und_faden_stoffe,R.drawable.nadel_und_faden_knoepfe,R.drawable.nadel_und_faden_faeden,R.drawable.nadel_und_faden_buendchen,"Hüxstraße 59.");
 
         myAdapter.insertShopListItem(shopListItemOne);
         myAdapter.insertShopListItem(shopListItemTwo);

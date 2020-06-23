@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
@@ -71,7 +73,9 @@ public class LadenProfilFragment extends Fragment {
         sortimentUno.setText(sortimentUnoString);
         sortimentDos.setText(sortimentDosString);
         sortimentTres.setText(sortimentTresString);
+        sortimentTres.setHintTextColor(getResources().getColor(R.color.colorPrimaryDark));
         sortimentQuadro.setText(sortimentQuadroString);
+        sortimentQuadro.setHintTextColor(getResources().getColor(R.color.colorPrimaryDark));
 
         return view;
     }

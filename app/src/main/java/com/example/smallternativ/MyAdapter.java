@@ -124,6 +124,7 @@ public class MyAdapter extends RecyclerView.Adapter  {
         public void setCurrentShopListItem(ShopListItem shopListItem) {
             currentShopListItem = shopListItem;
             shoplistItemTitle.setText(shopListItem.getTitle());
+            shoplistItemTitle.setTextSize(20);
             beschreibungsText.setText(shopListItem.getBeschreibung());
             profilBild.setImageResource(shopListItem.getProfilbildReference());
         }
