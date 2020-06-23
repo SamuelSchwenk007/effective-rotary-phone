@@ -21,12 +21,13 @@ public class ShopListItem {
     public String sortimentThresString;
     public String sortimentQuadroString;
     public String adresse;
+    public String produkt,ladenName,anzahl,datum,status,antwort,produktdetails;
     public int sortimentReferenceUno, sortimentReferenceDos, sortimentThresReference,sortimentQuadroReference;
 
     public ShopListItem (String title, String beschreibung, int profilbildReference, String kategorie,
-                         String sortimentUnoString, String sortimentDosString, String sortimentThresString,
-                         String sortimentQuadroString, int sortimentReferenceUno, int sortimentReferenceDos,
-                         int sortimentThresReference, int sortimentQuadroReference, String adresse){
+                          String sortimentUnoString, String sortimentDosString, String sortimentThresString,
+                          String sortimentQuadroString, int sortimentReferenceUno, int sortimentReferenceDos,
+                          int sortimentThresReference, int sortimentQuadroReference, String adresse){
         this.profilbildReference = profilbildReference;
         this.title = title;
         this.beschreibung = beschreibung;
@@ -42,6 +43,17 @@ public class ShopListItem {
         this.adresse = adresse;
 
     }
+    public ShopListItem (int profilbildReference,String produkt,String ladenName,String anzahl,String datum,String status,String antwort,String produktdetails){
+        this.profilbildReference = profilbildReference;
+        this.produkt = produkt;
+        this.ladenName = ladenName;
+        this.anzahl = anzahl;
+        this.datum = datum;
+        this.status = status;
+        this.antwort = antwort;
+        this.produktdetails = produktdetails;
+    }
+
 
     public int getProfilbildReference() {
         return profilbildReference;

@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:6357364269998291140",
-      "lastPropertyId": "24:1180601056050831283",
+      "lastPropertyId": "31:374314119969292962",
       "name": "ShopListItem",
       "properties": [
         {
@@ -78,6 +78,41 @@
           "name": "sortimentQuadroReference",
           "type": 5,
           "flags": 4
+        },
+        {
+          "id": "25:851660654736076940",
+          "name": "adresse",
+          "type": 9
+        },
+        {
+          "id": "26:7520945930390616",
+          "name": "produkt",
+          "type": 9
+        },
+        {
+          "id": "27:8368838643613107544",
+          "name": "ladenName",
+          "type": 9
+        },
+        {
+          "id": "28:7557598587986775617",
+          "name": "anzahl",
+          "type": 9
+        },
+        {
+          "id": "29:587467997631537931",
+          "name": "datum",
+          "type": 9
+        },
+        {
+          "id": "30:1757857574576460018",
+          "name": "status",
+          "type": 9
+        },
+        {
+          "id": "31:374314119969292962",
+          "name": "antwort",
+          "type": 9
         }
       ],
       "relations": []

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -59,7 +60,7 @@ public class AnfragenAdapter extends RecyclerView.Adapter  {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.ladein_eintrag, viewGroup, false);
+        View view = inflater.inflate(R.layout.laden_eintrag_anfragen, viewGroup, false);
         return new ShopListItemViewHolder(view, todoListener);
     }
 
@@ -107,6 +108,7 @@ public class AnfragenAdapter extends RecyclerView.Adapter  {
         public TextView shoplistItemTitle;
         public TextView beschreibungsText;
         public ImageView profilBild;
+        public CheckBox anfragenCheckbox;
         public Context context;
         public shopListItemListenerDos shopListItemListenerDos;
 
@@ -114,9 +116,10 @@ public class AnfragenAdapter extends RecyclerView.Adapter  {
         public ShopListItemViewHolder(View v, shopListItemListenerDos shopListItemListenerDos) {
             super(v);
             context = v.getContext();
-            profilBild = (ImageView) v.findViewById(R.id.eintrag_bild);
-            shoplistItemTitle = (TextView) v.findViewById(R.id.eintrag_title);
-            beschreibungsText = (TextView) v.findViewById(R.id.eintrag_beschreibung);
+            profilBild = (ImageView) v.findViewById(R.id.eintrag_bild_anfragen);
+            shoplistItemTitle = (TextView) v.findViewById(R.id.eintrag_title_anfragen);
+            beschreibungsText = (TextView) v.findViewById(R.id.eintrag_beschreibung_anfragen);
+            anfragenCheckbox = (CheckBox) v.findViewById(R.id.checkBox_anfragen);
             this.shopListItemListenerDos = shopListItemListenerDos;
             v.setOnClickListener(this);
         }

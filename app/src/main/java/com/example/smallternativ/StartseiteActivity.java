@@ -29,6 +29,7 @@ import java.util.ArrayList;
 
 public class StartseiteActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     MyAdapter myAdapter;
+    AnfragenAdapter anfragenAdapter;
     ArrayList<Fragment> fragmentList = new ArrayList<>();
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -37,6 +38,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         setContentView(R.layout.startseite_containerlayout);
         StartseitenFragment startseitenFragment = new StartseitenFragment();
         startseitenFragment.setStartseiteActivity(this);
+        startseitenFragment.setSupportActionBar(getSupportActionBar());
         removeAllFragment();
         fragmentList.add(startseitenFragment);
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -52,6 +54,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
             if(menuItem.getItemId()== R.id.page_1){
                 StartseitenFragment startseitenFragment1 = new StartseitenFragment();
                 startseitenFragment1.setStartseiteActivity(this);
+                startseitenFragment1.setSupportActionBar(getSupportActionBar());
                createFragment(startseitenFragment1);
                 StartseiteActivity.setAppTitle(getSupportActionBar(), getApplicationContext(),"Smallternative");
                 return true;
@@ -65,7 +68,10 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
            else if(menuItem.getItemId()==R.id.page_3){
                 AnfragenFragment anfragenFragment = new AnfragenFragment();
                 anfragenFragment.setSupportActionBar(getSupportActionBar());
+                anfragenFragment.setStartseiteActivity(this);
+                anfragenAdapter = AnfragenAdapter.getInstance(getApplicationContext(),anfragenFragment.getShopListItemListenerDos());
                 createFragment(anfragenFragment);
+                anfragenAdapter.clearallListelements();
                 return true;
             }
           else  if(menuItem.getItemId()==R.id.page_4){

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:orientation="vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <Button
+                    android:id="@+id/buttonAnfrageAbbrechenUnbeatbeitet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/roundedbutton"
+                    android:text="Anfrage abbrechen"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textColorHighlight="#000000" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/eintrag_bild_profil_anfragen_unbearbeitet"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="10dp"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textViewProdukt_unbearbeitet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textColor="#000000"
+                        android:textSize="55px"
+                        android:text="Neopren"
+                        tools:text="Neopren" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewLadenNameAnfragenUnbearbeitet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="Laden: Nadel und Faden"
+                    tools:text="Laden: Nadel und Faden" />
+
+                <TextView
+                    android:id="@+id/textViewProduktdetailsunbearbeitet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="Produktdetails: test, test"
+                    tools:text="Produktdetails: test, test" />
+
+                <TextView
+                    android:id="@+id/textViewAnzahlUnbearbeitet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Anzahl: 5"
+                    android:textColor="#000000"
+                    android:textSize="45px"
+                    tools:text="Anzahl: 5" />
+                <TextView
+                    android:id="@+id/textViewDatumUnbearbeitet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Datum: 21.05.2020"
+                    android:textColor="#000000"
+                    android:textSize="45px"
+                    tools:text="Datum: 21.05.2020" />
+                <TextView
+                    android:id="@+id/textViewStatusUnbearbeitet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Status: unbearbeitet"
+                    android:textColor="#000000"
+                    android:textSize="45px"
+                    tools:text="Status: unbearbeitet" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+                <TextView
+
+                    android:id="@+id/textViewAntwortUnbearbeitet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="45px"
+                    android:text="Antwort:"
+                    tools:text="Antwort:" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbarThumbVertical="@color/smallternativOrange"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="70dp">
+
+                    <TextView
+
+                        android:id="@+id/textViewAntwortTextUnbearbeitet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="45px"
+                        android:text="Noch keine Antwort erhalten"
+                        tools:text="Noch keine Antwort erhalten" />
+
+                </ScrollView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.widget.LinearLayout>

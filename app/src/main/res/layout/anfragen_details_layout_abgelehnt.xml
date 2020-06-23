@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:orientation="vertical"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/eintrag_bild_profil_anfragen_abgelehnt"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginBottom="10dp"/>
+                <RelativeLayout
+                    android:id="@+id/verticalInnerAnfragenAbgelehnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/textViewProduktAbgelehnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textColor="#000000"
+                        android:textSize="55px"
+                        android:text="Sonnenhut"
+                        tools:text="Sonnenhut" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewLadenNameAnfragenAbgelehnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="Laden: Cyroline"
+                    tools:text="Laden: Cyroline" />
+
+                <TextView
+                    android:id="@+id/textViewProduktdetailsAbgelehnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="Produktdetails: test, test"
+                    tools:text="Produktdetails: test, test" />
+
+                <TextView
+                    android:id="@+id/textViewAnzahlAbgelehnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Anzahl: 5"
+                    android:textColor="#000000"
+                    android:textSize="45px"
+                    tools:text="Anzahl: 5" />
+                <TextView
+                    android:id="@+id/textViewDatumAbgelehnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Datum: 21.05.2020"
+                    android:textColor="#000000"
+                    android:textSize="45px"
+                    tools:text="Datum: 21.05.2020" />
+                <TextView
+                    android:id="@+id/textViewStatusAbgelehnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Status: abgelehnt"
+                    android:textColor="#000000"
+                    android:textSize="45px"
+                    tools:text="Status: abgelehnt" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+                <TextView
+
+                    android:id="@+id/textViewAntwortAbgelehnt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="45px"
+                    android:text="Antwort:"
+                    tools:text="Antwort:" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbarThumbVertical="@color/smallternativOrange"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="70dp">
+
+                    <TextView
+
+                        android:id="@+id/textViewAntwortTextAbgelehnt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="45px"
+                        android:text="Lohnt sich leider nicht für mich"
+                        tools:text="Lohnt sich leider nicht für mich" />
+
+                </ScrollView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.widget.LinearLayout>
