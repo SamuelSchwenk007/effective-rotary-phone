@@ -129,9 +129,10 @@ public class AnfragenAdapter extends RecyclerView.Adapter  {
             currentShopListItem = shopListItem;
             String ladenName = shopListItem.getLadenName();
             String substring = ladenName.substring(6,ladenName.length());
-            shoplistItemTitle.setText("Anfrage An: "+substring);
+            shoplistItemTitle.setText(substring);
             shoplistItemTitle.setTextSize(20);
             beschreibungsText.setText(shopListItem.getProdukt());
+            beschreibungsText.setTextSize(16);
             profilBild.setImageResource(shopListItem.getProfilbildReference());
         }
 

@@ -21,7 +21,9 @@
             android:textAllCaps="false"
             android:background="@drawable/roundedbutton"
             android:textAlignment="center"
-            android:gravity="center">
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
         </Button>
         <Button
@@ -34,7 +36,9 @@
             android:textAllCaps="false"
             android:textAlignment="center"
             android:background="@drawable/roundedbutton"
-            android:gravity="center">
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
         </Button>
     </RelativeLayout>
