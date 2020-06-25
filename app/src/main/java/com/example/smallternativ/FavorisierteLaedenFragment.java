@@ -45,8 +45,13 @@ public class FavorisierteLaedenFragment extends Fragment implements MyAdapter.Sh
         ShopListItem shopListItemThree = new ShopListItem("Cyroline","Hier finden Sie FairTrade geschneiderte Bekleidung.",
                 R.drawable.cyroline_logo_fixed,"Kleidung, Modern","Angesagt","Retro","Sale",
                 "Speziel",R.drawable.nadel_und_faden_stoffe,R.drawable.nadel_und_faden_knoepfe,R.drawable.nadel_und_faden_faeden,R.drawable.nadel_und_faden_buendchen,"Fleischhauerstraße 49.");
+
+        ShopListItem shopListItemFive = new ShopListItem("Metalworks","Von der Ritterrüstung bis hin zum eleganten Ring. Bei uns erhalten Sie handgeschmiedete Qualitätsware.",
+                R.drawable.metalworks_profil,"Custom, Handmade","Hufeisen","Ringe","Rüstungen",
+                "Schwerte & Messer",R.drawable.metalworks_hufeisen,R.drawable.metalworks_ringe,R.drawable.metalworks_ruestung,R.drawable.metalworks_schwerter,"Breite Straße 40.");
         myAdapter.insertShopListItem(shopListItemTwo);
         myAdapter.insertShopListItem(shopListItemThree);
+        myAdapter.insertShopListItem(shopListItemFive);
 
 
 

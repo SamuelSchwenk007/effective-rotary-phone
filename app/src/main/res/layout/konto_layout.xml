@@ -96,7 +96,7 @@
                     android:id="@+id/textViewEmail2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="E-Mail"
+                    android:text="MarieM@xyz.de"
                     android:textColor="#000000"
                     android:textSize="55px"
                     tools:text="MarieM@xyz.de" />

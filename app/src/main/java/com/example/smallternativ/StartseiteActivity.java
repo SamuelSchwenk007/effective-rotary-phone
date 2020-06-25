@@ -25,6 +25,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 
 public class StartseiteActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
@@ -36,6 +38,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
     LinearLayout blacklinetree;
     LinearLayout blacklinefour;
     LinearLayout blacklinefive;
+    List<ShopListItem> liste ;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -231,7 +234,24 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
     public boolean onMenuItemClick(MenuItem menuItem) {
         switch(menuItem.getItemId()){
             case R.id.zufaelligerladen:
-                //Todo
+                int position = getRandomNumberInRange(1,5);
+                LadenProfilFragment ladenProfilFragment = new LadenProfilFragment();
+                ladenProfilFragment.setSupportActionBar(getSupportActionBar());
+                ladenProfilFragment.setMyAdapter(myAdapter);
+                ladenProfilFragment.setLadenNameString(liste.get(position).title);
+                ladenProfilFragment.setLadenBeschribungString(liste.get(position).beschreibung);
+                ladenProfilFragment.setLadenPicReference(liste.get(position).profilbildReference);
+                ladenProfilFragment.setKategorieItemString(liste.get(position).kategorie);
+                ladenProfilFragment.setAdresseString(liste.get(position).adresse);
+                ladenProfilFragment.setSortimentUnoReference(liste.get(position).sortimentReferenceUno);
+                ladenProfilFragment.setSortimentDosReference(liste.get(position).sortimentReferenceDos);
+                ladenProfilFragment.setSortimentTresReference(liste.get(position).sortimentThresReference);
+                ladenProfilFragment.setSortimentQuadroReference(liste.get(position).sortimentQuadroReference);
+                ladenProfilFragment.setSortimentUnoString(liste.get(position).getSortimentUnoString());
+                ladenProfilFragment.setSortimentDosString(liste.get(position).getSortimentDosString());
+                ladenProfilFragment.setSortimentTresString(liste.get(position).getSortimentThresString());
+                ladenProfilFragment.setSortimentQuadroString(liste.get(position).getSortimentQuadroString());
+                createFragment(ladenProfilFragment);
                 return true;
             case R.id.stadtwaehlen:
                 //Todo
@@ -273,5 +293,14 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view_fav);
         int addvalue = horizontalScrollView.getWidth();
         horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()+addvalue);
+    }
+    private static int getRandomNumberInRange(int min, int max) {
+
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
     }
 }

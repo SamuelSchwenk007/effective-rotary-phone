@@ -47,7 +47,7 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
 
     @Override
     public void OnShopListItemClick(int position) {
-            if(position == 0){
+            if(anfragenAdapter.getAufgaben().get(position).getStatus() =="Status: angenommen"){
                 AnfrageDetailsFragmentAngenommen anfrageDetailsFragmentAngenommen = new AnfrageDetailsFragmentAngenommen();
                 anfrageDetailsFragmentAngenommen.setSupportActionBar(supportActionBar);
                 anfrageDetailsFragmentAngenommen.setProduktString(anfragenAdapter.getAufgaben().get(position).produkt);
@@ -60,7 +60,7 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
                 anfrageDetailsFragmentAngenommen.setProduktDetailsString(anfragenAdapter.getAufgaben().get(position).produktdetails);
                 creatFragment(anfrageDetailsFragmentAngenommen);
             }
-            else if(position == 1) {
+            else if(anfragenAdapter.getAufgaben().get(position).getStatus() =="Status: abgelehnt") {
                 AnfrageDetailsFragmentAbgelehnt anfrageDetailsFragmentAbgelehnt = new AnfrageDetailsFragmentAbgelehnt();
                 anfrageDetailsFragmentAbgelehnt.setSupportActionBar(supportActionBar);
                 anfrageDetailsFragmentAbgelehnt.setProduktString(anfragenAdapter.getAufgaben().get(position).produkt);
@@ -90,15 +90,15 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
     public void loadAnfragentoList(Context context, AnfragenAdapter AnfragenAdapter){
         ShopListItem shopListItemTwo = new ShopListItem(R.drawable.asiatica_logo_fixed,"Papaya",
                 "Laden: Asiatica","Anzahl: 3","Datum: 12.05.2020","Status: angenommen",
-                "Leckere Papayas können wir dier gerne zu Verfügung stellen","Papaya 300 g");
+                "Leckere Papayas können wir dir gerne zu Verfügung stellen","Produkt: Papaya 300 g");
 
         ShopListItem shopListItemThree = new ShopListItem(R.drawable.cyroline_logo_fixed,"Neopren",
                 "Laden: Cyroline","Anzahl: 1","Datum: 18.05.2020","Status: abgelehnt",
-                "Dieses Geschäft lohnt sich leider nicht für mich","Neopren 40 mal 40");
+                "Dieses Geschäft lohnt sich leider nicht für mich","Produkt: Neopren 40 mal 40");
 
         ShopListItem shopListItemFour = new ShopListItem(R.drawable.nadel_und_faden_logo_fixed,"Stopfwolle",
                 "Laden: Nadel und Faden","Anzahl: 5","Datum: 20.06.2020","Status: unbearbeitet",
-                "Noch keine Antwort erhalten","Stopfwolle 2 m");
+                "Noch keine Antwort erhalten","Produkt: Stopfwolle 2 m");
 
         AnfragenAdapter.insertShopListItem(shopListItemTwo);
         AnfragenAdapter.insertShopListItem(shopListItemThree);

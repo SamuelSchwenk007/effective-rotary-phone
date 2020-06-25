@@ -16,6 +16,8 @@ import com.example.smallternativ.R;
 import com.example.smallternativ.ShopListItem;
 import com.example.smallternativ.StartseiteActivity;
 
+import java.util.ArrayList;
+
 import javax.crypto.KeyAgreement;
 
 import androidx.annotation.NonNull;
@@ -45,6 +47,12 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         kategorien = view.findViewById(R.id.kategorie);
         myAdapter = MyAdapter.getInstance(getContext(),shopListItemListener);
         loadShopsToList(getActivity().getApplicationContext(), myAdapter);
+        if(startseiteActivity.liste == null) {
+            startseiteActivity.liste = new ArrayList<>();
+            for(int i= 0;i<myAdapter.getAufgaben().size();i ++ ){
+                startseiteActivity.liste.add(myAdapter.getAufgaben().get(i));
+            }
+        }
         kategorien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,10 +113,19 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
                 R.drawable.nadel_und_faden_logo_fixed,"Basteln, Handmade","Stoffe","Knöpfe","Fäden",
                 "Füllungen",R.drawable.nadel_und_faden_stoffe,R.drawable.nadel_und_faden_knoepfe,R.drawable.nadel_und_faden_faeden,R.drawable.nadel_und_faden_buendchen,"Hüxstraße 59.");
 
+        ShopListItem shopListItemFive = new ShopListItem("Metalworks","Von der Ritterrüstung bis hin zum eleganten Ring. Bei uns erhalten Sie handgeschmiedete Qualitätsware.",
+                R.drawable.metalworks_profil,"Custom, Handmade","Hufeisen","Ringe","Rüstungen",
+                "Schwerte & Messer",R.drawable.metalworks_hufeisen,R.drawable.metalworks_ringe,R.drawable.metalworks_ruestung,R.drawable.metalworks_schwerter,"Breite Straße 40.");
+
+        ShopListItem shopListItemSix = new ShopListItem("Asia-Ambiente","Richten Sie ihr Haus in einem exotischen asiatischen Stil ein. Bei unseren Qualitätsmöbeln finden Sie bestimmt etwas nach ihrem Geschmack.",
+                R.drawable.asia_ambiente_profil,"Deko, Extravagant","Deko","Gartenmöbel","Kotatsus",
+                "Schränke",R.drawable.asia_ambiente_deko,R.drawable.asia_ambiente_gartenmoebel,R.drawable.asia_ambiente_kotatsus,R.drawable.asia_ambiente_schraenke,"Breite Straße 40.");
         myAdapter.insertShopListItem(shopListItemOne);
         myAdapter.insertShopListItem(shopListItemTwo);
         myAdapter.insertShopListItem(shopListItemThree);
         myAdapter.insertShopListItem(shopListItemFour);
+        myAdapter.insertShopListItem(shopListItemFive);
+        myAdapter.insertShopListItem(shopListItemSix);
 
 
 

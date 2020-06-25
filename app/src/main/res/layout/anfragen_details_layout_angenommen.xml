@@ -46,7 +46,7 @@
                 android:id="@+id/ladenNameContainerAnfragenAngenommen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:orientation="horizontal">
                 <ImageView
                     android:id="@+id/eintrag_bild_profil_anfragen_angenommen"
@@ -64,7 +64,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:textColor="#000000"
-                        android:textSize="55px"
+                        android:textSize="24dp"
                         android:text="Papaya"
                         tools:text="Papaya" />
                 </RelativeLayout>
@@ -84,14 +84,16 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
                     android:text="Laden: Asiatica"
-                    tools:text="Laden: Asiatica" />
+                    tools:text="Laden: Asiatica"
+                    android:textSize="20dp"/>
 
                 <TextView
                     android:id="@+id/textViewProduktdetailsAngenommen"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
-                    tools:text="Produktdetails: test, test" />
+                    tools:text="Produktdetails: test, test"
+                    android:textSize="20dp"/>
 
                 <TextView
                     android:id="@+id/textViewAnzahlAngenommen"
@@ -100,7 +102,7 @@
                     android:layout_marginTop="10dp"
                     android:text="Anzahl: 5"
                     android:textColor="#000000"
-                    android:textSize="45px"
+                    android:textSize="20dp"
                     tools:text="Anzahl: 5" />
                 <TextView
                     android:id="@+id/textViewDatumAngenommen"
@@ -109,7 +111,7 @@
                     android:layout_marginTop="10dp"
                     android:text="Datum: 21.05.2020"
                     android:textColor="#000000"
-                    android:textSize="45px"
+                    android:textSize="20dp"
                     tools:text="Datum: 21.05.2020" />
                 <TextView
                     android:id="@+id/textViewStatusAngenommen"
@@ -118,7 +120,7 @@
                     android:layout_marginTop="10dp"
                     android:text="Status: angenommen"
                     android:textColor="#000000"
-                    android:textSize="45px"
+                    android:textSize="20dp"
                     tools:text="Status: angenommen" />
             </LinearLayout>
             <LinearLayout
@@ -132,7 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:textSize="45px"
+                android:textSize="20dp"
                 android:text="Antwort:"
                 tools:text="Antwort:" />
 
@@ -149,7 +151,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
-                    android:textSize="45px"
+                    android:textSize="20dp"
                     android:text="Leckere Papayas können wir dier gerne zu Verfügung stellen"
                     tools:text="Leckere Papayas können wir dier gerne zu Verfügung stellen" />
 
