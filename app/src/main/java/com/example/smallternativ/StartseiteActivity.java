@@ -12,7 +12,6 @@ import android.widget.HorizontalScrollView;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
@@ -23,7 +22,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import java.util.ArrayList;
 
 
@@ -43,6 +41,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         fragmentList.add(startseitenFragment);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
         fragmentTransaction.add(R.id.fragment_container,startseitenFragment);
         fragmentTransaction.commit();
         setAppTitle(getSupportActionBar(), this,"Smalternative");
@@ -98,6 +97,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         fragmentList.add(fragment);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
         fragmentTransaction.add(R.id.fragment_container,fragment);
         fragmentTransaction.commit();
     }

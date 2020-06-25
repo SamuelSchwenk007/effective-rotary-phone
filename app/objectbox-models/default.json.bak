@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:6357364269998291140",
-      "lastPropertyId": "31:374314119969292962",
+      "lastPropertyId": "32:3762883708310725489",
       "name": "ShopListItem",
       "properties": [
         {
@@ -112,6 +112,11 @@
         {
           "id": "31:374314119969292962",
           "name": "antwort",
+          "type": 9
+        },
+        {
+          "id": "32:3762883708310725489",
+          "name": "produktdetails",
           "type": 9
         }
       ],
