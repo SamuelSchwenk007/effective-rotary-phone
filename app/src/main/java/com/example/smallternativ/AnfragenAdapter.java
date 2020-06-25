@@ -134,6 +134,16 @@ public class AnfragenAdapter extends RecyclerView.Adapter  {
             beschreibungsText.setText(shopListItem.getProdukt());
             beschreibungsText.setTextSize(16);
             profilBild.setImageResource(shopListItem.getProfilbildReference());
+            if(shopListItem.getStatus() =="Status: angenommen"){
+                anfragenCheckbox.setChecked(true);
+            }
+            else if (shopListItem.getStatus() =="Status: abgelehnt"){
+                anfragenCheckbox.setChecked(false);
+            }
+            else {
+                anfragenCheckbox.setVisibility(itemView.INVISIBLE);
+                anfragenCheckbox.setChecked(false);
+            }
         }
 
         @Override

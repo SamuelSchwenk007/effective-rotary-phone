@@ -4,11 +4,14 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,6 +31,11 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
     MyAdapter myAdapter;
     AnfragenAdapter anfragenAdapter;
     ArrayList<Fragment> fragmentList = new ArrayList<>();
+    LinearLayout blacklineone;
+    LinearLayout blacklinetwo;
+    LinearLayout blacklinetree;
+    LinearLayout blacklinefour;
+    LinearLayout blacklinefive;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,6 +58,11 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         bottom_navigation.setOnNavigationItemSelectedListener(menuItem -> {
             Log.d("test",""+menuItem.getItemId());
             if(menuItem.getItemId()== R.id.page_1){
+                blacklineone.setVisibility(View.VISIBLE);
+                blacklinetwo.setVisibility(View.INVISIBLE);
+                blacklinetree.setVisibility(View.INVISIBLE);
+                blacklinefour.setVisibility(View.INVISIBLE);
+                blacklinefive.setVisibility(View.INVISIBLE);
                 StartseitenFragment startseitenFragment1 = new StartseitenFragment();
                 startseitenFragment1.setStartseiteActivity(this);
                 startseitenFragment1.setSupportActionBar(getSupportActionBar());
@@ -58,12 +71,22 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 return true;
             }
             else if(menuItem.getItemId()==R.id.page_2){
+                blacklineone.setVisibility(View.INVISIBLE);
+                blacklinetwo.setVisibility(View.VISIBLE);
+                blacklinetree.setVisibility(View.INVISIBLE);
+                blacklinefour.setVisibility(View.INVISIBLE);
+                blacklinefive.setVisibility(View.INVISIBLE);
                FavorisierteLaedenFragment favorisierteLaedenFragment = new FavorisierteLaedenFragment();
                 favorisierteLaedenFragment.setSupportActionBar(getSupportActionBar());
                createFragment(favorisierteLaedenFragment);
                 return true;
             }
            else if(menuItem.getItemId()==R.id.page_3){
+                blacklineone.setVisibility(View.INVISIBLE);
+                blacklinetwo.setVisibility(View.INVISIBLE);
+                blacklinetree.setVisibility(View.VISIBLE);
+                blacklinefour.setVisibility(View.INVISIBLE);
+                blacklinefive.setVisibility(View.INVISIBLE);
                 AnfragenFragment anfragenFragment = new AnfragenFragment();
                 anfragenFragment.setSupportActionBar(getSupportActionBar());
                 anfragenFragment.setStartseiteActivity(this);
@@ -73,19 +96,64 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 return true;
             }
           else  if(menuItem.getItemId()==R.id.page_4){
+                blacklineone.setVisibility(View.INVISIBLE);
+                blacklinetwo.setVisibility(View.INVISIBLE);
+                blacklinetree.setVisibility(View.INVISIBLE);
+                blacklinefour.setVisibility(View.VISIBLE);
+                blacklinefive.setVisibility(View.INVISIBLE);
                 MeinKontoFragment meinkontoFragment = new MeinKontoFragment();
                 meinkontoFragment.setSupportActionBar(getSupportActionBar());
                createFragment(meinkontoFragment);
                 return true;
             }
           else  if(menuItem.getItemId()==R.id.page_5){
+                blacklineone.setVisibility(View.INVISIBLE);
+                blacklinetwo.setVisibility(View.INVISIBLE);
+                blacklinetree.setVisibility(View.INVISIBLE);
+                blacklinefour.setVisibility(View.INVISIBLE);
+                blacklinefive.setVisibility(View.VISIBLE);
               View view = new View(getApplicationContext());
               showMenuPopup(view);
                 return true;
             }
             else return true;
         });
+         blacklineone = findViewById(R.id.blacklineone);
+        blacklinetwo = findViewById(R.id.blacklinedos);
+        blacklinetree = findViewById(R.id.blacklinetres);
+        blacklinefour = findViewById(R.id.blacklinequadro);
+        blacklinefive = findViewById(R.id.blacklinesinco);
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int width = displayMetrics.widthPixels;
+        width = width -200;
+        int scrollayoutsize = width/5;
+        System.out.println("Hier der Wert"+scrollayoutsize);
+
+        ViewGroup.LayoutParams layoutParams = blacklineone.getLayoutParams();
+       layoutParams.width = scrollayoutsize;
+        blacklineone.setLayoutParams(layoutParams);
+
+        ViewGroup.LayoutParams layoutParamsdos = blacklinetwo.getLayoutParams();
+        layoutParamsdos.width = scrollayoutsize;
+        blacklinetwo.setLayoutParams(layoutParamsdos);
+
+        ViewGroup.LayoutParams layoutParamstres = blacklinetree.getLayoutParams();
+        layoutParamstres.width = scrollayoutsize;
+        blacklinetree.setLayoutParams(layoutParamstres);
+
+        ViewGroup.LayoutParams layoutParamsquadro = blacklinefour.getLayoutParams();
+        layoutParamsquadro.width = scrollayoutsize;
+        blacklinefour.setLayoutParams(layoutParamsquadro);
+
+        ViewGroup.LayoutParams layoutParamssinco = blacklinefive.getLayoutParams();
+        layoutParamssinco.width = scrollayoutsize;
+        blacklinefive.setLayoutParams(layoutParamssinco);
+        blacklinetwo.setVisibility(View.INVISIBLE);
+        blacklinetree.setVisibility(View.INVISIBLE);
+        blacklinefour.setVisibility(View.INVISIBLE);
+        blacklinefive.setVisibility(View.INVISIBLE);
     }
     public  void removeListElements(Context context, MyAdapter myAdapter){
             myAdapter.clearallListelements();
@@ -182,24 +250,28 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         StartseitenFragment startseitenFragment = (StartseitenFragment) fragmentList.get(0);
         View view = startseitenFragment.getStartseitenFragmentView();
         HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view);
-        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()-view.getWidth());
+        int subvalue = horizontalScrollView.getWidth();
+        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()-subvalue);
     }
     public void swipeRight(View v){
         StartseitenFragment startseitenFragment = (StartseitenFragment) fragmentList.get(0);
         View view = startseitenFragment.getStartseitenFragmentView();
         HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view);
-        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()+view.getWidth());
+        int addvalue = horizontalScrollView.getWidth();
+        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()+addvalue);
     }
     public void swipeLeftFav(View v){
         FavorisierteLaedenFragment favorisierteLaedenFragment = (FavorisierteLaedenFragment) fragmentList.get(0);
         View view = favorisierteLaedenFragment.getFavFragmentView();
         HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view_fav);
-        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()-view.getWidth());
+        int subvalue = horizontalScrollView.getWidth();
+        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()-subvalue);
     }
     public void swipeRightFav(View v){
         FavorisierteLaedenFragment favorisierteLaedenFragment = (FavorisierteLaedenFragment) fragmentList.get(0);
         View view = favorisierteLaedenFragment.getFavFragmentView();
         HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view_fav);
-        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()+view.getWidth());
+        int addvalue = horizontalScrollView.getWidth();
+        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()+addvalue);
     }
 }

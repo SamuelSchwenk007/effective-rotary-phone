@@ -23,8 +23,8 @@
             android:layout_height="match_parent"
             android:layout_weight="0.1"
             android:orientation="vertical"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp">
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
             <LinearLayout
                 android:id="@+id/hauptstandortContainer"
@@ -37,15 +37,16 @@
                     android:id="@+id/textViewHauptstandort"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="Hauptstandort:"
                     android:textColor="#000000"
-                    tools:text="Hauptstandort:" />
+                    tools:text="Hauptstandort:"
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@+id/textViewHauptstandort2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="Lübeck"
                     android:textColor="#000000"
                     android:textSize="55px"
                     tools:text="Lübeck" />
@@ -87,15 +88,16 @@
                     android:id="@+id/textViewSprache"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="Sprache:"
                     android:textColor="#000000"
-                    tools:text="Sprache:" />
+                    tools:text="Sprache:"
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@+id/textViewSprache2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="deutsch"
                     android:textColor="#000000"
                     android:textSize="55px"
                     tools:text="deutsch" />
@@ -136,15 +138,16 @@
                     android:id="@+id/textViewBarrierefrei"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="Immer barrierefrei suchen:"
                     android:textColor="#000000"
-                    tools:text="Immer barrierefrei suchen:" />
+                    tools:text="Immer barrierefrei suchen:"
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@+id/textViewBarrierefrei2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="Ja"
                     android:textColor="#000000"
                     android:textSize="55px"
                     tools:text="Ja" />
@@ -186,15 +189,16 @@
                     android:id="@+id/textViewLadenprofilErstellen"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="Besitzt du einen Laden?"
                     android:textColor="#000000"
-                    tools:text="Besitzt du einen Laden?" />
+                    tools:text="Besitzt du einen Laden?"
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@+id/textViewLadenprofilErstellen2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/e_mail"
+                    android:text="Nein"
                     android:textColor="#000000"
                     android:textSize="55px"
                     tools:text="Nein" />

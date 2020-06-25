@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class AnfrageDetailsFragmentUnbeantwortet extends Fragment {
     private String produktString,ladenNameString, anzahlString, datumString, statusString,antwortString;
     private TextView produkt,ladenName,anzahl,datum,status,antwort,produktdetails;
     private ImageView profilPic;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -22,8 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.1"
             android:orientation="vertical"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp">
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
             <LinearLayout
                 android:id="@+id/benutzerNameContainer"
@@ -38,7 +38,8 @@
                     android:layout_height="wrap_content"
                     android:text="Benutzername"
                     android:textColor="#000000"
-                    tools:text="Benutzername:" />
+                    tools:text="Benutzername:"
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@+id/textViewBenutzername2"
@@ -88,7 +89,8 @@
                     android:layout_height="wrap_content"
                     android:text="E-Mail-Adresse:"
                     android:textColor="#000000"
-                    tools:text="E-Mail-Adresse:" />
+                    tools:text="E-Mail-Adresse:"
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@+id/textViewEmail2"
@@ -137,7 +139,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
                     android:text="Passwort"
-                    tools:text="Passwort:" />
+                    tools:text="Passwort:"
+                    android:textSize="16dp"/>
 
                 <TextView
                     android:id="@+id/textViewBarrierefrei2"
@@ -187,7 +190,8 @@
                     android:layout_height="wrap_content"
                     android:text="Konto dauerhaft entfernen:"
                     android:textColor="#000000"
-                    tools:text="Konto dauerhaft entfernen:" />
+                    tools:text="Konto dauerhaft entfernen:"
+                    android:textSize="16dp"/>
 
                 <Button
                     android:id="@+id/kontoLoeschen"

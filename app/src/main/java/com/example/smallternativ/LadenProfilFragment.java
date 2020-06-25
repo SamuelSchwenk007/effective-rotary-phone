@@ -45,7 +45,6 @@ public class LadenProfilFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.ladenprofil_layout, container, false);
         StartseiteActivity.setAppTitle(supportActionBar, getContext(),"Ladenprofil");
         anfrageSenden = view.findViewById(R.id.buttonAnfrageSenden);
         favoritSetzen = view.findViewById(R.id.addFavourite);
