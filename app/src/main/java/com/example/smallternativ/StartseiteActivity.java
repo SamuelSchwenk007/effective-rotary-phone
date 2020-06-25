@@ -20,7 +20,6 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 
@@ -97,7 +96,14 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         fragmentList.add(fragment);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
+        if(fragment.getClass()==MeinKontoFragment.class || fragment.getClass()==StartseitenFragment.class ||fragment.getClass()==AnfragenFragment.class ||fragment.getClass()==FavorisierteLaedenFragment.class ){
+        fragmentTransaction.setCustomAnimations(android.R.anim.slide_in_left,
+                android.R.anim.slide_out_right);
+
+        }
+        else {
+            fragmentTransaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
+        }
         fragmentTransaction.add(R.id.fragment_container,fragment);
         fragmentTransaction.commit();
     }
