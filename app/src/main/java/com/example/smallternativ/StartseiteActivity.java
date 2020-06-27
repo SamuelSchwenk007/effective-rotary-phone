@@ -57,6 +57,8 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         setAppTitle(getSupportActionBar(), this,"Smallternative");
         myAdapter = MyAdapter.getInstance(getApplicationContext(),startseitenFragment.getShopListItemListener());
 
+        // test für Suchleiste
+        onSearchRequested();
         BottomNavigationView bottom_navigation =findViewById(R.id.bottom_navigation);
         bottom_navigation.setOnNavigationItemSelectedListener(menuItem -> {
             Log.d("test",""+menuItem.getItemId());
@@ -115,7 +117,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 blacklinetree.setVisibility(View.INVISIBLE);
                 blacklinefour.setVisibility(View.INVISIBLE);
                 blacklinefive.setVisibility(View.VISIBLE);
-              View view = new View(getApplicationContext());
+              View view = new View(this);
               showMenuPopup(view);
                 return true;
             }
@@ -224,12 +226,17 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         ab.setCustomView(tv);
     }
     public void showMenuPopup(View v){
-        PopupMenu popupMenu = new PopupMenu(this,v);
+        PopupMenu popupMenu = new PopupMenu(this,findViewById(R.id.page_5));
         popupMenu.setOnMenuItemClickListener(this);
         popupMenu.inflate(R.menu.menue_popup);
         popupMenu.show();
     }
-
+    public void showMenuePopup(View v){
+        PopupMenu popupMenu = new PopupMenu(this,v);
+        popupMenu.setOnMenuItemClickListener(this);
+        popupMenu.inflate(R.menu.kategorie_popup);
+        popupMenu.show();
+    }
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
         switch(menuItem.getItemId()){
