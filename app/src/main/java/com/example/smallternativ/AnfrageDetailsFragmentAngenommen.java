@@ -24,6 +24,7 @@ public class AnfrageDetailsFragmentAngenommen extends Fragment {
     private ImageView profilPic;
     private Button anfrageAbbrechen;
     private  StartseiteActivity startseiteActivity;
+    private int position;
 
     @Nullable
     @Override
@@ -57,6 +58,8 @@ public class AnfrageDetailsFragmentAngenommen extends Fragment {
                 startseiteActivity.getBlacklinefour().setVisibility(View.INVISIBLE);
                 startseiteActivity.getBlacklinefive().setVisibility(View.INVISIBLE);
                 AnfragenFragment anfragenFragment = new AnfragenFragment();
+                anfragenFragment.setDeleat(true);
+                anfragenFragment.setPosition(position);
                 anfragenFragment.setSupportActionBar(getSupportActionBar());
                 anfragenFragment.setStartseiteActivity(startseiteActivity);
                 AnfragenAdapter anfragenAdapter = AnfragenAdapter.getInstance(getContext(),anfragenFragment.getShopListItemListenerDos());
@@ -143,5 +146,13 @@ public class AnfrageDetailsFragmentAngenommen extends Fragment {
 
     public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
         this.startseiteActivity = startseiteActivity;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 }

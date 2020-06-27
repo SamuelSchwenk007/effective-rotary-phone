@@ -20,8 +20,4 @@
         android:id="@+id/max_Entfernung"
         android:enabled="true"
         android:title="max Entfernung"/>
-    <item
-        android:id="@+id/bestaetigen"
-        android:enabled="true"
-        android:title="Bestätigen"/>
 </menu>

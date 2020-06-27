@@ -22,6 +22,9 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
     RecyclerView recyclerView;
     AnfragenAdapter anfragenAdapter;
     StartseiteActivity startseiteActivity;
+    boolean deleat = false;
+    int position;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,6 +34,11 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
         anfragenAdapter = anfragenAdapter.getInstance(getContext(),shopListItemListenerDos);
         StartseiteActivity.setAppTitle(supportActionBar, getContext(),"Anfragen");
         loadAnfragentoList(getContext(), anfragenAdapter);
+        if(deleat){
+            deleateSomeAnfragen(position);
+        }
+        deleat= false;
+
         return view;
     }
     public void setTodoListenerDosToAdapter(AnfragenAdapter.shopListItemListenerDos shopListItemListener){
@@ -59,6 +67,7 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
                 anfrageDetailsFragmentAngenommen.setProfilPicReference(anfragenAdapter.getAufgaben().get(position).profilbildReference);
                 anfrageDetailsFragmentAngenommen.setProduktDetailsString(anfragenAdapter.getAufgaben().get(position).produktdetails);
                 anfrageDetailsFragmentAngenommen.setStartseiteActivity(startseiteActivity);
+                anfrageDetailsFragmentAngenommen.setPosition(position);
                 creatFragment(anfrageDetailsFragmentAngenommen);
             }
             else if(anfragenAdapter.getAufgaben().get(position).getStatus() =="Status: abgelehnt") {
@@ -124,6 +133,11 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
         fragmentTransaction.add(R.id.fragment_container,fragment);
         fragmentTransaction.commit();
     }
+    public void deleateSomeAnfragen(int position){
+        AnfragenAdapter anfragenAdapter = AnfragenAdapter.getInstance(getContext(),getShopListItemListenerDos());
+        anfragenAdapter.getAufgaben().remove(position);
+        anfragenAdapter.notifyDataSetChanged();
+    }
     public StartseiteActivity getStartseiteActivity() {
         return startseiteActivity;
     }
@@ -131,5 +145,21 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
     public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
         this.startseiteActivity = startseiteActivity;
     }
+    public boolean isDeleat() {
+        return deleat;
+    }
+
+    public void setDeleat(boolean deleat) {
+        this.deleat = deleat;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
 
 }

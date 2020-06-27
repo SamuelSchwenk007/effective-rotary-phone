@@ -141,45 +141,44 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         recyclerView.setAdapter(myAdapter);
     }
     public void deleatSomeShops(String kategorie){
+        myAdapter = MyAdapter.getInstance(getContext(),getShopListItemListener());
         ShopListItem poszero = myAdapter.getAufgaben().get(0);
         ShopListItem posone = myAdapter.getAufgaben().get(1);
         ShopListItem postwo = myAdapter.getAufgaben().get(2);
         ShopListItem postree = myAdapter.getAufgaben().get(3);
         ShopListItem posfour = myAdapter.getAufgaben().get(4);
         ShopListItem posfive = myAdapter.getAufgaben().get(5);
+
         if(kategorie == "Lebensmittel") {
-            myAdapter = MyAdapter.getInstance(getContext(),getShopListItemListener());
             myAdapter.getAufgaben().remove(postwo);
             myAdapter.getAufgaben().remove(postree);
             myAdapter.getAufgaben().remove(posfour);
             myAdapter.getAufgaben().remove(posfive);
-            myAdapter.notifyDataSetChanged();
         }
         else if (kategorie == "Kleidung"){
-            myAdapter = MyAdapter.getInstance(getContext(),getShopListItemListener());
             myAdapter.getAufgaben().remove(poszero);
             myAdapter.getAufgaben().remove(posone);
             myAdapter.getAufgaben().remove(postree);
             myAdapter.getAufgaben().remove(posfour);
             myAdapter.getAufgaben().remove(posfive);
-            myAdapter.notifyDataSetChanged();
 
         }
         else if (kategorie == "Dekoration"){
-            myAdapter = MyAdapter.getInstance(getContext(),getShopListItemListener());
             myAdapter.getAufgaben().remove(poszero);
             myAdapter.getAufgaben().remove(postwo);
             myAdapter.getAufgaben().remove(postree);
             myAdapter.getAufgaben().remove(posfour);
-            myAdapter.notifyDataSetChanged();
 
         }
-        else if (kategorie == "Nur Barrierefrei"){
-
+        else if (kategorie == "Barrierefrei"){
+            myAdapter.getAufgaben().remove(poszero);
+            myAdapter.getAufgaben().remove(posone);
         }
-        else if (kategorie == "Bestaetigen"){
-
+        else if (kategorie == "MaxEntfernung"){
+            myAdapter.getAufgaben().remove(posone);
+            myAdapter.getAufgaben().remove(posfour);
         }
+        myAdapter.notifyDataSetChanged();
     }
     public void showMenuPopup(View v){
         PopupMenu popupMenu = new PopupMenu(getContext(),v);
@@ -201,13 +200,10 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
                 createStartseiteFragmentWithDeleats("Dekoration");
                 return true;
             case R.id.nur_barrierefrei:
-                //Todo
+                createStartseiteFragmentWithDeleats("Barrierefrei");
                 return true;
             case R.id.max_Entfernung:
-                //Todo
-                return true;
-            case R.id.bestaetigen:
-                //Todo
+                createStartseiteFragmentWithDeleats("MaxEntfernung");
                 return true;
             default:
                 return false;

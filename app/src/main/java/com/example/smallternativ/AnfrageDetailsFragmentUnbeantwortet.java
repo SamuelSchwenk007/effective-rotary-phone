@@ -57,6 +57,8 @@ public class AnfrageDetailsFragmentUnbeantwortet extends Fragment {
                 startseiteActivity.getBlacklinefour().setVisibility(View.INVISIBLE);
                 startseiteActivity.getBlacklinefive().setVisibility(View.INVISIBLE);
                 AnfragenFragment anfragenFragment = new AnfragenFragment();
+                anfragenFragment.setDeleat(true);
+                anfragenFragment.setPosition(adapterPosition);
                 anfragenFragment.setSupportActionBar(getSupportActionBar());
                 anfragenFragment.setStartseiteActivity(startseiteActivity);
                 AnfragenAdapter anfragenAdapter = AnfragenAdapter.getInstance(getContext(),anfragenFragment.getShopListItemListenerDos());
