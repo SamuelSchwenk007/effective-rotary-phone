@@ -59,8 +59,20 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
                 startseiteActivity.liste.add(myAdapter.getAufgaben().get(i));
             }
         }
+        kategorien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showKategoriePopup(view);
+            }
+        });
 
         return view;
+    }
+    public void showKategoriePopup(View v){
+        PopupMenu popupMenu = new PopupMenu(getContext(),v);
+        popupMenu.setOnMenuItemClickListener(this);
+        popupMenu.inflate(R.menu.kategorie_popup);
+        popupMenu.show();
     }
     public void setTodoListenerToAdapter(MyAdapter.ShopListItemListener shopListItemListener){
         MyAdapter adapter = MyAdapter.getInstance(getContext(), shopListItemListener);
