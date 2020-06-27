@@ -37,7 +37,7 @@
                     android:textAlignment="center"
                     android:background="@drawable/roundedbutton"
                     android:gravity="center"
-                    android:onClick="showMenuePopup">
+                    android:onClick="showKategoriePopup">
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
 
