@@ -34,7 +34,8 @@
                     android:textAllCaps="false"
                     android:textAlignment="center"
                     android:background="@drawable/roundedbutton"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:onClick="showMenuePopup">
 
                 </Button>
         </RelativeLayout>

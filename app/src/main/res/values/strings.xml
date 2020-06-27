@@ -25,4 +25,5 @@
     <string name="anf">Anfragen</string>
     <string name="konto">Mein Konto</string>
     <string name="menu">Menü</string>
+    <string name="search_hint">Suche...</string>
 </resources>

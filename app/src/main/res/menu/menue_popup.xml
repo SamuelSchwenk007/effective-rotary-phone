@@ -3,7 +3,9 @@
     <item
         android:id="@+id/zufaelligerladen"
         android:enabled="true"
-        android:title="Zufälliger Laden" />
+        android:title="Zufälliger Laden"
+
+/>
     <item
         android:id="@+id/stadtwaehlen"
         android:enabled="true"

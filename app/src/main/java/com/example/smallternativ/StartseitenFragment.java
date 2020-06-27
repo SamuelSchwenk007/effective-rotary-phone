@@ -45,13 +45,7 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         kategorien = view.findViewById(R.id.kategorie);
         myAdapter = MyAdapter.getInstance(getContext(),shopListItemListener);
         loadShopsToList(getActivity().getApplicationContext(), myAdapter);
-        kategorien.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                View newview = new View(getContext());
-                showMenuPopup(newview);
-            }
-        });
+
         return view;
     }
     public void setTodoListenerToAdapter(MyAdapter.ShopListItemListener shopListItemListener){
@@ -117,12 +111,7 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(myAdapter);
     }
-    public void showMenuPopup(View v){
-        PopupMenu popupMenu = new PopupMenu(getContext(),v);
-        popupMenu.setOnMenuItemClickListener(this);
-        popupMenu.inflate(R.menu.kategorie_popup);
-        popupMenu.show();
-    }
+
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
         switch(menuItem.getItemId()){
