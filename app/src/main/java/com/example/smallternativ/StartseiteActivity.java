@@ -231,6 +231,12 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         popupMenu.inflate(R.menu.menue_popup);
         popupMenu.show();
     }
+    public void showMenuePopup(View v){
+        PopupMenu popupMenu = new PopupMenu(this,v);
+        popupMenu.setOnMenuItemClickListener(this);
+        popupMenu.inflate(R.menu.kategorie_popup);
+        popupMenu.show();
+    }
     public void showKategoriePopup(View v){
         PopupMenu popupMenu = new PopupMenu(this,v);
         popupMenu.setOnMenuItemClickListener(this);
