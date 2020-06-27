@@ -54,7 +54,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         fragmentTransaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
         fragmentTransaction.add(R.id.fragment_container,startseitenFragment);
         fragmentTransaction.commit();
-        setAppTitle(getSupportActionBar(), this,"Smalternative");
+        setAppTitle(getSupportActionBar(), this,"Smallternative");
         myAdapter = MyAdapter.getInstance(getApplicationContext(),startseitenFragment.getShopListItemListener());
 
         BottomNavigationView bottom_navigation =findViewById(R.id.bottom_navigation);
@@ -302,5 +302,45 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
 
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
+    }
+
+    public LinearLayout getBlacklineone() {
+        return blacklineone;
+    }
+
+    public void setBlacklineone(LinearLayout blacklineone) {
+        this.blacklineone = blacklineone;
+    }
+
+    public LinearLayout getBlacklinetwo() {
+        return blacklinetwo;
+    }
+
+    public void setBlacklinetwo(LinearLayout blacklinetwo) {
+        this.blacklinetwo = blacklinetwo;
+    }
+
+    public LinearLayout getBlacklinetree() {
+        return blacklinetree;
+    }
+
+    public void setBlacklinetree(LinearLayout blacklinetree) {
+        this.blacklinetree = blacklinetree;
+    }
+
+    public LinearLayout getBlacklinefour() {
+        return blacklinefour;
+    }
+
+    public void setBlacklinefour(LinearLayout blacklinefour) {
+        this.blacklinefour = blacklinefour;
+    }
+
+    public LinearLayout getBlacklinefive() {
+        return blacklinefive;
+    }
+
+    public void setBlacklinefive(LinearLayout blacklinefive) {
+        this.blacklinefive = blacklinefive;
     }
 }

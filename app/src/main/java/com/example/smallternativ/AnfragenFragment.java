@@ -58,6 +58,7 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
                 anfrageDetailsFragmentAngenommen.setAntwortString(anfragenAdapter.getAufgaben().get(position).antwort);
                 anfrageDetailsFragmentAngenommen.setProfilPicReference(anfragenAdapter.getAufgaben().get(position).profilbildReference);
                 anfrageDetailsFragmentAngenommen.setProduktDetailsString(anfragenAdapter.getAufgaben().get(position).produktdetails);
+                anfrageDetailsFragmentAngenommen.setStartseiteActivity(startseiteActivity);
                 creatFragment(anfrageDetailsFragmentAngenommen);
             }
             else if(anfragenAdapter.getAufgaben().get(position).getStatus() =="Status: abgelehnt") {
@@ -84,6 +85,8 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
                 anfrageDetailsFragmentUnbeantwortet.setAntwortString(anfragenAdapter.getAufgaben().get(position).antwort);
                 anfrageDetailsFragmentUnbeantwortet.setProfilPicReference(anfragenAdapter.getAufgaben().get(position).profilbildReference);
                 anfrageDetailsFragmentUnbeantwortet.setProduktDetailsString(anfragenAdapter.getAufgaben().get(position).produktdetails);
+                anfrageDetailsFragmentUnbeantwortet.setStartseiteActivity(startseiteActivity);
+                anfrageDetailsFragmentUnbeantwortet.setAdapterPosition(position);
                 creatFragment(anfrageDetailsFragmentUnbeantwortet);
             }
     }

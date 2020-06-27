@@ -77,7 +77,10 @@
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
             android:fillViewport="true"
-            android:scrollbars="horizontal">
+            android:scrollbars="horizontal"
+            android:scrollbarThumbHorizontal="@color/smallternativOrange"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

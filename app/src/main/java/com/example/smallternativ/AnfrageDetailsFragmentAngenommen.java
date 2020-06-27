@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,6 +22,8 @@ public class AnfrageDetailsFragmentAngenommen extends Fragment {
     private String produktString,ladenNameString, anzahlString, datumString, statusString,antwortString;
     private TextView produkt,ladenName,anzahl,datum,status,antwort,produktdetails;
     private ImageView profilPic;
+    private Button anfrageAbbrechen;
+    private  StartseiteActivity startseiteActivity;
 
     @Nullable
     @Override
@@ -44,6 +47,23 @@ public class AnfrageDetailsFragmentAngenommen extends Fragment {
         profilPic = view.findViewById(R.id.eintrag_bild_profil_anfragen_angenommen);
         profilPic.setImageResource(profilPicReference);
         produktdetails.setText(produktDetailsString);
+        anfrageAbbrechen = view.findViewById(R.id.buttonAnfrageAbbrechenAngenommen);
+        anfrageAbbrechen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startseiteActivity.getBlacklineone().setVisibility(View.INVISIBLE);
+                startseiteActivity.getBlacklinetwo().setVisibility(View.INVISIBLE);
+                startseiteActivity.getBlacklinetree().setVisibility(View.VISIBLE);
+                startseiteActivity.getBlacklinefour().setVisibility(View.INVISIBLE);
+                startseiteActivity.getBlacklinefive().setVisibility(View.INVISIBLE);
+                AnfragenFragment anfragenFragment = new AnfragenFragment();
+                anfragenFragment.setSupportActionBar(getSupportActionBar());
+                anfragenFragment.setStartseiteActivity(startseiteActivity);
+                AnfragenAdapter anfragenAdapter = AnfragenAdapter.getInstance(getContext(),anfragenFragment.getShopListItemListenerDos());
+                startseiteActivity.createFragment(anfragenFragment);
+                anfragenAdapter.clearallListelements();
+            }
+        });
         return view;
     }
     public ActionBar getSupportActionBar() {
@@ -115,5 +135,13 @@ public class AnfrageDetailsFragmentAngenommen extends Fragment {
 
     public void setProduktDetailsString(String produktDetailsString) {
         this.produktDetailsString = produktDetailsString;
+    }
+
+    public StartseiteActivity getStartseiteActivity() {
+        return startseiteActivity;
+    }
+
+    public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
+        this.startseiteActivity = startseiteActivity;
     }
 }

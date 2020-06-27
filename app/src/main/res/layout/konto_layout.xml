@@ -5,14 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".StartseiteActivity"
-    android:paddingBottom="70dp">
+    android:paddingBottom="65dp">
 
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:scrollbars="vertical"
-    android:scrollbarThumbVertical="@color/smallternativOrange">
+    android:scrollbarThumbVertical="@color/smallternativOrange"
+    android:scrollbarSize="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="5dp">
     <LinearLayout
         android:id="@+id/maincontainer"
         android:layout_width="match_parent"
@@ -239,7 +242,14 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"/>
 
-
+            <LinearLayout
+                android:id="@+id/orangeLine8"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="15dp"
+                android:background="#FFA21F"
+                android:orientation="horizontal"></LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

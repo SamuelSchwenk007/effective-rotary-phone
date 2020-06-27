@@ -5,6 +5,16 @@
     android:layout_height="match_parent"
     android:background="#E6F3FF"
     tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@color/smallternativOrange"
+        android:scrollbarSize="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp">
+
     <LinearLayout
         android:id="@+id/maincontainer"
         android:layout_width="match_parent"
@@ -208,15 +218,17 @@
 
                 <Button
                     android:id="@+id/buttonFaceBook"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fb" />
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/facebook"
+                    android:layout_marginRight="5dp"/>
 
                 <Button
                     android:id="@+id/buttonGoogle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/g" />
+                    android:background="@drawable/google_plus"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"/>
 
             </LinearLayout>
 
@@ -254,6 +266,8 @@
                 </LinearLayout>
 
         </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
 
         <LinearLayout
             android:id="@+id/orangeBottomLine"
@@ -263,5 +277,4 @@
             android:background="#FFA21F"
             android:layout_weight="1">
         </LinearLayout>
-    </LinearLayout>
 </android.widget.LinearLayout>

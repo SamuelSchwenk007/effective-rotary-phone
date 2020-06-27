@@ -174,7 +174,8 @@
                 android:layout_height="wrap_content"
                 android:scrollbarThumbVertical="@color/smallternativOrange"
                 android:layout_marginTop="10dp"
-                android:paddingBottom="70dp">
+                android:paddingBottom="70dp"
+                android:scrollbarSize="5dp">
                 <LinearLayout
                     android:id="@+id/verticalinner"
                     android:layout_width="match_parent"
