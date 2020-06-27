@@ -37,6 +37,8 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
     MyAdapter myAdapter;
     Button kategorien;
     StartseiteActivity startseiteActivity;
+    boolean deleat= false;
+    String kategorie;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -47,6 +49,10 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         kategorien = view.findViewById(R.id.kategorie);
         myAdapter = MyAdapter.getInstance(getContext(),shopListItemListener);
         loadShopsToList(getActivity().getApplicationContext(), myAdapter);
+        if(deleat){
+            deleatSomeShops(kategorie);
+        }
+        deleat = false;
         if(startseiteActivity.liste == null) {
             startseiteActivity.liste = new ArrayList<>();
             for(int i= 0;i<myAdapter.getAufgaben().size();i ++ ){
@@ -134,6 +140,47 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(myAdapter);
     }
+    public void deleatSomeShops(String kategorie){
+        ShopListItem poszero = myAdapter.getAufgaben().get(0);
+        ShopListItem posone = myAdapter.getAufgaben().get(1);
+        ShopListItem postwo = myAdapter.getAufgaben().get(2);
+        ShopListItem postree = myAdapter.getAufgaben().get(3);
+        ShopListItem posfour = myAdapter.getAufgaben().get(4);
+        ShopListItem posfive = myAdapter.getAufgaben().get(5);
+        if(kategorie == "Lebensmittel") {
+            myAdapter = MyAdapter.getInstance(getContext(),getShopListItemListener());
+            myAdapter.getAufgaben().remove(postwo);
+            myAdapter.getAufgaben().remove(postree);
+            myAdapter.getAufgaben().remove(posfour);
+            myAdapter.getAufgaben().remove(posfive);
+            myAdapter.notifyDataSetChanged();
+        }
+        else if (kategorie == "Kleidung"){
+            myAdapter = MyAdapter.getInstance(getContext(),getShopListItemListener());
+            myAdapter.getAufgaben().remove(poszero);
+            myAdapter.getAufgaben().remove(posone);
+            myAdapter.getAufgaben().remove(postree);
+            myAdapter.getAufgaben().remove(posfour);
+            myAdapter.getAufgaben().remove(posfive);
+            myAdapter.notifyDataSetChanged();
+
+        }
+        else if (kategorie == "Dekoration"){
+            myAdapter = MyAdapter.getInstance(getContext(),getShopListItemListener());
+            myAdapter.getAufgaben().remove(poszero);
+            myAdapter.getAufgaben().remove(postwo);
+            myAdapter.getAufgaben().remove(postree);
+            myAdapter.getAufgaben().remove(posfour);
+            myAdapter.notifyDataSetChanged();
+
+        }
+        else if (kategorie == "Nur Barrierefrei"){
+
+        }
+        else if (kategorie == "Bestaetigen"){
+
+        }
+    }
     public void showMenuPopup(View v){
         PopupMenu popupMenu = new PopupMenu(getContext(),v);
         popupMenu.setOnMenuItemClickListener(this);
@@ -144,13 +191,14 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
     public boolean onMenuItemClick(MenuItem menuItem) {
         switch(menuItem.getItemId()){
             case R.id.lebensmittel:
-                //Todo
+                createStartseiteFragmentWithDeleats("Lebensmittel");
+
                 return true;
             case R.id.kleidung:
-                //Todo
+                createStartseiteFragmentWithDeleats("Kleidung");
                 return true;
             case R.id.dekoration:
-                //Todo
+                createStartseiteFragmentWithDeleats("Dekoration");
                 return true;
             case R.id.nur_barrierefrei:
                 //Todo
@@ -165,6 +213,20 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
                 return false;
         }
     }
+    public void createStartseiteFragmentWithDeleats(String kategorie){
+        startseiteActivity.getBlacklineone().setVisibility(View.VISIBLE);
+        startseiteActivity.getBlacklinetwo().setVisibility(View.INVISIBLE);
+        startseiteActivity.getBlacklinetree().setVisibility(View.INVISIBLE);
+        startseiteActivity.getBlacklinefour().setVisibility(View.INVISIBLE);
+        startseiteActivity.getBlacklinefive().setVisibility(View.INVISIBLE);
+        StartseitenFragment startseitenFragment1 = new StartseitenFragment();
+        startseitenFragment1.setKategorie(kategorie);
+        startseitenFragment1.setDeleat(true);
+        startseitenFragment1.setStartseiteActivity(startseiteActivity);
+        startseitenFragment1.setSupportActionBar(getSupportActionBar());
+        startseiteActivity.createFragment(startseitenFragment1);
+        StartseiteActivity.setAppTitle(getSupportActionBar(), getContext(),"Smallternative");
+    }
 
     public MyAdapter.ShopListItemListener getShopListItemListener(){
         return this;
@@ -178,5 +240,19 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
 
     public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
         this.startseiteActivity = startseiteActivity;
+    }
+    public String getKategorie() {
+        return kategorie;
+    }
+
+    public void setKategorie(String kategorie) {
+        this.kategorie = kategorie;
+    }
+    public boolean isDeleat() {
+        return deleat;
+    }
+
+    public void setDeleat(boolean deleat) {
+        this.deleat = deleat;
     }
 }
