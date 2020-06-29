@@ -121,9 +121,44 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "2:3340922515012745660",
+      "lastPropertyId": "5:6271695613060271983",
+      "name": "Produkt",
+      "properties": [
+        {
+          "id": "1:7201909852076758554",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:1721976823306081422",
+          "name": "title",
+          "type": 9
+        },
+        {
+          "id": "3:6779960860603768843",
+          "name": "beschreibung",
+          "type": 9
+        },
+        {
+          "id": "4:1600529958663538821",
+          "name": "profilbildReference",
+          "type": 5,
+          "flags": 4
+        },
+        {
+          "id": "5:6271695613060271983",
+          "name": "kategorie",
+          "type": 9
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:6357364269998291140",
+  "lastEntityId": "2:3340922515012745660",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

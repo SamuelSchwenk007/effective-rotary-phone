@@ -12,4 +12,9 @@
     <string name="hintthree"><font size="16">Details eingeben.</font></string>
     <string name="hintfour"><font size="16">Anzahl eingeben.</font></string>
 
+    <style name="YOURSTYLE" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:itemBackground">@drawable/menu_bar</item>
+        <item name="android:textAlignment">center</item>
+    </style>
 </resources>

@@ -23,6 +23,7 @@ import javax.crypto.KeyAgreement;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -69,7 +70,8 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         return view;
     }
     public void showKategoriePopup(View v){
-        PopupMenu popupMenu = new PopupMenu(getContext(),v);
+        Context wrapper = new ContextThemeWrapper(getContext(), R.style.YOURSTYLE);
+        PopupMenu popupMenu = new PopupMenu(wrapper,v);
         popupMenu.setOnMenuItemClickListener(this);
         popupMenu.inflate(R.menu.kategorie_popup);
         popupMenu.show();

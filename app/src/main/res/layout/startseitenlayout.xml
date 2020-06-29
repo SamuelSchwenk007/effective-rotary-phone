@@ -23,7 +23,8 @@
                     android:textAlignment="center"
                     android:gravity="center"
                     android:paddingLeft="10dp"
-                    android:paddingRight="10dp">
+                    android:paddingRight="10dp"
+                    android:onClick="openMap">
 
                 </Button>
                 <Button

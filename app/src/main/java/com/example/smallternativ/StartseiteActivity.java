@@ -1,7 +1,9 @@
 package com.example.smallternativ;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -21,6 +23,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -60,8 +63,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         setAppTitle(getSupportActionBar(), this,"Smallternative");
         myAdapter = MyAdapter.getInstance(getApplicationContext(),startseitenFragment.getShopListItemListener());
 
-        // test für Suchleiste
-        onSearchRequested();
+
         BottomNavigationView bottom_navigation =findViewById(R.id.bottom_navigation);
         bottom_navigation.setOnNavigationItemSelectedListener(menuItem -> {
             Log.d("test",""+menuItem.getItemId());
@@ -229,7 +231,8 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         ab.setCustomView(tv);
     }
     public void showMenuPopup(View v){
-        PopupMenu popupMenu = new PopupMenu(this,findViewById(R.id.page_5));
+        Context wrapper = new ContextThemeWrapper(this, R.style.YOURSTYLE);
+        PopupMenu popupMenu = new PopupMenu(wrapper,findViewById(R.id.page_5));
         popupMenu.setOnMenuItemClickListener(this);
         popupMenu.inflate(R.menu.menue_popup);
         popupMenu.show();
@@ -259,7 +262,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 createFragment(ladenProfilFragment);
                 return true;
             case R.id.stadtwaehlen:
-                //Todo
+                testSuche(findViewById(R.id.stadtwaehlen));
                 return true;
             case R.id.einstellungen:
                 EinstellungenFragment einstellungenFragment = new EinstellungenFragment();
@@ -267,6 +270,8 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 createFragment(einstellungenFragment);
                 return true;
             case R.id.karte:
+                openMap(findViewById(R.id.karte));
+                return true;
             default:
                 return false;
         }
@@ -316,6 +321,25 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         anfrageStellenDialog.show(fragmentManager,"Anfrage senden");
     }
 
+    public void testSuche(View v){
+        SucheEinenLadenDialog sucheLaden = new SucheEinenLadenDialog();
+        sucheLaden.setAnfragenAdapter(anfragenAdapter);
+        sucheLaden.setStartseiteActivity(this);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        sucheLaden.show(fragmentManager,"Laden Suchen");
+    }
+    public void openMap(View v){
+        // Create a Uri from an intent string. Use the result to create an Intent.
+        Uri gmmIntentUri = Uri.parse("geo:53.869000,10.687000");
+
+// Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+// Make the Intent explicit by setting the Google Maps package
+        mapIntent.setPackage("com.google.android.apps.maps");
+
+// Attempt to start an activity that can handle the Intent
+        startActivity(mapIntent);
+    }
     public LinearLayout getBlacklineone() {
         return blacklineone;
     }
