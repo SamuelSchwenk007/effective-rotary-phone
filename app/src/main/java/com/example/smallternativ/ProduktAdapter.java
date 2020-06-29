@@ -149,5 +149,13 @@ public class ProduktAdapter extends RecyclerView.Adapter  {
         public void setProduktTitle(TextView ProduktTitle) {
             this.ProduktTitle = ProduktTitle;
         }
+        public ProduktAdapter.ProduktListener getProduktListener() {
+            return ProduktListener;
+        }
+
+        public void setProduktListener(ProduktAdapter.ProduktListener produktListener) {
+            ProduktListener = produktListener;
+        }
+
     }
 }

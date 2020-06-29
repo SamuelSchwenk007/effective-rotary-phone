@@ -30,8 +30,18 @@ public class AnfrageStellenDialog extends DialogFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.anfrage_stellen_dialog_layout,null);
-        TextView textView = view.findViewById(R.id.anfrageDialogTitle);
-        textView.setTypeface(ResourcesCompat.getFont(getContext(),R.font.pacifico));
+        TextView ladentitel = view.findViewById(R.id.anfrageDialogTitle);
+        ladentitel.setTypeface(ResourcesCompat.getFont(getContext(),R.font.pacifico));
+        ladentitel.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        laden = view.findViewById(R.id.laden);
+        produkt = view.findViewById(R.id.produkt);
+        produktdetails = view.findViewById(R.id.produktdetails);
+        anzahl = view.findViewById(R.id.anzahl);
+        laden.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        produkt.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        produktdetails.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        anzahl.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+
         anfrageabbrechen = view.findViewById(R.id.abbrechenBtton);
         anfrageabbrechen.setOnClickListener(new View.OnClickListener() {
             @Override

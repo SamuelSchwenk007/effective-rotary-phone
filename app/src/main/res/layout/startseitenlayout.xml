@@ -47,26 +47,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:layout_marginBottom="10dp">
-        <Button
-            android:id="@+id/arrowleft"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/arrowleft"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp"
-            android:onClick="swipeLeft">
-        </Button>
-        <Button
-            android:id="@+id/arrowright"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/arrowright"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:layout_marginRight="10dp"
-            android:onClick="swipeRight">
-        </Button>
+
 
                 <HorizontalScrollView
                     android:id="@+id/news_scroll-view"
@@ -81,7 +62,9 @@
                     android:scrollbarThumbHorizontal="@color/smallternativOrange"
                     android:scrollbarSize="5dp"
                     android:paddingLeft="10dp"
-                    android:paddingRight="10dp">
+                    android:paddingRight="10dp"
+                    android:scrollbarFadeDuration="0">
+
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"

@@ -26,23 +26,27 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="5dp">
             <TextView
+                android:id="@+id/laden"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text="Laden:">
             </TextView>
             <TextView
+                android:id="@+id/produkt"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text="Produkt:">
 
             </TextView>
             <TextView
+                android:id="@+id/produktdetails"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text="Produktdetails:">
 
             </TextView>
             <TextView
+                android:id="@+id/anzahl"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text="Anzahl:">

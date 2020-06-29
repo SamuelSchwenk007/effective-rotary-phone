@@ -174,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:scrollbarThumbVertical="@color/smallternativOrange"
                 android:layout_marginTop="10dp"
-                android:paddingBottom="70dp"
+                android:layout_marginBottom="70dp"
                 android:scrollbarSize="5dp">
                 <LinearLayout
                     android:id="@+id/verticalinner"
@@ -189,39 +189,65 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/buttonSortimentUno"
-                    android:layout_width="match_parent"
+                <RelativeLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#F0F0F0"
-                    android:freezesText="false"
-                    android:gravity="bottom|center"
-                    android:text="Stoffe"
-                    android:textAllCaps="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#000000"
-                    android:textColorHighlight="#000000"
-                    tools:visibility="visible" />
-
-                <Button
-                    android:id="@+id/buttonSortimentDos"
-                    android:layout_width="match_parent"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/buttonSortimentUno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:freezesText="false"
+                        android:gravity="bottom|center"
+                        android:textColorHighlight="#000000"
+                        tools:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:background="@drawable/cyroline_shirts"/>
+                    <TextView
+                        android:id="@+id/sortimentUnoText"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="Stoffe"
+                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/transparent_banner"
+                        android:layout_alignBottom="@id/buttonSortimentUno"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp">
+                    </TextView>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#F0F0F0"
-                    android:freezesText="false"
-                    android:gravity="bottom|center"
-                    android:text="Knöpfe"
-                    android:textAllCaps="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                    android:textColor="#000000"
-                    android:textColorHighlight="#000000"
-                    tools:visibility="visible" />
+                    android:layout_weight="1">
+                    <ImageView
+                        android:id="@+id/buttonSortimentDos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        tools:visibility="visible"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/cyroline_shirts"/>
+                    <TextView
+                        android:id="@+id/sortimentDosText"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="Stoffe"
+                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/transparent_banner"
+                        android:layout_alignBottom="@id/buttonSortimentDos"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp">
+                    </TextView>
+                </RelativeLayout>
 
 
             </LinearLayout>
@@ -231,39 +257,65 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:orientation="horizontal">
-                    <Button
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                    <ImageView
                         android:id="@+id/buttonSortimentTres"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:background="#F0F0F0"
                         android:freezesText="false"
                         android:gravity="bottom|center"
+                        android:textColorHighlight="#000000"
+                        tools:visibility="visible"
+                        android:layout_alignParentLeft="true"
+                        android:background="@drawable/cyroline_shirts"/>
+                    <TextView
+                        android:id="@+id/sortimentTresText"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
                         android:text="Stoffe"
-                        android:textAllCaps="false"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="#000000"
-                        android:textColorHighlight="#000000"
-                        tools:visibility="visible" />
-
-                    <Button
+                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/transparent_banner"
+                        android:layout_alignBottom="@id/buttonSortimentTres"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp">
+                    </TextView>
+                    </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                    <ImageView
                         android:id="@+id/buttonSortimentQuadro"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:background="#F0F0F0"
-                        android:freezesText="false"
-                        android:gravity="bottom|center"
-                        android:text="Knöpfe"
-                        android:textAllCaps="false"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textColor="#000000"
-                        android:textColorHighlight="#000000"
-                        tools:visibility="visible" />
+                        tools:visibility="visible"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/cyroline_shirts"/>
+                    <TextView
+                        android:id="@+id/sortimentQuadroText"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:text="Stoffe"
+                        android:textColor="#FFFFFF"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/transparent_banner"
+                        android:layout_alignBottom="@id/buttonSortimentQuadro"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp">
+                    </TextView>
+                </RelativeLayout>
             </LinearLayout>
                 </LinearLayout>
             </ScrollView>

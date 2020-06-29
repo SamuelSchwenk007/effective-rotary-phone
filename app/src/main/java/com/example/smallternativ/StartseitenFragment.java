@@ -115,7 +115,7 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
                 R.drawable.oez_suelo_obst,"Dr.-Julius-Leber-Straße 3-7.");
 
         ShopListItem shopListItemTwo = new ShopListItem("Asiatica","Waren aus Asien von Lebensmitteln bis zur Dekoration.",
-                R.drawable.asiatica_logo_fixed,"Nahrung, Barrierefrei","Spezialitäten","Deko","Sushi",
+                R.drawable.asiatica_logo_fixed,"Nahrung, Barrierefrei","Spezielles","Deko","Sushi",
                 "Gewürze",R.drawable.asiatica_deko,R.drawable.asiatica_einrichtung,R.drawable.asiatica_essen,R.drawable.asiatica_gewuerze,"Fleischhauerstraße 10.");
 
         ShopListItem shopListItemThree = new ShopListItem("Cyroline","Hier finden Sie FairTrade geschneiderte Bekleidung.",

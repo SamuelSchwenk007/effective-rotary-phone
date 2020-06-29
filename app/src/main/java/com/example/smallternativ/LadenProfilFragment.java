@@ -22,10 +22,10 @@ public class LadenProfilFragment extends Fragment {
     private Button anfrageSenden;
     private Button favoritSetzen;
     private Button karte;
-    private Button sortimentUno;
-    private Button sortimentDos;
-    private Button sortimentTres;
-    private Button sortimentQuadro;
+    private ImageView sortimentUno;
+    private ImageView sortimentDos;
+    private ImageView sortimentTres;
+    private ImageView sortimentQuadro;
     private TextView ladenName;
     private  TextView ladenAdresse;
     private ImageView ladenBild;
@@ -42,6 +42,7 @@ public class LadenProfilFragment extends Fragment {
     private  String adresseString;
     private int ladenPicReference, sortimentUnoReference, sortimentDosReference,sortimentTresReference, sortimentQuadroReference;
     private StartseiteActivity startseiteActivity;
+    private TextView sortimentOne, sortimentTwo, sortimentTree,sortimentFour;
 
     @Nullable
     @Override
@@ -71,12 +72,14 @@ public class LadenProfilFragment extends Fragment {
         sortimentDos.setBackgroundResource(sortimentDosReference);
         sortimentTres.setBackgroundResource(sortimentTresReference);
         sortimentQuadro.setBackgroundResource(sortimentQuadroReference);
-        sortimentUno.setText(sortimentUnoString);
-        sortimentDos.setText(sortimentDosString);
-        sortimentTres.setText(sortimentTresString);
-        sortimentTres.setHintTextColor(getResources().getColor(R.color.colorPrimaryDark));
-        sortimentQuadro.setText(sortimentQuadroString);
-        sortimentQuadro.setHintTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        sortimentOne = view.findViewById(R.id.sortimentUnoText);
+        sortimentTwo = view.findViewById(R.id.sortimentDosText);
+        sortimentTree = view.findViewById(R.id.sortimentTresText);
+        sortimentFour = view.findViewById(R.id.sortimentQuadroText);
+        sortimentOne.setText(sortimentUnoString);
+        sortimentTwo.setText(sortimentDosString);
+        sortimentTree.setText(sortimentTresString);
+        sortimentFour.setText(sortimentQuadroString);
 
         sortimentUno.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -241,19 +244,19 @@ public class LadenProfilFragment extends Fragment {
         this.sortimentDosReference = sortimentDosReference;
     }
 
-    public Button getSortimentUno() {
+    public ImageView getSortimentUno() {
         return sortimentUno;
     }
 
-    public void setSortimentUno(Button sortimentUno) {
+    public void setSortimentUno(ImageView sortimentUno) {
         this.sortimentUno = sortimentUno;
     }
 
-    public Button getSortimentDos() {
+    public ImageView getSortimentDos() {
         return sortimentDos;
     }
 
-    public void setSortimentDos(Button sortimentDos) {
+    public void setSortimentDos(ImageView sortimentDos) {
         this.sortimentDos = sortimentDos;
     }
 

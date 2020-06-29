@@ -47,7 +47,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:textColor="#000000"
-                        android:textSize="55px"
+                        android:textSize="24dp"
                         tools:text="Nadel &amp; Faden" />
                 </RelativeLayout>
 
@@ -67,15 +67,25 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
                     android:text="Kategorie:"
-                    tools:text="Kategorie:" />
+                    tools:text="Kategorie:"
+                    android:textSize="20dp"/>
 
                 <TextView
                     android:id="@+id/textViewProduktKategorie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
-                    tools:text="Kleidung, barrierefrei" />
+                    tools:text="Kleidung, barrierefrei"
+                    android:textSize="20dp"/>
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Beschreibung:"
+                    android:textSize="20dp"
+                    android:textColor="#000000">
 
+                </TextView>
                 <TextView
                     android:id="@+id/textViewProduktbeschreibung"
                     android:layout_width="match_parent"
@@ -83,7 +93,7 @@
                     android:layout_marginTop="10dp"
                     android:text="@string/e_mail"
                     android:textColor="#000000"
-                    android:textSize="45px"
+                    android:textSize="20dp"
                     tools:text="Hier finden Sie unterschiedliche Stoffe, Bänder, Knöpfe und vieles mehr" />
 
 

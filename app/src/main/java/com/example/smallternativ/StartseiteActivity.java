@@ -41,6 +41,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
     LinearLayout blacklinefour;
     LinearLayout blacklinefive;
     List<ShopListItem> liste ;
+    ProduktAdapter produktAdapter;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -162,11 +163,11 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         blacklinefour.setVisibility(View.INVISIBLE);
         blacklinefive.setVisibility(View.INVISIBLE);
     }
-    public  void removeListElements(Context context, MyAdapter myAdapter){
+    public  void removeListElements(MyAdapter myAdapter){
             myAdapter.clearallListelements();
     }
     public void createFragment(Fragment fragment){
-        removeListElements(getApplicationContext(),myAdapter);
+        removeListElements(myAdapter);
         removeAllFragment();
         fragmentList.add(fragment);
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -360,5 +361,13 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
 
     public void setAnfragenAdapter(AnfragenAdapter anfragenAdapter) {
         this.anfragenAdapter = anfragenAdapter;
+    }
+
+    public ProduktAdapter getProduktAdapter() {
+        return produktAdapter;
+    }
+
+    public void setProduktAdapter(ProduktAdapter produktAdapter) {
+        this.produktAdapter = produktAdapter;
     }
 }
