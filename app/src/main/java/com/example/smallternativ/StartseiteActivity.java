@@ -239,6 +239,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
             case R.id.zufaelligerladen:
                 int position = getRandomNumberInRange(1,5);
                 LadenProfilFragment ladenProfilFragment = new LadenProfilFragment();
+                ladenProfilFragment.setStartseiteActivity(this);
                 ladenProfilFragment.setSupportActionBar(getSupportActionBar());
                 ladenProfilFragment.setMyAdapter(myAdapter);
                 ladenProfilFragment.setLadenNameString(liste.get(position).title);

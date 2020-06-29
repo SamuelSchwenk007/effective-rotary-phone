@@ -41,6 +41,7 @@ public class LadenProfilFragment extends Fragment {
     private String sortimentQuadroString;
     private  String adresseString;
     private int ladenPicReference, sortimentUnoReference, sortimentDosReference,sortimentTresReference, sortimentQuadroReference;
+    private StartseiteActivity startseiteActivity;
 
     @Nullable
     @Override
@@ -76,6 +77,51 @@ public class LadenProfilFragment extends Fragment {
         sortimentTres.setHintTextColor(getResources().getColor(R.color.colorPrimaryDark));
         sortimentQuadro.setText(sortimentQuadroString);
         sortimentQuadro.setHintTextColor(getResources().getColor(R.color.colorPrimaryDark));
+
+        sortimentUno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ProduktListFragment produktListFragment = new ProduktListFragment();
+                produktListFragment.setStartseiteActivity(startseiteActivity);
+                produktListFragment.setSupportActionBar(supportActionBar);
+                produktListFragment.setSortimentname(sortimentUnoString);
+                produktListFragment.setLadenname(ladenNameString);
+                startseiteActivity.createFragment(produktListFragment);
+            }
+        });
+        sortimentDos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ProduktListFragment produktListFragment = new ProduktListFragment();
+                produktListFragment.setStartseiteActivity(startseiteActivity);
+                produktListFragment.setSupportActionBar(supportActionBar);
+                produktListFragment.setSortimentname(sortimentDosString);
+                produktListFragment.setLadenname(ladenNameString);
+                startseiteActivity.createFragment(produktListFragment);
+            }
+        });
+        sortimentTres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ProduktListFragment produktListFragment = new ProduktListFragment();
+                produktListFragment.setStartseiteActivity(startseiteActivity);
+                produktListFragment.setSupportActionBar(supportActionBar);
+                produktListFragment.setSortimentname(sortimentTresString);
+                produktListFragment.setLadenname(ladenNameString);
+                startseiteActivity.createFragment(produktListFragment);
+            }
+        });
+        sortimentQuadro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ProduktListFragment produktListFragment = new ProduktListFragment();
+                produktListFragment.setStartseiteActivity(startseiteActivity);
+                produktListFragment.setSupportActionBar(supportActionBar);
+                produktListFragment.setSortimentname(sortimentQuadroString);
+                produktListFragment.setLadenname(ladenNameString);
+                startseiteActivity.createFragment(produktListFragment);
+            }
+        });
 
         return view;
     }
@@ -263,6 +309,14 @@ public class LadenProfilFragment extends Fragment {
 
     public void setAdresseString(String adresseString) {
         this.adresseString = adresseString;
+    }
+
+    public StartseiteActivity getStartseiteActivity() {
+        return startseiteActivity;
+    }
+
+    public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
+        this.startseiteActivity = startseiteActivity;
     }
 
 }

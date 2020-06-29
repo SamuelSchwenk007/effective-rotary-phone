@@ -90,6 +90,7 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
     public void OnShopListItemClick(int position) {
         myAdapter = MyAdapter.getInstance(getContext(),shopListItemListener);
         LadenProfilFragment ladenProfilFragment = new LadenProfilFragment();
+        ladenProfilFragment.setStartseiteActivity(startseiteActivity);
         ladenProfilFragment.setSupportActionBar(supportActionBar);
         ladenProfilFragment.setMyAdapter(myAdapter);
         ladenProfilFragment.setLadenNameString(myAdapter.getAufgaben().get(position).title);
