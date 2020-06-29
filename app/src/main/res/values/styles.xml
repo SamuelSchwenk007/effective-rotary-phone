@@ -7,5 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <string name="hintone"><font size="16">Ladenname eingeben.</font></string>
+    <string name="hinttwo"><font size="16">Produkt eingeben.</font></string>
+    <string name="hintthree"><font size="16">Details eingeben.</font></string>
+    <string name="hintfour"><font size="16">Anzahl eingeben.</font></string>
 
 </resources>

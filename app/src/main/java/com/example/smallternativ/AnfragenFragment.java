@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +27,7 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
     StartseiteActivity startseiteActivity;
     boolean deleat = false;
     int position;
+    FloatingActionButton addAnfragenButton;
 
     @Nullable
     @Override
@@ -32,6 +36,7 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
         setTodoListenerDosToAdapter(shopListItemListenerDos);
         recyclerView = view.findViewById(R.id.recyclerView_anfragen);
         anfragenAdapter = anfragenAdapter.getInstance(getContext(),shopListItemListenerDos);
+        startseiteActivity.setAnfragenAdapter(anfragenAdapter);
         StartseiteActivity.setAppTitle(supportActionBar, getContext(),"Anfragen");
         loadAnfragentoList(getContext(), anfragenAdapter);
         if(deleat){
@@ -98,6 +103,8 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
                 anfrageDetailsFragmentUnbeantwortet.setAdapterPosition(position);
                 creatFragment(anfrageDetailsFragmentUnbeantwortet);
             }
+            addAnfragenButton = view.findViewById(R.id.anfragen_add);
+            addAnfragenButton.bringToFront();
     }
     public void loadAnfragentoList(Context context, AnfragenAdapter AnfragenAdapter){
         ShopListItem shopListItemTwo = new ShopListItem(R.drawable.asiatica_logo_fixed,"Papaya",

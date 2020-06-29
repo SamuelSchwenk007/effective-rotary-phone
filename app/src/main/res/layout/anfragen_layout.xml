@@ -4,7 +4,11 @@
     android:layout_height="match_parent"
     android:paddingBottom="70dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+<android.widget.RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ScrollView
+        android:id="@+id/anfrage_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
@@ -18,5 +22,16 @@
 
     </androidx.recyclerview.widget.RecyclerView>
     </ScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/anfragen_add"
+        android:layout_gravity="bottom|end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/addbutton"
+        android:layout_marginRight="10dp"
+        android:onClick="addOnclick"/>
+</android.widget.RelativeLayout>
 
 </android.widget.LinearLayout>

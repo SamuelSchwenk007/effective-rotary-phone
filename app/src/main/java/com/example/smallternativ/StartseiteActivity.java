@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
@@ -304,6 +306,12 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         Random r = new Random();
         return r.nextInt((max - min) + 1) + min;
     }
+    public void addOnclick(View v){
+        AnfrageStellenDialog anfrageStellenDialog = new AnfrageStellenDialog();
+        anfrageStellenDialog.setAnfragenAdapter(anfragenAdapter);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        anfrageStellenDialog.show(fragmentManager,"Anfrage senden");
+    }
 
     public LinearLayout getBlacklineone() {
         return blacklineone;
@@ -343,5 +351,13 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
 
     public void setBlacklinefive(LinearLayout blacklinefive) {
         this.blacklinefive = blacklinefive;
+    }
+
+    public AnfragenAdapter getAnfragenAdapter() {
+        return anfragenAdapter;
+    }
+
+    public void setAnfragenAdapter(AnfragenAdapter anfragenAdapter) {
+        this.anfragenAdapter = anfragenAdapter;
     }
 }
