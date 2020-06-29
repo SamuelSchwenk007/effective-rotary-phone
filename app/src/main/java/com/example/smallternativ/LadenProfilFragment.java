@@ -125,6 +125,13 @@ public class LadenProfilFragment extends Fragment {
                 startseiteActivity.createFragment(produktListFragment);
             }
         });
+        anfrageSenden = view.findViewById(R.id.buttonAnfrageSenden);
+        anfrageSenden.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startseiteActivity.addOnclick(view);
+            }
+        });
 
         return view;
     }

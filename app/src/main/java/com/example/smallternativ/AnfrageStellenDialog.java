@@ -25,6 +25,7 @@ public class AnfrageStellenDialog extends DialogFragment {
     Button anfragestellen;
     Button anfrageabbrechen;
     AnfragenAdapter anfragenAdapter;
+    StartseiteActivity startseiteActivity;
 
     @Nullable
     @Override
@@ -53,13 +54,22 @@ public class AnfrageStellenDialog extends DialogFragment {
         anfragestellen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(anfragenAdapter == null) {
+                    AnfragenFragment anfragenFragment = new AnfragenFragment();
+                    anfragenFragment.setSupportActionBar(startseiteActivity.getSupportActionBar());
+                    anfragenFragment.setStartseiteActivity(startseiteActivity);
+                    anfragenAdapter = AnfragenAdapter.getInstance(getContext(),anfragenFragment.getShopListItemListenerDos());
+                    startseiteActivity.createFragment(anfragenFragment);
+                    anfragenAdapter.clearallListelements();
+                }
+                else{
+                    ShopListItem shopListItemThree = new ShopListItem(R.drawable.metalworks_profil, "Schwert",
+                            "Laden: Metalworks", "Anzahl: 1", "Datum: 25.06.2020", "Status: unbeantwortet",
+                            "Leider noch keine Antwort verfügbar", "Produkt: 2 Händer Custom");
 
-                ShopListItem shopListItemThree = new ShopListItem(R.drawable.metalworks_profil,"Schwert",
-                        "Laden: Metalworks","Anzahl: 1","Datum: 25.06.2020","Status: unbeantwortet",
-                        "Leider noch keine Antwort verfügbar","Produkt: 2 Händer Custom");
-
-                anfragenAdapter.getAufgaben().add(shopListItemThree);
-                anfragenAdapter.notifyDataSetChanged();
+                    anfragenAdapter.getAufgaben().add(shopListItemThree);
+                    anfragenAdapter.notifyDataSetChanged();
+                }
                 dismiss();
             }
         });
@@ -72,5 +82,12 @@ public class AnfrageStellenDialog extends DialogFragment {
 
     public void setAnfragenAdapter(AnfragenAdapter anfragenAdapter) {
         this.anfragenAdapter = anfragenAdapter;
+    }
+    public StartseiteActivity getStartseiteActivity() {
+        return startseiteActivity;
+    }
+
+    public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
+        this.startseiteActivity = startseiteActivity;
     }
 }

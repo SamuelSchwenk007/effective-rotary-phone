@@ -311,6 +311,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
     public void addOnclick(View v){
         AnfrageStellenDialog anfrageStellenDialog = new AnfrageStellenDialog();
         anfrageStellenDialog.setAnfragenAdapter(anfragenAdapter);
+        anfrageStellenDialog.setStartseiteActivity(this);
         FragmentManager fragmentManager = getSupportFragmentManager();
         anfrageStellenDialog.show(fragmentManager,"Anfrage senden");
     }
