@@ -1,15 +1,22 @@
 package com.example.smallternativ;
 
 import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import androidx.activity.OnBackPressedDispatcherOwner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +39,13 @@ public class ProduktListFragment extends Fragment implements ProduktAdapter.Prod
         produktAdapter = ProduktAdapter.getInstance(getContext(),produktListener);
         startseiteActivity.setProduktAdapter(produktAdapter);
         loadAnfragentoList(getContext(), produktAdapter);
+        startseiteActivity.setLadenname(Ladenname);
+        startseiteActivity.setCameFromSortiment(true);
+        final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
+        upArrow.setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return view;
     }
 
@@ -42,8 +56,14 @@ public class ProduktListFragment extends Fragment implements ProduktAdapter.Prod
         produktDetailsFragment.setBeschreibungsText(produktAdapter.getAufgaben().get(position).beschreibung);
         produktDetailsFragment.setProductPicReference(produktAdapter.getAufgaben().get(position).profilbildReference);
         produktDetailsFragment.setKategorienProdukt(produktAdapter.getAufgaben().get(position).kategorie);
+        produktDetailsFragment.setStartseiteActivity(startseiteActivity);
+        startseiteActivity.setSortimenName(Sortimentname);
+        startseiteActivity.setLadenname(Ladenname);
+        produktDetailsFragment.setLadenname(Ladenname);
+        produktDetailsFragment.setSortiment(Sortimentname);
         startseiteActivity.createFragment(produktDetailsFragment);
     }
+
     public void loadAnfragentoList(Context context, ProduktAdapter produktAdapter){
         if(!produktAdapter.getAufgaben().isEmpty()) {
             produktAdapter.getAufgaben().clear();
@@ -106,6 +126,9 @@ public class ProduktListFragment extends Fragment implements ProduktAdapter.Prod
             recyclerView.setHasFixedSize(true);
             recyclerView.setAdapter(produktAdapter);
     }
+
+
+
     public void setProduktListenerToAdapter(ProduktAdapter.ProduktListener produktListener){
         ProduktAdapter adapter = produktAdapter.getInstance(getContext(), produktListener);
         adapter.setProduktlistener(this);
@@ -141,6 +164,7 @@ public class ProduktListFragment extends Fragment implements ProduktAdapter.Prod
     public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
         this.startseiteActivity = startseiteActivity;
     }
+
 
 
 }

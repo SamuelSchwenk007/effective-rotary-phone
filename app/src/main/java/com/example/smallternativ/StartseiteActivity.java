@@ -2,6 +2,7 @@ package com.example.smallternativ;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
@@ -13,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
@@ -46,10 +48,14 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
     LinearLayout blacklinefive;
     List<ShopListItem> liste ;
     ProduktAdapter produktAdapter;
+    String ladenname;
+    boolean cameFromSortiment;
+    String sortimenName;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.startseite_containerlayout);
         StartseitenFragment startseitenFragment = new StartseitenFragment();
         startseitenFragment.setStartseiteActivity(this);
@@ -63,7 +69,8 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         fragmentTransaction.commit();
         setAppTitle(getSupportActionBar(), this,"Smallternative");
         myAdapter = MyAdapter.getInstance(getApplicationContext(),startseitenFragment.getShopListItemListener());
-
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         BottomNavigationView bottom_navigation =findViewById(R.id.bottom_navigation);
         bottom_navigation.setOnNavigationItemSelectedListener(menuItem -> {
@@ -165,6 +172,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         blacklinetree.setVisibility(View.INVISIBLE);
         blacklinefour.setVisibility(View.INVISIBLE);
         blacklinefive.setVisibility(View.INVISIBLE);
+
     }
     public  void removeListElements(MyAdapter myAdapter){
             myAdapter.clearallListelements();
@@ -336,9 +344,66 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
             testSuche(findViewById(R.id.action_search));
             return true;
         }
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onBackPressed() {
+        int position = 0;
+        String sortimentname="";
+        for (int i = 0; i < liste.size(); i++) {
+            if (ladenname == liste.get(i).getTitle()) {
+                position = i;
+            }
+        }
+        if(cameFromSortiment) {
+            LadenProfilFragment ladenProfilFragment = new LadenProfilFragment();
+            ladenProfilFragment.setStartseiteActivity(this);
+            ladenProfilFragment.setSupportActionBar(getSupportActionBar());
+            ladenProfilFragment.setMyAdapter(myAdapter);
+            ladenProfilFragment.setLadenNameString(liste.get(position).title);
+            ladenProfilFragment.setLadenBeschribungString(liste.get(position).beschreibung);
+            ladenProfilFragment.setLadenPicReference(liste.get(position).profilbildReference);
+            ladenProfilFragment.setKategorieItemString(liste.get(position).kategorie);
+            ladenProfilFragment.setAdresseString(liste.get(position).adresse);
+            ladenProfilFragment.setSortimentUnoReference(liste.get(position).sortimentReferenceUno);
+            ladenProfilFragment.setSortimentDosReference(liste.get(position).sortimentReferenceDos);
+            ladenProfilFragment.setSortimentTresReference(liste.get(position).sortimentThresReference);
+            ladenProfilFragment.setSortimentQuadroReference(liste.get(position).sortimentQuadroReference);
+            ladenProfilFragment.setSortimentUnoString(liste.get(position).getSortimentUnoString());
+            ladenProfilFragment.setSortimentDosString(liste.get(position).getSortimentDosString());
+            ladenProfilFragment.setSortimentTresString(liste.get(position).getSortimentThresString());
+            ladenProfilFragment.setSortimentQuadroString(liste.get(position).getSortimentQuadroString());
+            createFragment(ladenProfilFragment);
+        }
+        else{
+                if (sortimenName == liste.get(position).getSortimentUnoString()) {
+                  sortimentname =liste.get(position).getSortimentUnoString();
+                }
+                else if (sortimenName == liste.get(position).getSortimentDosString()){
+                    sortimentname =liste.get(position).getSortimentDosString();
+                }
+                else if (sortimenName == liste.get(position).getSortimentThresString()){
+                    sortimentname =liste.get(position).getSortimentThresString();
+                }
+                else if (sortimenName == liste.get(position).getSortimentQuadroString()){
+                    sortimentname =liste.get(position).getSortimentQuadroString();
+                }
+            ProduktListFragment produktListFragment = new ProduktListFragment();
+            produktListFragment.setStartseiteActivity(this);
+            produktListFragment.setSupportActionBar(getSupportActionBar());
+            produktListFragment.setSortimentname(sortimentname);
+            produktListFragment.setLadenname(ladenname);
+            createFragment(produktListFragment);
+
+
+        }
+    }
+
     public LinearLayout getBlacklineone() {
         return blacklineone;
     }
@@ -402,4 +467,29 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
     public void setFragmentList(ArrayList<Fragment> fragmentList) {
         this.fragmentList = fragmentList;
     }
+
+    public String getLadenname() {
+        return ladenname;
+    }
+
+    public void setLadenname(String ladenname) {
+        this.ladenname = ladenname;
+    }
+
+    public boolean isCameFromSortiment() {
+        return cameFromSortiment;
+    }
+
+    public void setCameFromSortiment(boolean cameFromSortiment) {
+        this.cameFromSortiment = cameFromSortiment;
+    }
+
+    public String getSortimenName() {
+        return sortimenName;
+    }
+
+    public void setSortimenName(String sortimenName) {
+        this.sortimenName = sortimenName;
+    }
+
 }

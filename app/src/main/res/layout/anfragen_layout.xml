@@ -32,7 +32,9 @@
         android:src="@drawable/add_button"
         android:layout_marginRight="10dp"
         android:onClick="addOnclick"
-        android:stateListAnimator="@null"/>
+        android:stateListAnimator="@null"
+        android:elevation="0dp"
+        app:elevation="0dp"/>
 </android.widget.RelativeLayout>
 
 </android.widget.LinearLayout>

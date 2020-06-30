@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,14 +19,17 @@
         </activity>
         <activity android:name=".StartseiteActivity">
         <meta-data android:name="android.app.default_searchable"
-            android:value=".SearchableActivity" />
+            android:value=".SearchableActivity"
+            android:screenOrientation="portrait"/>
         </activity>
-        <activity android:name=".RegistrierenActivity"></activity>
+        <activity android:name=".RegistrierenActivity"
+            android:screenOrientation="portrait"></activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".SearchableActivity" >
+        <activity android:name=".SearchableActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>

@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarThumbVertical="@color/smallternativOrange"
+        android:scrollbarSize="5dp">
 
     <LinearLayout
     android:id="@+id/maincontainer"
@@ -205,7 +209,9 @@
                         android:textColorHighlight="#000000"
                         tools:visibility="visible"
                         android:layout_alignParentLeft="true"
-                        android:background="@drawable/cyroline_shirts"/>
+                        android:background="@drawable/cyroline_shirts"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"/>
                     <TextView
                         android:id="@+id/sortimentUnoText"
                         android:layout_width="match_parent"
@@ -217,7 +223,8 @@
                         android:layout_alignParentRight="true"
                         android:background="@drawable/transparent_banner"
                         android:layout_alignBottom="@id/buttonSortimentUno"
-                        android:layout_marginRight="15dp">
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp">
                     </TextView>
                 </RelativeLayout>
                 <RelativeLayout
@@ -270,7 +277,9 @@
                         android:textColorHighlight="#000000"
                         tools:visibility="visible"
                         android:layout_alignParentLeft="true"
-                        android:background="@drawable/cyroline_shirts"/>
+                        android:background="@drawable/cyroline_shirts"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"/>
                     <TextView
                         android:id="@+id/sortimentTresText"
                         android:layout_width="match_parent"
@@ -282,7 +291,8 @@
                         android:layout_alignParentRight="true"
                         android:background="@drawable/transparent_banner"
                         android:layout_alignBottom="@id/buttonSortimentTres"
-                        android:layout_marginRight="15dp">
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp">
                     </TextView>
                     </RelativeLayout>
                 <RelativeLayout
@@ -297,7 +307,7 @@
                         android:layout_marginRight="10dp"
                         tools:visibility="visible"
                         android:layout_alignParentRight="true"
-                        android:background="@drawable/cyroline_shirts"/>
+                        android:background="@drawable/cyroline_shirts" />
                     <TextView
                         android:id="@+id/sortimentQuadroText"
                         android:layout_width="match_parent"
@@ -322,5 +332,5 @@
 
     </LinearLayout>
 
-
+    </ScrollView>
 </android.widget.LinearLayout>

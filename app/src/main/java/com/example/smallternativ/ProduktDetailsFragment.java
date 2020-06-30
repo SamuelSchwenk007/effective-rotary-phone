@@ -20,6 +20,9 @@ public class ProduktDetailsFragment extends Fragment {
     TextView beschreibungProdukt;
     ImageView produktBild;
     TextView kategorien;
+    StartseiteActivity startseiteActivity;
+    String ladenname;
+    String sortiment;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,9 +35,14 @@ public class ProduktDetailsFragment extends Fragment {
         beschreibungProdukt.setText(beschreibungsText);
         produktBild.setImageResource(productPicReference);
         kategorien.setText(kategorienProdukt);
+        startseiteActivity.setCameFromSortiment(false);
+        startseiteActivity.setLadenname(ladenname);
+        startseiteActivity.setSortimenName(sortiment);
 
         return view;
     }
+
+
 
     public String getProduktname() {
         return Produktname;
@@ -67,5 +75,28 @@ public class ProduktDetailsFragment extends Fragment {
     public void setProductPicReference(int productPicReference) {
         this.productPicReference = productPicReference;
     }
+
+    public StartseiteActivity getStartseiteActivity() {
+        return startseiteActivity;
+    }
+
+    public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
+        this.startseiteActivity = startseiteActivity;
+    }   public String getLadenname() {
+        return ladenname;
+    }
+
+    public void setLadenname(String ladenname) {
+        this.ladenname = ladenname;
+    }
+
+    public String getSortiment() {
+        return sortiment;
+    }
+
+    public void setSortiment(String sortiment) {
+        this.sortiment = sortiment;
+    }
+
 
 }
