@@ -127,8 +127,8 @@ public class FavorisierteLaedenFragment extends Fragment implements MyAdapter.Sh
                 return false;
         }
     } public void createStartseiteFragmentWithDeleats(String kategorie){
-        startseiteActivity.getBlacklineone().setVisibility(View.VISIBLE);
-        startseiteActivity.getBlacklinetwo().setVisibility(View.INVISIBLE);
+        startseiteActivity.getBlacklineone().setVisibility(View.INVISIBLE);
+        startseiteActivity.getBlacklinetwo().setVisibility(View.VISIBLE);
         startseiteActivity.getBlacklinetree().setVisibility(View.INVISIBLE);
         startseiteActivity.getBlacklinefour().setVisibility(View.INVISIBLE);
         startseiteActivity.getBlacklinefive().setVisibility(View.INVISIBLE);

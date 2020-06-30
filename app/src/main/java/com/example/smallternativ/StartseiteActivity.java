@@ -95,6 +95,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 blacklinefour.setVisibility(View.INVISIBLE);
                 blacklinefive.setVisibility(View.INVISIBLE);
                FavorisierteLaedenFragment favorisierteLaedenFragment = new FavorisierteLaedenFragment();
+               favorisierteLaedenFragment.setStartseiteActivity(this);
                 favorisierteLaedenFragment.setSupportActionBar(getSupportActionBar());
                createFragment(favorisierteLaedenFragment);
                 return true;
