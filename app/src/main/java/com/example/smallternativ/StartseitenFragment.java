@@ -136,7 +136,7 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
 
         ShopListItem shopListItemFive = new ShopListItem("Metalworks","Von der Ritterrüstung bis hin zum eleganten Ring. Bei uns erhalten Sie handgeschmiedete Qualitätsware.",
                 R.drawable.metalworks_profil,"Custom, Handmade","Hufeisen","Ringe","Rüstungen",
-                "Schwerte & Messer",R.drawable.metalworks_hufeisen,R.drawable.metalworks_ringe,R.drawable.metalworks_ruestung,R.drawable.metalworks_schwerter,"Breite Straße 40.");
+                "Schwerter & Messer",R.drawable.metalworks_hufeisen,R.drawable.metalworks_ringe,R.drawable.metalworks_ruestung,R.drawable.metalworks_schwerter,"Breite Straße 40.");
 
         ShopListItem shopListItemSix = new ShopListItem("Asia-Ambiente","Richten Sie ihr Haus in einem exotischen asiatischen Stil ein. Bei unseren Qualitätsmöbeln finden Sie bestimmt etwas nach ihrem Geschmack.",
                 R.drawable.asia_ambiente_profil,"Deko, Extravagant","Deko","Gartenmöbel","Kotatsus",

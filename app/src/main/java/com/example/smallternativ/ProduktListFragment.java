@@ -92,7 +92,7 @@ public class ProduktListFragment extends Fragment implements ProduktAdapter.Prod
             } else if (Ladenname == "Metalworks") {
                 Produkt produktone;
                 Produkt produkttwo;
-                if (Sortimentname == "Custom, Handmade") {
+                if (Sortimentname == "Schwerter & Messer") {
                     produktone = new Produkt("Templer-Schwert", "Templerschwert 18 Jahundert Nachbau, aus gehärtetem Damaststahl.", R.drawable.templer_schwert, "Waffen, Handgemacht");
                     produkttwo = new Produkt("Einhand-Schwert", "Bei 1600 Grad geschmiedetes Einhand-Schwert für den Hobbybedarf.", R.drawable.einhand_schwert, "Waffen, Handgemacht");
                 } else if (Sortimentname == "Hufeisen") {
