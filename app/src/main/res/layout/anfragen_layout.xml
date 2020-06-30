@@ -29,9 +29,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/addbutton"
+        android:src="@drawable/add_button"
         android:layout_marginRight="10dp"
-        android:onClick="addOnclick"/>
+        android:onClick="addOnclick"
+        android:stateListAnimator="@null"/>
 </android.widget.RelativeLayout>
 
 </android.widget.LinearLayout>

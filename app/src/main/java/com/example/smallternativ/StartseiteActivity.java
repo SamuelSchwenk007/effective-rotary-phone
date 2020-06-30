@@ -263,7 +263,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 createFragment(ladenProfilFragment);
                 return true;
             case R.id.stadtwaehlen:
-
+                stadtSuche(findViewById(R.id.stadtwaehlen));
                 return true;
             case R.id.einstellungen:
                 EinstellungenFragment einstellungenFragment = new EinstellungenFragment();
@@ -301,6 +301,13 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         FragmentManager fragmentManager = getSupportFragmentManager();
         sucheLaden.show(fragmentManager,"Laden Suchen");
     }
+    public void stadtSuche(View v){
+        StadtWaehlen stadtWaehlen = new StadtWaehlen();
+        stadtWaehlen.setAnfragenAdapter(anfragenAdapter);
+        stadtWaehlen.setStartseiteActivity(this);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        stadtWaehlen.show(fragmentManager,"Stadt Wählen");
+    }
     public void openMap(View v){
         // Create a Uri from an intent string. Use the result to create an Intent.
         Uri gmmIntentUri = Uri.parse("geo:53.869000,10.687000");
@@ -326,7 +333,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         int id = item.getItemId();
 
         if (id == R.id.action_search) {
-            testSuche(findViewById(R.id.stadtwaehlen));
+            testSuche(findViewById(R.id.action_search));
             return true;
         }
 
