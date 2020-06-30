@@ -1,5 +1,6 @@
 package com.example.smallternativ;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
 
@@ -43,7 +45,9 @@ public class LadenProfilFragment extends Fragment {
     private int ladenPicReference, sortimentUnoReference, sortimentDosReference,sortimentTresReference, sortimentQuadroReference;
     private StartseiteActivity startseiteActivity;
     private TextView sortimentOne, sortimentTwo, sortimentTree,sortimentFour;
+    private boolean comefromFavs;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -130,6 +134,29 @@ public class LadenProfilFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 startseiteActivity.addOnclick(view);
+            }
+        });
+        if(comefromFavs){
+            favoritSetzen.setForeground(getResources().getDrawable(R.drawable.star_border_filled));
+        }
+        favoritSetzen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(comefromFavs){
+                    favoritSetzen.setForeground(getResources().getDrawable(R.drawable.star_border));
+                    comefromFavs = false;
+                }
+                else{
+                    favoritSetzen.setForeground(getResources().getDrawable(R.drawable.star_border_filled));
+                    comefromFavs = true;
+                }
+            }
+        });
+        karte = view.findViewById(R.id.buttonKarteLadenprofil);
+        karte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startseiteActivity.openMap(view.findViewById(R.id.karte));
             }
         });
 
@@ -327,6 +354,14 @@ public class LadenProfilFragment extends Fragment {
 
     public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
         this.startseiteActivity = startseiteActivity;
+    }
+
+    public boolean isComefromFavs() {
+        return comefromFavs;
+    }
+
+    public void setComefromFavs(boolean comefromFavs) {
+        this.comefromFavs = comefromFavs;
     }
 
 }

@@ -95,6 +95,12 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         ladenProfilFragment.setStartseiteActivity(startseiteActivity);
         ladenProfilFragment.setSupportActionBar(supportActionBar);
         ladenProfilFragment.setMyAdapter(myAdapter);
+        if(startseiteActivity.getFragmentList().get(0) == this) {
+            ladenProfilFragment.setComefromFavs(false);
+        }
+        else{
+            ladenProfilFragment.setComefromFavs(true);
+        }
         ladenProfilFragment.setLadenNameString(myAdapter.getAufgaben().get(position).title);
         ladenProfilFragment.setLadenBeschribungString(myAdapter.getAufgaben().get(position).beschreibung);
         ladenProfilFragment.setLadenPicReference(myAdapter.getAufgaben().get(position).profilbildReference);

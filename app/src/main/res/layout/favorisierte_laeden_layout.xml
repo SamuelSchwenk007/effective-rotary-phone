@@ -47,29 +47,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp">
-        <Button
-            android:id="@+id/arrowleft_fav"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/arrowleft"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp"
-            android:onClick="swipeLeftFav">
-        </Button>
-        <Button
-            android:id="@+id/arrowright_fav"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/arrowright"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:layout_marginRight="10dp"
-            android:onClick="swipeRightFav">
-        </Button>
+
 
         <HorizontalScrollView
-            android:id="@+id/news_scroll-view_fav"
+            android:id="@+id/news_scroll-view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -79,56 +60,124 @@
             android:fillViewport="true"
             android:scrollbars="horizontal"
             android:scrollbarThumbHorizontal="@color/smallternativOrange"
+            android:scrollbarSize="5dp"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:paddingRight="10dp"
+            android:scrollbarFadeDuration="0">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
+                android:orientation="horizontal"
+                android:layout_marginRight="10dp">
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/copons"
-                    android:gravity="left|center"
-                    android:text="Rabattcoupons bei Nadel und Faden!"
-                    android:textAlignment="center"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"></TextView>
-
-                <TextView
+                    android:orientation="vertical"
+                    android:layout_marginRight="5dp">
+                    <ImageView
+                        android:id="@+id/couponspic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/copons"
+                        android:gravity="left|center"
+                        android:textAlignment="center"
+                        android:textColor="#000000">
+                    </ImageView>
+                    <TextView
+                        android:id="@+id/couponsNewsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/couponspic"
+                        android:text="Neue Rabattcoupons bei Nadel und Faden!"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/transparent_banner"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:gravity="center_vertical">
+                    </TextView>
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/pizza_news"
-                    android:gravity="left|center"
-                    android:text="PizzaHut hat neue Angebote!"
-                    android:textAlignment="center"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"></TextView>
-
-                <TextView
+                    android:orientation="vertical"
+                    android:layout_marginRight="5dp">
+                    <ImageView
+                        android:id="@+id/pizzapic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/pizza_news"
+                        android:gravity="left|center"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF">
+                    </ImageView>
+                    <TextView
+                        android:id="@+id/pizzasNewsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/pizzapic"
+                        android:text="Pizza Hut hat vergrößert!"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/transparent_banner"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+                    </TextView>
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/yoga_news"
-                    android:gravity="left|center"
-                    android:text=" Nitsche bietet Deli, Yoga an! "
-                    android:textAlignment="center"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"></TextView>
-
-                <TextView
+                    android:orientation="vertical"
+                    android:layout_marginRight="5dp">
+                    <ImageView
+                        android:id="@+id/yogapic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/yoga_news"
+                        android:gravity="left|center"
+                        android:textAlignment="center"
+                        android:textColor="#000000">
+                    </ImageView>
+                    <TextView
+                        android:id="@+id/yogaNewsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/yogapic"
+                        android:text="Nietsche bitet jetzt Yoga an!"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/transparent_banner"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+                    </TextView>
+                </RelativeLayout>
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/cake_news"
-                    android:gravity="left|center"
-                    android:text="Neues Cafe an der Untertrave."
-                    android:textColor="#000000"
-                    android:textAlignment="center"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"></TextView>
+                    android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/cakepic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/cake_news"
+                        android:gravity="left|center"
+                        android:textAlignment="center"
+                        android:textColor="#000000">
+                    </ImageView>
+                    <TextView
+                        android:id="@+id/cakeNewsText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/cakepic"
+                        android:text="Schönes neues Cafe an der Unttertrave!"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/transparent_banner"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp">
+                    </TextView>
+                </RelativeLayout>
             </LinearLayout>
         </HorizontalScrollView>
     </RelativeLayout>

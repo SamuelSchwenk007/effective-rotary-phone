@@ -49,12 +49,13 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_centerInParent="true"
-                    android:foreground="@drawable/fav_button"
+                    android:foreground="@drawable/star_border"
                     android:backgroundTint="#E6F3FF"
                     android:freezesText="false"
                     android:layout_toLeftOf="@id/buttonKarteLadenprofil"
                     android:layout_toRightOf="@id/buttonAnfrageSenden"
-                    tools:visibility="visible" />
+                    tools:visibility="visible"
+                    android:stateListAnimator="@null"/>
 
                 <Button
                     android:id="@+id/buttonKarteLadenprofil"
@@ -95,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:textColor="#000000"
-                    android:textSize="55px"
+                    android:textSize="24dp"
                     tools:text="Nadel &amp; Faden" />
 
                 <TextView
@@ -105,7 +106,7 @@
                     android:layout_alignParentBottom="true"
                     android:textAlignment="center"
                     android:textColor="#000000"
-                    android:textSize="40px"
+                    android:textSize="20dp"
                     tools:text="Hüxstraße 59, Lübeck"
                     android:gravity="center_horizontal" />
                 </RelativeLayout>
@@ -117,7 +118,7 @@
                 android:id="@+id/kategorieContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -126,14 +127,16 @@
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
                     android:text="Kategorie:"
-                    tools:text="Kategorie:" />
+                    tools:text="Kategorie:"
+                    android:textSize="20dp"/>
 
                 <TextView
                     android:id="@+id/textViewKategorie2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="#000000"
-                    tools:text="Kleidung, barrierefrei" />
+                    tools:text="Kleidung, barrierefrei"
+                    android:textSize="20dp"/>
 
                 <TextView
                     android:id="@+id/textViewLadenbeschreibung"
@@ -142,7 +145,7 @@
                     android:layout_marginTop="10dp"
                     android:text="@string/e_mail"
                     android:textColor="#000000"
-                    android:textSize="45px"
+                    android:textSize="20dp"
                     tools:text="Hier finden Sie unterschiedliche Stoffe, Bänder, Knöpfe und vieles mehr" />
 
 
@@ -165,7 +168,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#000000"
-                android:textSize="45px"
+                android:textSize="20dp"
                 android:text="Sortiment"
                 tools:text="Sortiment" />
 
@@ -175,12 +178,12 @@
                 android:scrollbarThumbVertical="@color/smallternativOrange"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="70dp"
-                android:scrollbarSize="5dp">
+                android:scrollbarSize="5dp"
+                android:scrollbarFadeDuration="0">
                 <LinearLayout
                     android:id="@+id/verticalinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:orientation="vertical">
             <LinearLayout
                 android:id="@+id/horizontalinner"
@@ -197,8 +200,6 @@
                         android:id="@+id/buttonSortimentUno"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
                         android:freezesText="false"
                         android:gravity="bottom|center"
                         android:textColorHighlight="#000000"
@@ -216,8 +217,7 @@
                         android:layout_alignParentRight="true"
                         android:background="@drawable/transparent_banner"
                         android:layout_alignBottom="@id/buttonSortimentUno"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp">
+                        android:layout_marginRight="15dp">
                     </TextView>
                 </RelativeLayout>
                 <RelativeLayout
@@ -265,8 +265,6 @@
                         android:id="@+id/buttonSortimentTres"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
                         android:freezesText="false"
                         android:gravity="bottom|center"
                         android:textColorHighlight="#000000"
@@ -284,8 +282,7 @@
                         android:layout_alignParentRight="true"
                         android:background="@drawable/transparent_banner"
                         android:layout_alignBottom="@id/buttonSortimentTres"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp">
+                        android:layout_marginRight="15dp">
                     </TextView>
                     </RelativeLayout>
                 <RelativeLayout

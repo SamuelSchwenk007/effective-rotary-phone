@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -262,7 +263,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 createFragment(ladenProfilFragment);
                 return true;
             case R.id.stadtwaehlen:
-                testSuche(findViewById(R.id.stadtwaehlen));
+
                 return true;
             case R.id.einstellungen:
                 EinstellungenFragment einstellungenFragment = new EinstellungenFragment();
@@ -275,34 +276,6 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
             default:
                 return false;
         }
-    }
-    public void swipeLeft(View v){
-        StartseitenFragment startseitenFragment = (StartseitenFragment) fragmentList.get(0);
-        View view = startseitenFragment.getStartseitenFragmentView();
-        HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view);
-        int subvalue = horizontalScrollView.getWidth();
-        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()-subvalue);
-    }
-    public void swipeRight(View v){
-        StartseitenFragment startseitenFragment = (StartseitenFragment) fragmentList.get(0);
-        View view = startseitenFragment.getStartseitenFragmentView();
-        HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view);
-        int addvalue = horizontalScrollView.getWidth();
-        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()+addvalue);
-    }
-    public void swipeLeftFav(View v){
-        FavorisierteLaedenFragment favorisierteLaedenFragment = (FavorisierteLaedenFragment) fragmentList.get(0);
-        View view = favorisierteLaedenFragment.getFavFragmentView();
-        HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view_fav);
-        int subvalue = horizontalScrollView.getWidth();
-        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()-subvalue);
-    }
-    public void swipeRightFav(View v){
-        FavorisierteLaedenFragment favorisierteLaedenFragment = (FavorisierteLaedenFragment) fragmentList.get(0);
-        View view = favorisierteLaedenFragment.getFavFragmentView();
-        HorizontalScrollView horizontalScrollView = view.findViewById(R.id.news_scroll_view_fav);
-        int addvalue = horizontalScrollView.getWidth();
-        horizontalScrollView.setScrollX(horizontalScrollView.getScrollX()+addvalue);
     }
     private static int getRandomNumberInRange(int min, int max) {
 
@@ -339,6 +312,25 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
 
 // Attempt to start an activity that can handle the Intent
         startActivity(mapIntent);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menue_appbar_button, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.action_search) {
+            testSuche(findViewById(R.id.stadtwaehlen));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
     public LinearLayout getBlacklineone() {
         return blacklineone;
@@ -394,5 +386,13 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
 
     public void setProduktAdapter(ProduktAdapter produktAdapter) {
         this.produktAdapter = produktAdapter;
+    }
+
+    public ArrayList<Fragment> getFragmentList() {
+        return fragmentList;
+    }
+
+    public void setFragmentList(ArrayList<Fragment> fragmentList) {
+        this.fragmentList = fragmentList;
     }
 }

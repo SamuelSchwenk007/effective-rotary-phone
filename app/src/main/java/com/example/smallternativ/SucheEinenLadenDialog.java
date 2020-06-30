@@ -21,6 +21,7 @@ public class SucheEinenLadenDialog extends DialogFragment {
     Button sucheabbrechen;
     AnfragenAdapter anfragenAdapter;
     StartseiteActivity startseiteActivity;
+    TextView sucheEinenLadenTitle;
 
     @Nullable
     @Override
@@ -28,7 +29,9 @@ public class SucheEinenLadenDialog extends DialogFragment {
         View view = inflater.inflate(R.layout.ladensuche_layout,null);
 
 
-
+        sucheEinenLadenTitle = view.findViewById(R.id.sucheDialogTitle);
+        sucheEinenLadenTitle.setTypeface(ResourcesCompat.getFont(getContext(),R.font.pacifico));
+        sucheEinenLadenTitle.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
         sucheabbrechen = view.findViewById(R.id.sucheAbbrechen);
         sucheabbrechen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +43,24 @@ public class SucheEinenLadenDialog extends DialogFragment {
         sucheStarten.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                LadenProfilFragment ladenProfilFragment = new LadenProfilFragment();
+                ladenProfilFragment.setStartseiteActivity(startseiteActivity);
+                ladenProfilFragment.setSupportActionBar(startseiteActivity.getSupportActionBar());
+                ladenProfilFragment.setMyAdapter(startseiteActivity.myAdapter);
+                ladenProfilFragment.setLadenNameString(startseiteActivity.liste.get(5).title);
+                ladenProfilFragment.setLadenBeschribungString(startseiteActivity.liste.get(5).beschreibung);
+                ladenProfilFragment.setLadenPicReference(startseiteActivity.liste.get(5).profilbildReference);
+                ladenProfilFragment.setKategorieItemString(startseiteActivity.liste.get(5).kategorie);
+                ladenProfilFragment.setAdresseString(startseiteActivity.liste.get(5).adresse);
+                ladenProfilFragment.setSortimentUnoReference(startseiteActivity.liste.get(5).sortimentReferenceUno);
+                ladenProfilFragment.setSortimentDosReference(startseiteActivity.liste.get(5).sortimentReferenceDos);
+                ladenProfilFragment.setSortimentTresReference(startseiteActivity.liste.get(5).sortimentThresReference);
+                ladenProfilFragment.setSortimentQuadroReference(startseiteActivity.liste.get(5).sortimentQuadroReference);
+                ladenProfilFragment.setSortimentUnoString(startseiteActivity.liste.get(5).getSortimentUnoString());
+                ladenProfilFragment.setSortimentDosString(startseiteActivity.liste.get(5).getSortimentDosString());
+                ladenProfilFragment.setSortimentTresString(startseiteActivity.liste.get(5).getSortimentThresString());
+                ladenProfilFragment.setSortimentQuadroString(startseiteActivity.liste.get(5).getSortimentQuadroString());
+                startseiteActivity.createFragment(ladenProfilFragment);
 
                 dismiss();
             }
