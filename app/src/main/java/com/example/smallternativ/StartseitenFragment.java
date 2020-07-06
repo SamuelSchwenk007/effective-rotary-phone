@@ -224,7 +224,6 @@ public class StartseitenFragment extends Fragment implements MyAdapter.ShopListI
         startseiteActivity.getBlacklinetwo().setVisibility(View.INVISIBLE);
         startseiteActivity.getBlacklinetree().setVisibility(View.INVISIBLE);
         startseiteActivity.getBlacklinefour().setVisibility(View.INVISIBLE);
-        startseiteActivity.getBlacklinefive().setVisibility(View.INVISIBLE);
         StartseitenFragment startseitenFragment1 = new StartseitenFragment();
         startseitenFragment1.setKategorie(kategorie);
         startseitenFragment1.setDeleat(true);

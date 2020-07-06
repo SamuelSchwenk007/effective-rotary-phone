@@ -45,7 +45,6 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
     LinearLayout blacklinetwo;
     LinearLayout blacklinetree;
     LinearLayout blacklinefour;
-    LinearLayout blacklinefive;
     List<ShopListItem> liste ;
     ProduktAdapter produktAdapter;
     String ladenname;
@@ -80,7 +79,6 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 blacklinetwo.setVisibility(View.INVISIBLE);
                 blacklinetree.setVisibility(View.INVISIBLE);
                 blacklinefour.setVisibility(View.INVISIBLE);
-                blacklinefive.setVisibility(View.INVISIBLE);
                 StartseitenFragment startseitenFragment1 = new StartseitenFragment();
                 startseitenFragment1.setStartseiteActivity(this);
                 startseitenFragment1.setSupportActionBar(getSupportActionBar());
@@ -93,7 +91,6 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 blacklinetwo.setVisibility(View.VISIBLE);
                 blacklinetree.setVisibility(View.INVISIBLE);
                 blacklinefour.setVisibility(View.INVISIBLE);
-                blacklinefive.setVisibility(View.INVISIBLE);
                FavorisierteLaedenFragment favorisierteLaedenFragment = new FavorisierteLaedenFragment();
                favorisierteLaedenFragment.setStartseiteActivity(this);
                 favorisierteLaedenFragment.setSupportActionBar(getSupportActionBar());
@@ -105,7 +102,6 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 blacklinetwo.setVisibility(View.INVISIBLE);
                 blacklinetree.setVisibility(View.VISIBLE);
                 blacklinefour.setVisibility(View.INVISIBLE);
-                blacklinefive.setVisibility(View.INVISIBLE);
                 AnfragenFragment anfragenFragment = new AnfragenFragment();
                 anfragenFragment.setSupportActionBar(getSupportActionBar());
                 anfragenFragment.setStartseiteActivity(this);
@@ -119,18 +115,12 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 blacklinetwo.setVisibility(View.INVISIBLE);
                 blacklinetree.setVisibility(View.INVISIBLE);
                 blacklinefour.setVisibility(View.VISIBLE);
-                blacklinefive.setVisibility(View.INVISIBLE);
                 MeinKontoFragment meinkontoFragment = new MeinKontoFragment();
                 meinkontoFragment.setSupportActionBar(getSupportActionBar());
                createFragment(meinkontoFragment);
                 return true;
             }
           else  if(menuItem.getItemId()==R.id.page_5){
-                blacklineone.setVisibility(View.INVISIBLE);
-                blacklinetwo.setVisibility(View.INVISIBLE);
-                blacklinetree.setVisibility(View.INVISIBLE);
-                blacklinefour.setVisibility(View.INVISIBLE);
-                blacklinefive.setVisibility(View.VISIBLE);
               View view = new View(this);
               showMenuPopup(view);
                 return true;
@@ -141,7 +131,6 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         blacklinetwo = findViewById(R.id.blacklinedos);
         blacklinetree = findViewById(R.id.blacklinetres);
         blacklinefour = findViewById(R.id.blacklinequadro);
-        blacklinefive = findViewById(R.id.blacklinesinco);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -166,13 +155,9 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
         layoutParamsquadro.width = scrollayoutsize;
         blacklinefour.setLayoutParams(layoutParamsquadro);
 
-        ViewGroup.LayoutParams layoutParamssinco = blacklinefive.getLayoutParams();
-        layoutParamssinco.width = scrollayoutsize;
-        blacklinefive.setLayoutParams(layoutParamssinco);
         blacklinetwo.setVisibility(View.INVISIBLE);
         blacklinetree.setVisibility(View.INVISIBLE);
         blacklinefour.setVisibility(View.INVISIBLE);
-        blacklinefive.setVisibility(View.INVISIBLE);
 
     }
     public  void removeListElements(MyAdapter myAdapter){
@@ -435,14 +420,6 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
 
     public void setBlacklinefour(LinearLayout blacklinefour) {
         this.blacklinefour = blacklinefour;
-    }
-
-    public LinearLayout getBlacklinefive() {
-        return blacklinefive;
-    }
-
-    public void setBlacklinefive(LinearLayout blacklinefive) {
-        this.blacklinefive = blacklinefive;
     }
 
     public AnfragenAdapter getAnfragenAdapter() {

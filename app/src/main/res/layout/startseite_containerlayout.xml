@@ -72,16 +72,6 @@
                     android:layout_toRightOf="@+id/blacklinetres"
                     android:layout_marginRight="5dp"
                     android:layout_marginLeft="10dp"></LinearLayout>
-                <LinearLayout
-                    android:id="@+id/blacklinesinco"
-                    android:layout_width="wrap_content"
-                    android:layout_height="2dp"
-                    android:layout_gravity="left"
-                    android:background="#000000"
-                    android:orientation="horizontal"
-                    android:layout_toRightOf="@+id/blacklinequadro"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="5dp"></LinearLayout>
             </RelativeLayout>
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 </android.widget.RelativeLayout>

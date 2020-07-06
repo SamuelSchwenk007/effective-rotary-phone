@@ -131,7 +131,6 @@ public class FavorisierteLaedenFragment extends Fragment implements MyAdapter.Sh
         startseiteActivity.getBlacklinetwo().setVisibility(View.VISIBLE);
         startseiteActivity.getBlacklinetree().setVisibility(View.INVISIBLE);
         startseiteActivity.getBlacklinefour().setVisibility(View.INVISIBLE);
-        startseiteActivity.getBlacklinefive().setVisibility(View.INVISIBLE);
         StartseitenFragment startseitenFragment1 = new StartseitenFragment();
         startseitenFragment1.setKategorie(kategorie);
         startseitenFragment1.setDeleat(true);
