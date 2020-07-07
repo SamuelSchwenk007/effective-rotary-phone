@@ -36,6 +36,7 @@ public class ProduktDetailsFragment extends Fragment {
         produktBild.setImageResource(productPicReference);
         kategorien.setText(kategorienProdukt);
         startseiteActivity.setCameFromSortiment(false);
+        startseiteActivity.setToAnfragenpls(false);
         startseiteActivity.setLadenname(ladenname);
         startseiteActivity.setSortimenName(sortiment);
 

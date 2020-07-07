@@ -1,5 +1,7 @@
 package com.example.smallternativ;
 
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +46,15 @@ public class AnfrageDetailsFragmentUnbeantwortet extends Fragment {
         datum.setText(datumString);
         status.setText(statusString);
         antwort.setText(antwortString);
+        startseiteActivity.setCameFromSortiment(false);
+        startseiteActivity.setToAnfragenpls(true);
+
+        final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
+        upArrow.setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         profilPic = view.findViewById(R.id.eintrag_bild_profil_anfragen_unbearbeitet);
         profilPic.setImageResource(profilPicReference);
         produktdetails.setText(produktDetailsString);

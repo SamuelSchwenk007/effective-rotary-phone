@@ -41,6 +41,7 @@ public class ProduktListFragment extends Fragment implements ProduktAdapter.Prod
         loadAnfragentoList(getContext(), produktAdapter);
         startseiteActivity.setLadenname(Ladenname);
         startseiteActivity.setCameFromSortiment(true);
+        startseiteActivity.setToAnfragenpls(false);
         final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
         getSupportActionBar().setHomeAsUpIndicator(upArrow);

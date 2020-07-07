@@ -49,6 +49,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
     ProduktAdapter produktAdapter;
     String ladenname;
     boolean cameFromSortiment;
+    boolean toAnfragenpls;
     String sortimenName;
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -346,7 +347,7 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
                 position = i;
             }
         }
-        if(cameFromSortiment) {
+        if(cameFromSortiment && !toAnfragenpls) {
             LadenProfilFragment ladenProfilFragment = new LadenProfilFragment();
             ladenProfilFragment.setStartseiteActivity(this);
             ladenProfilFragment.setSupportActionBar(getSupportActionBar());
@@ -365,6 +366,20 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
             ladenProfilFragment.setSortimentTresString(liste.get(position).getSortimentThresString());
             ladenProfilFragment.setSortimentQuadroString(liste.get(position).getSortimentQuadroString());
             createFragment(ladenProfilFragment);
+        }
+        else if(toAnfragenpls && !cameFromSortiment){
+
+            blacklineone.setVisibility(View.INVISIBLE);
+            blacklinetwo.setVisibility(View.INVISIBLE);
+            blacklinetree.setVisibility(View.VISIBLE);
+            blacklinefour.setVisibility(View.INVISIBLE);
+            AnfragenFragment anfragenFragment = new AnfragenFragment();
+            anfragenFragment.setSupportActionBar(getSupportActionBar());
+            anfragenFragment.setStartseiteActivity(this);
+            anfragenAdapter = AnfragenAdapter.getInstance(getApplicationContext(),anfragenFragment.getShopListItemListenerDos());
+            createFragment(anfragenFragment);
+            anfragenAdapter.clearallListelements();
+
         }
         else{
                 if (sortimenName == liste.get(position).getSortimentUnoString()) {
@@ -468,6 +483,14 @@ public class StartseiteActivity extends AppCompatActivity implements PopupMenu.O
 
     public void setSortimenName(String sortimenName) {
         this.sortimenName = sortimenName;
+    }
+
+    public boolean isToAnfragenpls() {
+        return toAnfragenpls;
+    }
+
+    public void setToAnfragenpls(boolean toAnfragenpls) {
+        this.toAnfragenpls = toAnfragenpls;
     }
 
 }

@@ -1,5 +1,7 @@
 package com.example.smallternativ;
 
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +28,7 @@ public class AnfrageDetailsFragmentAbgelehnt extends Fragment {
     private String produktDetailsString;
     private TextView produkt,ladenName,anzahl,datum,status,antwort, produktdetails;
     private ImageView profilPic;
+    private StartseiteActivity startseiteActivity;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -47,6 +50,13 @@ public class AnfrageDetailsFragmentAbgelehnt extends Fragment {
         profilPic = view.findViewById(R.id.eintrag_bild_profil_anfragen_abgelehnt);
         profilPic.setImageResource(profilPicReference);
         produktdetails.setText(produktDetailsString);
+        startseiteActivity.setCameFromSortiment(false);
+        startseiteActivity.setToAnfragenpls(true);
+        final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
+        upArrow.setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         return view;
     }
     public ActionBar getSupportActionBar() {
@@ -119,4 +129,13 @@ public class AnfrageDetailsFragmentAbgelehnt extends Fragment {
     public void setProduktDetailsString(String produktDetailsString) {
         this.produktDetailsString = produktDetailsString;
     }
+
+    public StartseiteActivity getStartseiteActivity() {
+        return startseiteActivity;
+    }
+
+    public void setStartseiteActivity(StartseiteActivity startseiteActivity) {
+        this.startseiteActivity = startseiteActivity;
+    }
+
 }

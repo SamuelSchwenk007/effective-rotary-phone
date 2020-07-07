@@ -78,6 +78,7 @@ public class AnfragenFragment extends Fragment implements AnfragenAdapter.shopLi
             else if(anfragenAdapter.getAufgaben().get(position).getStatus() =="Status: abgelehnt") {
                 AnfrageDetailsFragmentAbgelehnt anfrageDetailsFragmentAbgelehnt = new AnfrageDetailsFragmentAbgelehnt();
                 anfrageDetailsFragmentAbgelehnt.setSupportActionBar(supportActionBar);
+                anfrageDetailsFragmentAbgelehnt.setStartseiteActivity(startseiteActivity);
                 anfrageDetailsFragmentAbgelehnt.setProduktString(anfragenAdapter.getAufgaben().get(position).produkt);
                 anfrageDetailsFragmentAbgelehnt.setLadenNameString(anfragenAdapter.getAufgaben().get(position).ladenName);
                 anfrageDetailsFragmentAbgelehnt.setAnzahlString(anfragenAdapter.getAufgaben().get(position).anzahl);

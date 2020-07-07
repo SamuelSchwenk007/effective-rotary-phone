@@ -1,5 +1,7 @@
 package com.example.smallternativ;
 
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +40,15 @@ public class AnfrageDetailsFragmentAngenommen extends Fragment {
         status = view.findViewById(R.id.textViewStatusAngenommen);
         antwort = view.findViewById(R.id.textViewAntwortTextAngenommen);
         produktdetails = view.findViewById(R.id.textViewProduktdetailsAngenommen);
+
+        startseiteActivity.setCameFromSortiment(false);
+        startseiteActivity.setToAnfragenpls(true);
+
+        final Drawable upArrow = getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
+        upArrow.setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
+        getSupportActionBar().setHomeAsUpIndicator(upArrow);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         produkt.setText(produktString);
         ladenName.setText(ladenNameString);
@@ -154,4 +165,5 @@ public class AnfrageDetailsFragmentAngenommen extends Fragment {
     public void setPosition(int position) {
         this.position = position;
     }
+
 }
